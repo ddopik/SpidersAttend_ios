@@ -16,8 +16,52 @@
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUz-Ld-GWw">
+                                <rect key="frame" x="45" y="595" width="325" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="htN-I9-pqD"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="325" id="obb-9I-psC"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Usp-fn-6sD">
+                                <rect key="frame" x="57" y="397" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tOI-4t-VSC">
+                                <rect key="frame" x="57" y="471" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Football-Association-of-Ireland-logo-PNG-715x715" translatesAutoresizingMaskIntoConstraints="NO" id="oyX-sf-Ukk">
+                                <rect key="frame" x="87" y="191" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YUz-Ld-GWw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5SY-Bi-2uj"/>
+                            <constraint firstItem="tOI-4t-VSC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CiF-Yi-JnS"/>
+                            <constraint firstItem="tOI-4t-VSC" firstAttribute="top" secondItem="Usp-fn-6sD" secondAttribute="bottom" constant="44" id="OkY-aO-VBt"/>
+                            <constraint firstItem="oyX-sf-Ukk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="PLQ-Cp-unN"/>
+                            <constraint firstItem="Usp-fn-6sD" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tOI-4t-VSC" secondAttribute="trailing" id="ViW-Fm-hR9"/>
+                            <constraint firstItem="Usp-fn-6sD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tOI-4t-VSC" secondAttribute="leading" id="Y46-3n-1av"/>
+                            <constraint firstItem="tOI-4t-VSC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZbK-d4-vQZ"/>
+                            <constraint firstItem="oyX-sf-Ukk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="73" id="eeY-F5-Hfp"/>
+                            <constraint firstItem="oyX-sf-Ukk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ip3-ZS-YXd"/>
+                            <constraint firstItem="Usp-fn-6sD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="397" id="nlJ-33-sPH"/>
+                            <constraint firstItem="Usp-fn-6sD" firstAttribute="top" secondItem="oyX-sf-Ukk" secondAttribute="bottom" constant="78" id="qdI-ta-lmP"/>
+                            <constraint firstItem="Usp-fn-6sD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="wyb-8c-uU8"/>
+                            <constraint firstItem="YUz-Ld-GWw" firstAttribute="top" secondItem="tOI-4t-VSC" secondAttribute="bottom" constant="94" id="xY1-NV-CO1"/>
+                            <constraint firstItem="YUz-Ld-GWw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yIG-9J-OL4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -26,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-854" y="-579"/>
+            <point key="canvasLocation" x="-855.07246376811599" y="-579.24107142857144"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8ON-lY-e2I">
@@ -63,4 +107,7 @@
             <point key="canvasLocation" x="275" y="-450"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Football-Association-of-Ireland-logo-PNG-715x715" width="715" height="715"/>
+    </resources>
 </document>
