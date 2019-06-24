@@ -1,0 +1,6 @@
+framework module Pods_SpidersAttendUITests {
+  umbrella header "Pods-SpidersAttendUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
