@@ -85,7 +85,7 @@ class LoginViewController: BaseViewController {
         
        let failureClos={
         (err:NetworkBaseError) in
-            print("failed ---->\(err.data?.msg)")
+//            print("failed ---->\(err.data?.msg)")
         }
 
         APIRouter.sendLoginRequest( loginparameters : loginParameter,success :successClos, failure : failureClos)

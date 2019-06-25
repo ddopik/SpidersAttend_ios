@@ -12,6 +12,7 @@ struct NetworkBaseError : Codable {
     let code : String?
     let data : NetworkBaseErrorData?
     let status : Bool?
+ 
     
     enum CodingKeys: String, CodingKey {
         case code = "code"
@@ -20,24 +21,34 @@ struct NetworkBaseError : Codable {
     }
     
     init(from decoder: Decoder) throws {
+        
+        
         let values = try decoder.container(keyedBy: CodingKeys.self)
         code = try values.decodeIfPresent(String.self, forKey: .code)
-        data = try NetworkBaseErrorData(from: decoder)
+        data = try values.decodeIfPresent(NetworkBaseErrorData.self, forKey: .data)
         status = try values.decodeIfPresent(Bool.self, forKey: .status)
+ 
     }
     
-}
+    
 struct NetworkBaseErrorData : Codable {
     
-    let msg : String?
+    var msg : String?
     
     enum CodingKeys: String, CodingKey {
         case msg = "msg"
     }
-    
+
     init(from decoder: Decoder) throws {
+    
         let values = try decoder.container(keyedBy: CodingKeys.self)
+//  dump(values)
         msg = try values.decodeIfPresent(String.self, forKey: .msg)
+        print("---------=====>\(msg)")
+      
+        
     }
     
+    
+    }
 }
