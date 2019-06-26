@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
     
     let locationManger = CLLocationManager()
     let container = UIView()
-    
+    var onLocationUpdateDelegate :OnLocationUpdateDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,18 +24,24 @@ class BaseViewController: UIViewController {
 }
 
 
+
+public protocol OnLocationUpdateDelegate {
+    func onLocationUpdated(curenrtlocation:CLLocation)
+}
+
 extension BaseViewController :CLLocationManagerDelegate{
     
     
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let currentLocation = locations.last else{
+        guard let mLocation = locations.last else{
             return
-            
         }
-        print("lat ---> \(currentLocation.coordinate.latitude)")
-        print("lng---> \(currentLocation.coordinate.longitude) ")
+        print("lat -----locationManager--> \(mLocation.coordinate.latitude)")
+        print("lng -----locationManager--> \(mLocation.coordinate.longitude) ")
+        onLocationUpdateDelegate?.onLocationUpdated(curenrtlocation : locationManger.location!)
+
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         do{
@@ -55,10 +61,11 @@ extension BaseViewController :CLLocationManagerDelegate{
             if (locationManger.location?.coordinate) != nil{
                 let lat=locationManger.location?.coordinate.longitude
                 let lng=locationManger.location?.coordinate.longitude
-                
-                print("lat ---> \(String(describing: lat))")
-                print("lng---> \(String(describing: lng)) ")
-                
+                print("lat ---authorizedWhenInUse--> \(String(describing: lat))")
+                print("lng ----authorizedWhenInUse-> \(String(describing: lng)) ")
+
+                onLocationUpdateDelegate?.onLocationUpdated(curenrtlocation : locationManger.location!)
+
             }else{
                 print("checkLocationAutorization ---> location is nil")
             }

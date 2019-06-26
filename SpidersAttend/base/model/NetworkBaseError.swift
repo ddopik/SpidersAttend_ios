@@ -42,11 +42,7 @@ struct NetworkBaseErrorData : Codable {
     init(from decoder: Decoder) throws {
     
         let values = try decoder.container(keyedBy: CodingKeys.self)
-//  dump(values)
-        msg = try values.decodeIfPresent(String.self, forKey: .msg)
-        print("---------=====>\(msg)")
-      
-        
+        msg = try values.decodeIfPresent(String.self, forKey: .msg)      
     }
     
     

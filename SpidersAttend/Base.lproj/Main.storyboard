@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Football-Association-of-Ireland-logo-PNG-715x715" translatesAutoresizingMaskIntoConstraints="NO" id="oyX-sf-Ukk">
-                                <rect key="frame" x="91" y="103" width="232" height="300"/>
+                                <rect key="frame" x="91" y="59" width="232" height="344"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUz-Ld-GWw">
                                 <rect key="frame" x="44.5" y="612" width="325" height="50"/>
@@ -81,11 +81,28 @@
                     <connections>
                         <outlet property="inputUserName" destination="N5Z-S1-d9x" id="Rj7-VZ-eTY"/>
                         <outlet property="userPassword" destination="HsM-wF-HDs" id="a2O-ty-0BY"/>
+                        <segue destination="cbc-K9-zMN" kind="show" id="Vaa-CB-W2v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="965.21739130434787" y="-579.24107142857144"/>
+            <point key="canvasLocation" x="-100" y="-684"/>
+        </scene>
+        <!--Main State View Controller-->
+        <scene sceneID="x7a-2I-ppc">
+            <objects>
+                <viewController storyboardIdentifier="MainStateViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4b9-9m-4RM" customClass="MainStateViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zzF-qo-cOx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ANh-he-df4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sgq-iS-Ov5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D1M-DJ-tCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810.14492753623199" y="107.14285714285714"/>
         </scene>
         <!--Spiders Attend-->
         <scene sceneID="v4N-dW-sew">
@@ -104,30 +121,30 @@
                         <viewLayoutGuide key="safeArea" id="4Ly-fV-AFV"/>
                     </view>
                     <connections>
-                        <segue destination="j6D-XD-Bwm" kind="show" id="NLJ-bc-j9d"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="mlX-jk-kG1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vl-gm-ALH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1500" y="-579"/>
+            <point key="canvasLocation" x="-100" y="-1465"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="ji8-c2-Z0J">
+        <scene sceneID="m3d-Oa-5tW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j6D-XD-Bwm" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainStateNavigatoinController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cbc-K9-zMN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wjd-zM-hQf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hla-30-JPW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zxV-YK-jEI"/>
+                        <segue destination="4b9-9m-4RM" kind="relationship" relationship="rootViewController" id="xrv-MI-Z2f"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UWe-4t-M6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bFw-5U-Hz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55.072463768115945" y="-579.24107142857144"/>
+            <point key="canvasLocation" x="-100.00000000000001" y="106.47321428571428"/>
         </scene>
     </scenes>
     <resources>

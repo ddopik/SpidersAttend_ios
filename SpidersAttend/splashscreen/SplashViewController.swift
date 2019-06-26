@@ -16,9 +16,24 @@ class SplashViewController: BaseViewController {
        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-            let next = self.storyboard!.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
+            if PrefUtil.isFirstTimeLogin(){
+                let next = self.storyboard!.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
+                self.present(next, animated: true, completion: nil)
+            }else{
+                let mainStateViewController = self.storyboard!.instantiateViewController(withIdentifier:"MainStateViewController") as! MainStateViewController
+                
+                let mainStateNavigationController =  self.storyboard!.instantiateViewController(withIdentifier: "MainStateNavigatoinController") as! UINavigationController
+                
+//                mainStateNavigationController.pushViewController(roo mainStateViewController, animated: true)
+                self.present(mainStateNavigationController, animated: true, completion: nil)
+
+            }
+            
+       
             
             
-            self.present(next, animated: true, completion: nil)        })
+            
+            
+        })
     }
 }
