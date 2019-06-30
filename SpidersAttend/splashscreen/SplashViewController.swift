@@ -22,10 +22,10 @@ class SplashViewController: BaseViewController {
             }else{
                 let mainStateViewController = self.storyboard!.instantiateViewController(withIdentifier:"MainStateViewController") as! MainStateViewController
                 
-                let mainStateNavigationController =  self.storyboard!.instantiateViewController(withIdentifier: "MainStateNavigatoinController") as! UINavigationController
+                let mainStateTabNavigationController =  self.storyboard!.instantiateViewController(withIdentifier: "MainTabViewController") as! UITabBarController
                 
 //                mainStateNavigationController.pushViewController(roo mainStateViewController, animated: true)
-                self.present(mainStateNavigationController, animated: true, completion: nil)
+                self.present(mainStateTabNavigationController, animated: true, completion: nil)
 
             }
             

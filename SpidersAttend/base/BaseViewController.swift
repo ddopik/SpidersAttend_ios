@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 import SnapKit
+import MapKit
+
 
 class BaseViewController: UIViewController {
     
@@ -41,7 +43,7 @@ extension BaseViewController :CLLocationManagerDelegate{
         print("lat -----locationManager--> \(mLocation.coordinate.latitude)")
         print("lng -----locationManager--> \(mLocation.coordinate.longitude) ")
         onLocationUpdateDelegate?.onLocationUpdated(curenrtlocation : locationManger.location!)
-
+        
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         do{
@@ -49,7 +51,7 @@ extension BaseViewController :CLLocationManagerDelegate{
         }catch{
             print("Please allow permation")
         }
-      
+        
     }
     
     private func checkLocationAutorization() throws{
@@ -63,9 +65,9 @@ extension BaseViewController :CLLocationManagerDelegate{
                 let lng=locationManger.location?.coordinate.longitude
                 print("lat ---authorizedWhenInUse--> \(String(describing: lat))")
                 print("lng ----authorizedWhenInUse-> \(String(describing: lng)) ")
-
+                
                 onLocationUpdateDelegate?.onLocationUpdated(curenrtlocation : locationManger.location!)
-
+                
             }else{
                 print("checkLocationAutorization ---> location is nil")
             }
@@ -74,19 +76,19 @@ extension BaseViewController :CLLocationManagerDelegate{
             break
         case .denied :
             // promote A dialog the we need permuation
-             throw ValidationError("Permation","Please allow Location services")
+            throw ValidationError("Permation","Please allow Location services")
             
         case .restricted :
             break
         case .notDetermined:
             locationManger.requestWhenInUseAuthorization()
-           
+            
             break
             
             
             
-//        @unknown default:
-//            <#fatalError()#>
+            //        @unknown default:
+            //            <#fatalError()#>
         }
         
     }
@@ -98,17 +100,17 @@ extension BaseViewController :CLLocationManagerDelegate{
     
     func startLocationServices() throws{
         do{
-        if(CLLocationManager.locationServicesEnabled()){
-            // GPS is Enabled
-            setUpLocationMangerServices()
-        
-          try  checkLocationAutorization()
-            
-        }else{
-            _ = BaseViewController.generate(parent: self, messageText: "A Message", messageTitle: "A title", buttonText: "A button label")
-        }
+            if(CLLocationManager.locationServicesEnabled()){
+                // GPS is Enabled
+                setUpLocationMangerServices()
+                
+                try  checkLocationAutorization()
+                
+            }else{
+                _ = BaseViewController.generate(parent: self, messageText: "A Message", messageTitle: "A title", buttonText: "A button label")
+            }
         }catch{
-                  _ = BaseViewController.generate(parent: self, messageText: "", messageTitle: "Please allow location permation", buttonText: "ok")
+            _ = BaseViewController.generate(parent: self, messageText: "", messageTitle: "Please allow location permation", buttonText: "ok")
         }
     }
     
@@ -167,4 +169,6 @@ extension BaseViewController{
         parent.present(alert, animated: true, completion: nil)
         return alert
     }
+
 }
+ 

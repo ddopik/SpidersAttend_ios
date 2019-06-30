@@ -29,7 +29,8 @@ class PrefUtil {
     private static let CURRENT_CENTRAL_LNG = "current_central_lng"
     private static let CURRENT_CENTRAL_RADIOUS = "CURRENT_CENTRAL_RADIOUS"
     private static let IS_INSIDE_RADIOUS = "is_inside_radious"
-    
+    public static let savedItems = "saved GEO"
+
     
     
     

@@ -18,8 +18,6 @@
 		042F7B7822BFB3A20059E5B4 /* LoginUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B7422BFB3A20059E5B4 /* LoginUserData.swift */; };
 		042F7B7922BFB3A20059E5B4 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B7522BFB3A20059E5B4 /* LoginData.swift */; };
 		042F7B7A22BFB3A20059E5B4 /* LoginAttendStatu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B7622BFB3A20059E5B4 /* LoginAttendStatu.swift */; };
-		042F7B7D22BFB47C0059E5B4 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B7B22BFB47C0059E5B4 /* ErrorResponse.swift */; };
-		042F7B7E22BFB47C0059E5B4 /* ErrorResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B7C22BFB47C0059E5B4 /* ErrorResponseData.swift */; };
 		042F7B8222C0DCB90059E5B4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B8122C0DCB90059E5B4 /* AppConstants.swift */; };
 		042F7B8422C1055F0059E5B4 /* NetworkBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B8322C1055F0059E5B4 /* NetworkBaseError.swift */; };
 		042F7B8722C26E7F0059E5B4 /* PrefUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B8622C26E7F0059E5B4 /* PrefUtil.swift */; };
@@ -28,9 +26,9 @@
 		042F7B9422C3801A0059E5B4 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9322C3801A0059E5B4 /* ClockView.swift */; };
 		042F7B9622C3803B0059E5B4 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9522C3803B0059E5B4 /* DateHelper.swift */; };
 		042F7B9822C3807A0059E5B4 /* StyleKit_Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9722C3807A0059E5B4 /* StyleKit_Clock.swift */; };
-		049D878522BB9D340009767B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D878122BB9D340009767B /* Category.swift */; };
-		049D878622BB9D340009767B /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D878222BB9D340009767B /* DateFormatter.swift */; };
-		049D878822BB9D340009767B /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D878422BB9D340009767B /* Article.swift */; };
+		042F7B9C22C4BCAC0059E5B4 /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9B22C4BCAC0059E5B4 /* Geotification.swift */; };
+		042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */; };
+		0462D21722C9220F00A459CE /* Utiletes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462D21622C9220F00A459CE /* Utiletes.swift */; };
 		049D878E22BBA3A00009767B /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D878D22BBA3A00009767B /* APIRouter.swift */; };
 		04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAB022B57D88002C59E5 /* AppDelegate.swift */; };
 		04D9DAB322B57D88002C59E5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAB222B57D88002C59E5 /* BaseViewController.swift */; };
@@ -73,8 +71,6 @@
 		042F7B7422BFB3A20059E5B4 /* LoginUserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginUserData.swift; path = ../../../../../Downloads/Source_file_JsonCafe/LoginUserData.swift; sourceTree = "<group>"; };
 		042F7B7522BFB3A20059E5B4 /* LoginData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginData.swift; path = ../../../../../Downloads/Source_file_JsonCafe/LoginData.swift; sourceTree = "<group>"; };
 		042F7B7622BFB3A20059E5B4 /* LoginAttendStatu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginAttendStatu.swift; path = ../../../../../Downloads/Source_file_JsonCafe/LoginAttendStatu.swift; sourceTree = "<group>"; };
-		042F7B7B22BFB47C0059E5B4 /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorResponse.swift; path = "../../../../Documents/SpidersIOS_Models/Source_file_JsonCafe (1)/ErrorResponse.swift"; sourceTree = "<group>"; };
-		042F7B7C22BFB47C0059E5B4 /* ErrorResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorResponseData.swift; path = "../../../../Documents/SpidersIOS_Models/Source_file_JsonCafe (1)/ErrorResponseData.swift"; sourceTree = "<group>"; };
 		042F7B8122C0DCB90059E5B4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		042F7B8322C1055F0059E5B4 /* NetworkBaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBaseError.swift; sourceTree = "<group>"; };
 		042F7B8622C26E7F0059E5B4 /* PrefUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefUtil.swift; sourceTree = "<group>"; };
@@ -83,9 +79,9 @@
 		042F7B9322C3801A0059E5B4 /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockView.swift; path = "../../../../../../Downloads/ClockView-master 2/clock5/ClockView.swift"; sourceTree = "<group>"; };
 		042F7B9522C3803B0059E5B4 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateHelper.swift; path = "../../../../../../Downloads/ClockView-master 2/clock5/DateHelper.swift"; sourceTree = "<group>"; };
 		042F7B9722C3807A0059E5B4 /* StyleKit_Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleKit_Clock.swift; path = "../../../../../../Downloads/ClockView-master 2/clock5/StyleKit_Clock.swift"; sourceTree = "<group>"; };
-		049D878122BB9D340009767B /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = "../../../../Downloads/NetworkingExample-master/Networking/Models/Category.swift"; sourceTree = "<group>"; };
-		049D878222BB9D340009767B /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateFormatter.swift; path = "../../../../Downloads/NetworkingExample-master/Networking/Models/DateFormatter.swift"; sourceTree = "<group>"; };
-		049D878422BB9D340009767B /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Article.swift; path = "../../../../Downloads/NetworkingExample-master/Networking/Models/Article.swift"; sourceTree = "<group>"; };
+		042F7B9B22C4BCAC0059E5B4 /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geotification.swift; path = "../../../../Downloads/Geotify/Geotify-Finished/Geotify/Geotification.swift"; sourceTree = "<group>"; };
+		042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeotificationBaseViewController.swift; sourceTree = "<group>"; };
+		0462D21622C9220F00A459CE /* Utiletes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utiletes.swift; sourceTree = "<group>"; };
 		049D878D22BBA3A00009767B /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = "../../../../Downloads/NetworkingExample-master/Networking/APIClient/APIRouter.swift"; sourceTree = "<group>"; };
 		04D9DAAD22B57D88002C59E5 /* SpidersAttend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpidersAttend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D9DAB022B57D88002C59E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,10 +176,12 @@
 		042C00A022BE838B000546D0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				042F7B9B22C4BCAC0059E5B4 /* Geotification.swift */,
 				042F7B8A22C378DD0059E5B4 /* Constants.swift */,
 				042C00B122BECA87000546D0 /* Validator.swift */,
 				042F7B8122C0DCB90059E5B4 /* AppConstants.swift */,
 				042F7B8622C26E7F0059E5B4 /* PrefUtil.swift */,
+				0462D21622C9220F00A459CE /* Utiletes.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -212,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				042F7B9022C37FC80059E5B4 /* MainStateViewController.swift */,
+				042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */,
 			);
 			path = mainState;
 			sourceTree = "<group>";
@@ -232,18 +231,6 @@
 				049D878D22BBA3A00009767B /* APIRouter.swift */,
 			);
 			path = ApiClient;
-			sourceTree = "<group>";
-		};
-		049D878022BB9D160009767B /* models */ = {
-			isa = PBXGroup;
-			children = (
-				042F7B7C22BFB47C0059E5B4 /* ErrorResponseData.swift */,
-				042F7B7B22BFB47C0059E5B4 /* ErrorResponse.swift */,
-				049D878422BB9D340009767B /* Article.swift */,
-				049D878122BB9D340009767B /* Category.swift */,
-				049D878222BB9D340009767B /* DateFormatter.swift */,
-			);
-			path = models;
 			sourceTree = "<group>";
 		};
 		04D9DAA422B57D88002C59E5 = {
@@ -274,7 +261,6 @@
 				04D9DAB022B57D88002C59E5 /* AppDelegate.swift */,
 				049D877B22BB9C6B0009767B /* ApiClient */,
 				042445D622B7AB870089C817 /* base */,
-				049D878022BB9D160009767B /* models */,
 				042F7B8F22C3798A0059E5B4 /* mainState */,
 				042445D322B78F4A0089C817 /* login */,
 				04145E5222B69BCB0084222C /* splashscreen */,
@@ -549,31 +535,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				049D878822BB9D340009767B /* Article.swift in Sources */,
 				042F7B9422C3801A0059E5B4 /* ClockView.swift in Sources */,
 				042445D522B78F7B0089C817 /* LoginViewController.swift in Sources */,
 				042F7B8422C1055F0059E5B4 /* NetworkBaseError.swift in Sources */,
 				042F7B7922BFB3A20059E5B4 /* LoginData.swift in Sources */,
-				049D878522BB9D340009767B /* Category.swift in Sources */,
+				0462D21722C9220F00A459CE /* Utiletes.swift in Sources */,
 				042F7B8222C0DCB90059E5B4 /* AppConstants.swift in Sources */,
 				042445DB22B98F5C0089C817 /* CircularProgress.swift in Sources */,
 				04145E5422B69C040084222C /* SplashViewController.swift in Sources */,
 				042C00A622BEA713000546D0 /* ValidationError.swift in Sources */,
-				049D878622BB9D340009767B /* DateFormatter.swift in Sources */,
 				04D9DAB322B57D88002C59E5 /* BaseViewController.swift in Sources */,
 				049D878E22BBA3A00009767B /* APIRouter.swift in Sources */,
 				042C00B222BECA87000546D0 /* Validator.swift in Sources */,
 				042F7B8722C26E7F0059E5B4 /* PrefUtil.swift in Sources */,
-				042F7B7E22BFB47C0059E5B4 /* ErrorResponseData.swift in Sources */,
 				042F7B7A22BFB3A20059E5B4 /* LoginAttendStatu.swift in Sources */,
 				042445D822B7ABAC0089C817 /* BaseNavigationController.swift in Sources */,
-				042F7B7D22BFB47C0059E5B4 /* ErrorResponse.swift in Sources */,
 				042F7B7722BFB3A20059E5B4 /* LoginResponse.swift in Sources */,
 				042F7B7822BFB3A20059E5B4 /* LoginUserData.swift in Sources */,
+				042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */,
 				042F7B9822C3807A0059E5B4 /* StyleKit_Clock.swift in Sources */,
 				042F7B9622C3803B0059E5B4 /* DateHelper.swift in Sources */,
 				042445DD22BA30780089C817 /* RPCircularProgress.swift in Sources */,
 				042F7B9122C37FC80059E5B4 /* MainStateViewController.swift in Sources */,
+				042F7B9C22C4BCAC0059E5B4 /* Geotification.swift in Sources */,
 				04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */,
 				042F7B8B22C378DD0059E5B4 /* Constants.swift in Sources */,
 			);
