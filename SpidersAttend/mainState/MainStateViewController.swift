@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class MainStateViewController: BaseViewController {
+import CoreLocation
+class MainStateViewController: GeotificationBaseViewController {
     /// PaintCode used for drawing a custom clock
     
     @IBOutlet weak var clockView: ClockView!
@@ -26,8 +26,20 @@ class MainStateViewController: BaseViewController {
         }
     }
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+           super.onLocationUpdateDelegate = self
+        
+        
+     
+        
+        
+        
+        
+        
+        
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateAction), userInfo: nil, repeats: true)
         
         
@@ -40,8 +52,18 @@ class MainStateViewController: BaseViewController {
             return
         }
         
-       
+     
     }
+    
+    @IBAction func attendButton(_ sender: Any) {
+//      super.requestFencing()
+        do{
+            try startLocationServices()
+        }
+        catch{
+            print("MainStateViewController ----> \(Error.self)")
+        }
+     }
     
    @objc  func appMovedToForeground() {
         print("App moved to ForeGround!")
@@ -82,5 +104,13 @@ class MainStateViewController: BaseViewController {
         timer = nil
     }
     
+    
  
 }
+
+extension MainStateViewController : OnLocationUpdateDelegate{
+    func onLocationUpdated(curenrtlocation: CLLocation) {
+        startGeotiFication(  curenrtlocation.coordinate.latitude,curenrtlocation.coordinate.longitude);
+    }
+}
+

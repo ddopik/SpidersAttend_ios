@@ -41,7 +41,7 @@ class LoginViewController: BaseViewController {
             
         }catch {
             
-            _ = BaseViewController.generate(parent: self, messageText: (error as! ValidationError).message,messageTitle:  (error as! ValidationError).errorTitle, buttonText: "Ok")
+            _ = generate(parent: self, messageText: (error as! ValidationError).message,messageTitle:  (error as! ValidationError).errorTitle, buttonText: "Ok")
         }
     }
     
@@ -104,7 +104,7 @@ class LoginViewController: BaseViewController {
         let failureClos={
             (err:NetworkBaseError?) in
             print("failed ---->\(err?.data?.msg)")
-            _ =  BaseViewController.generate(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+            _ = self.generate(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
         }
         
         APIRouter.sendLoginRequest( loginparameters : loginParameter,success : successClos , failure : failureClos)

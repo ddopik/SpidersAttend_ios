@@ -169,7 +169,7 @@ class PrefUtil {
  
     }
     
-    static func getCurrentCentralRadius() -> String? {
+  public  static func getCurrentCentralRadius() -> String? {
         return  UserDefaults.standard.string(forKey: CURRENT_CENTRAL_RADIOUS) ?? nil
     }
     

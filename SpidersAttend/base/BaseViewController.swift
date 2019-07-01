@@ -12,6 +12,11 @@ import SnapKit
 import MapKit
 
 
+public protocol OnLocationUpdateDelegate {
+    func onLocationUpdated(curenrtlocation:CLLocation)
+}
+
+
 class BaseViewController: UIViewController {
     
     let locationManger = CLLocationManager()
@@ -24,17 +29,7 @@ class BaseViewController: UIViewController {
     
     
 }
-
-
-
-public protocol OnLocationUpdateDelegate {
-    func onLocationUpdated(curenrtlocation:CLLocation)
-}
-
 extension BaseViewController :CLLocationManagerDelegate{
-    
-    
-    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let mLocation = locations.last else{
@@ -42,9 +37,11 @@ extension BaseViewController :CLLocationManagerDelegate{
         }
         print("lat -----locationManager--> \(mLocation.coordinate.latitude)")
         print("lng -----locationManager--> \(mLocation.coordinate.longitude) ")
-        onLocationUpdateDelegate?.onLocationUpdated(curenrtlocation : locationManger.location!)
+//        onLocationUpdateDelegate?.onLocationUpdated(curenrtlocation : locationManger.location!)
         
     }
+    
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         do{
             try   checkLocationAutorization()
@@ -54,9 +51,50 @@ extension BaseViewController :CLLocationManagerDelegate{
         
     }
     
+    
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        if region is CLCircularRegion {
+            //            handleEvent(for: region)
+            print(" user inside radious")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        if region is CLCircularRegion {
+            //            handleEvent(for: region)
+            print(" user outside radious")
+        }
+    }
+  
+    func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+        print("locationManager ---->monitoringDidFailFor(): \(error.localizedDescription)")
+//        print("Monitoring failed for region with identifier: \(region!.identifier)")
+    }
+ 
+    func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
+        print("locationManager -----> didDetermineState() \(state.rawValue)")
+        
+    }
+}
+extension BaseViewController
+{
     private func checkLocationAutorization() throws{
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
+            //             already got our desired permuation
+            if (locationManger.location?.coordinate) != nil{
+                let lat=locationManger.location?.coordinate.longitude
+                let lng=locationManger.location?.coordinate.longitude
+                print("lat ---authorizedAlways--> \(String(describing: lat))")
+                print("lng ----authorizedAlways-> \(String(describing: lng)) ")
+                
+                onLocationUpdateDelegate?.onLocationUpdated(curenrtlocation : locationManger.location!)
+                
+            }else{
+                print("checkLocationAutorization ---> location is nil")
+            }
+            locationManger.startUpdatingLocation()
             break
         case .authorizedWhenInUse :
             //             already got our desired permuation
@@ -76,13 +114,15 @@ extension BaseViewController :CLLocationManagerDelegate{
             break
         case .denied :
             // promote A dialog the we need permuation
+            print("locationManger ---> denied")
             throw ValidationError("Permation","Please allow Location services")
             
         case .restricted :
             break
         case .notDetermined:
             locationManger.requestWhenInUseAuthorization()
-            
+            print("locationManger ---> notDetermined")
+
             break
             
             
@@ -107,10 +147,10 @@ extension BaseViewController :CLLocationManagerDelegate{
                 try  checkLocationAutorization()
                 
             }else{
-                _ = BaseViewController.generate(parent: self, messageText: "A Message", messageTitle: "A title", buttonText: "A button label")
+              _ =   generate(parent: self, messageText: "A Message", messageTitle: "A title", buttonText: "A button label")
             }
         }catch{
-            _ = BaseViewController.generate(parent: self, messageText: "", messageTitle: "Please allow location permation", buttonText: "ok")
+           _ = generate(parent: self, messageText: "", messageTitle: "Please allow location permation", buttonText: "ok")
         }
     }
     
@@ -162,13 +202,13 @@ extension BaseViewController {
         }}
     
 }
-extension BaseViewController{
-    class func generate(parent: UIViewController, messageText: String, messageTitle: String, buttonText: String) -> UIAlertController {
-        let alert = UIAlertController(title: messageTitle, message: messageText, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: buttonText, style: UIAlertAction.Style.default, handler: nil))
-        parent.present(alert, animated: true, completion: nil)
-        return alert
-    }
+//extension BaseViewController{
+//    class func generate(parent: UIViewController, messageText: String, messageTitle: String, buttonText: String) -> UIAlertController {
+//        let alert = UIAlertController(title: messageTitle, message: messageText, preferredStyle: UIAlertController.Style.alert)
+//        alert.addAction(UIAlertAction(title: buttonText, style: UIAlertAction.Style.default, handler: nil))
+//        parent.present(alert, animated: true, completion: nil)
+//        return alert
+//    }
+//    
+//}
 
-}
- 

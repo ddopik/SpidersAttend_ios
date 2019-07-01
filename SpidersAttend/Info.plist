@@ -25,6 +25,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>we need Location to determine if Office Nearby</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>we need Location to determine if Office Nearby</string>
 	<key>UILaunchStoryboardName</key>

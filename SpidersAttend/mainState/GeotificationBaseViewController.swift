@@ -10,41 +10,41 @@ import Foundation
 import CoreLocation
 import UIKit
 
-class GeotificationBaseViewController : UIViewController{
-    var geotifications:[Geotification] = [] 
+class GeotificationBaseViewController : BaseViewController{
+    var allGeotifications:[Geotification] = [] 
     var locationManager = CLLocationManager()
-    
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
-        loadAllGeotifications()
+     
     }
     
     
-    func startGeotiFication(){
-        
-//        let coordinate = mapView.centerCoordinate
-//        let radius = Double(radiusTextField.text!) ?? 0
+    func startGeotiFication(_ lat:Double,_ lng:Double){
+//           loadAllGeotifications() ///load old fencing region
         let identifier = NSUUID().uuidString
-        let note = "user get out"
+        let note = "UserFencing"
         let eventType: Geotification.EventType = .onExit
-        let coordinate = CLLocationCoordinate2D(latitude: 2.3, longitude: 4.4) 
+        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude:lng)
           // 1
-        let clampedRadius = min(20.0, locationManager.maximumRegionMonitoringDistance)
+//        Double(PrefUtil.getCurrentCentralRadius()!)!
+        let clampedRadius = min(200.0, locationManager.maximumRegionMonitoringDistance)
         let geotification = Geotification(coordinate: coordinate, radius: clampedRadius,
                                           identifier: identifier, note: note, eventType: eventType)
-        add(geotification)
         
+        // in case allawing multible fencing we add the new insert new  point
+//         add(geotification)
+//        saveAllGeotifications()
+        ////////
         startMonitoring(geotification: geotification)
-        saveAllGeotifications()
     }
     
     
     // MARK: Loading and saving functions
     func loadAllGeotifications() {
-        geotifications.removeAll()
+        allGeotifications.removeAll()
         let allGeotifications = Geotification.allGeotifications()
         allGeotifications.forEach { add($0) }
     }
@@ -53,21 +53,22 @@ class GeotificationBaseViewController : UIViewController{
     func saveAllGeotifications() {
         let encoder = JSONEncoder()
         do {
-            let data = try encoder.encode(geotifications)
+            let data = try encoder.encode(allGeotifications)
             UserDefaults.standard.set(data, forKey: PrefUtil.savedItems)
         } catch {
             print("error encoding geotifications")
         }
     }
     
+ 
     // MARK: Functions that update the model/associated views with geotification changes
     func add(_ geotification: Geotification) {
-        geotifications.append(geotification)
+        allGeotifications.append(geotification)
     }
     
     func remove(_ geotification: Geotification) {
-        guard let index = geotifications.index(of: geotification) else { return }
-        geotifications.remove(at: index)
+        guard let index = allGeotifications.firstIndex(of: geotification) else { return }
+        allGeotifications.remove(at: index)
     }
     
     /***   With the location manager properly configured, you must now allow your app to register user geofences for monitoring.
@@ -78,9 +79,10 @@ class GeotificationBaseViewController : UIViewController{
         let region = CLCircularRegion(center: geotification.coordinate,
                                       radius: geotification.radius,
                                       identifier: geotification.identifier)
-        // 2
-        region.notifyOnEntry = (geotification.eventType == .onEntry)
-        region.notifyOnExit = !region.notifyOnEntry
+    
+                region.notifyOnEntry = true
+                region.notifyOnExit = true
+        
         return region
     }
     
@@ -90,16 +92,16 @@ class GeotificationBaseViewController : UIViewController{
             return
         }
         
-        if CLLocationManager.authorizationStatus() != .authorizedAlways {
-            let message = """
-      Your geotification is saved but will only be activated once you grant
-      Geotify permission to access the device location.
-      """
-            showAlert(withTitle:"Warning", message: message)
-        }
-        
+//        if CLLocationManager.authorizationStatus() != .authorizedAlways {
+//            let message = """
+//      Your geotification is saved but will only be activated once you grant
+//      Geotify permission to access the device location.
+//      """
+//            showAlert(withTitle:"Warning", message: message)
+//        }
         let fenceRegion = region(with: geotification)
         locationManager.startMonitoring(for: fenceRegion)
+         locationManager.requestState(for: fenceRegion)
     }
     
     func stopMonitoring(geotification: Geotification) {
@@ -109,20 +111,6 @@ class GeotificationBaseViewController : UIViewController{
         }
     }
 }
+ 
 
-// MARK: - Location Manager Delegate
-extension GeotificationBaseViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-//        mapView.showsUserLocation = status == .authorizedAlways
-    }
-    
-    func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
-        print("Monitoring failed for region with identifier: \(region!.identifier)")
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Location Manager failed with the following error: \(error)")
-    }
-    
-}
+ 

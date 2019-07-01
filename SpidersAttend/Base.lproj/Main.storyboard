@@ -126,6 +126,9 @@
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="attendButton:" destination="4b9-9m-4RM" eventType="touchUpInside" id="3PG-iZ-7uz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
