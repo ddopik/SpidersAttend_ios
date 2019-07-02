@@ -63,16 +63,7 @@ class LoginViewController: BaseViewController {
     
     
     private  func requestLogin(_ location: CLLocation){
-        
-        //        APIClient.login(userName:userName, password:password) { result in
-        //            switch result {
-        //            case .success(let user):
-        //                print("_____________________________")
-        //                print(user)
-        //            case .failure(let error):
-        //                print(error)
-        //            }
-        //        }
+
         let loginParameter=[
             AppConstants.APIParameterKey.username : String( self.inputUserName.text!),
             AppConstants.APIParameterKey.pass :String(self.userPassword.text!),

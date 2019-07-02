@@ -28,6 +28,7 @@
 		042F7B9822C3807A0059E5B4 /* StyleKit_Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9722C3807A0059E5B4 /* StyleKit_Clock.swift */; };
 		042F7B9C22C4BCAC0059E5B4 /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9B22C4BCAC0059E5B4 /* Geotification.swift */; };
 		042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */; };
+		0443D47122CB8A9300FDDE64 /* CheckStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443D47022CB8A9300FDDE64 /* CheckStatusResponse.swift */; };
 		0462D21722C9220F00A459CE /* Utiletes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462D21622C9220F00A459CE /* Utiletes.swift */; };
 		049D878E22BBA3A00009767B /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D878D22BBA3A00009767B /* APIRouter.swift */; };
 		04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAB022B57D88002C59E5 /* AppDelegate.swift */; };
@@ -81,6 +82,7 @@
 		042F7B9722C3807A0059E5B4 /* StyleKit_Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleKit_Clock.swift; path = "../../../../../../Downloads/ClockView-master 2/clock5/StyleKit_Clock.swift"; sourceTree = "<group>"; };
 		042F7B9B22C4BCAC0059E5B4 /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geotification.swift; path = "../../../../Downloads/Geotify/Geotify-Finished/Geotify/Geotification.swift"; sourceTree = "<group>"; };
 		042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeotificationBaseViewController.swift; sourceTree = "<group>"; };
+		0443D47022CB8A9300FDDE64 /* CheckStatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStatusResponse.swift; sourceTree = "<group>"; };
 		0462D21622C9220F00A459CE /* Utiletes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utiletes.swift; sourceTree = "<group>"; };
 		049D878D22BBA3A00009767B /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = "../../../../Downloads/NetworkingExample-master/Networking/APIClient/APIRouter.swift"; sourceTree = "<group>"; };
 		04D9DAAD22B57D88002C59E5 /* SpidersAttend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpidersAttend.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +211,7 @@
 		042F7B8F22C3798A0059E5B4 /* mainState */ = {
 			isa = PBXGroup;
 			children = (
+				0443D46F22CB8A6900FDDE64 /* model */,
 				042F7B9022C37FC80059E5B4 /* MainStateViewController.swift */,
 				042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */,
 			);
@@ -223,6 +226,14 @@
 				042F7B9322C3801A0059E5B4 /* ClockView.swift */,
 			);
 			path = clockView;
+			sourceTree = "<group>";
+		};
+		0443D46F22CB8A6900FDDE64 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				0443D47022CB8A9300FDDE64 /* CheckStatusResponse.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		049D877B22BB9C6B0009767B /* ApiClient */ = {
@@ -536,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				042F7B9422C3801A0059E5B4 /* ClockView.swift in Sources */,
+				0443D47122CB8A9300FDDE64 /* CheckStatusResponse.swift in Sources */,
 				042445D522B78F7B0089C817 /* LoginViewController.swift in Sources */,
 				042F7B8422C1055F0059E5B4 /* NetworkBaseError.swift in Sources */,
 				042F7B7922BFB3A20059E5B4 /* LoginData.swift in Sources */,

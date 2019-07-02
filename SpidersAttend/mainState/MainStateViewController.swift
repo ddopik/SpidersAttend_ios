@@ -13,33 +13,54 @@ class MainStateViewController: GeotificationBaseViewController {
     
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var dateTimeLabel: UILabel!
+    @IBOutlet weak var stateMessage: UITextView!
     @IBOutlet var tapGetureRecognizer: UITapGestureRecognizer!
-    
     private var timer: Timer!
-    private var observer: NSObjectProtocol?
-
-    // the Model
-    public var timeToDisplay: Date? {
+    private var timeToDisplay: Date? {
         willSet {
             guard let newDate = newValue else { return }
             updateView(newDate: newDate)
         }
     }
     
-   
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.onLocationUpdateDelegate = self
+        setCloclView()
+        requestUserStatus()
         
-           super.onLocationUpdateDelegate = self
-        
-        
-     
-        
-        
-        
-        
-        
-        
+    }
+    
+    @IBAction func attendButton(_ sender: Any) {
+        do{
+            try startLocationServices()
+        }
+        catch{
+            print("MainStateViewController ----> \(Error.self)")
+        }
+    }
+    
+    
+    
+    
+    @objc  func appMovedToForeground() {
+        print("App moved to ForeGround!")
+        /// recall check Api here
+    }
+    
+    
+    
+    @objc func willEnterForeground() {
+        print("App moved to Background!")
+    }
+    
+}
+/////////////////////////////////////////////////
+
+extension MainStateViewController{
+    
+    
+    private func setCloclView(){
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateAction), userInfo: nil, repeats: true)
         
         
@@ -52,39 +73,6 @@ class MainStateViewController: GeotificationBaseViewController {
             return
         }
         
-     
-    }
-    
-    @IBAction func attendButton(_ sender: Any) {
-//      super.requestFencing()
-        do{
-            try startLocationServices()
-        }
-        catch{
-            print("MainStateViewController ----> \(Error.self)")
-        }
-     }
-    
-   @objc  func appMovedToForeground() {
-        print("App moved to ForeGround!")
-    /// recall check Api here
-    }
-    
-    
-   
-    @objc func willEnterForeground() {
-        print("App moved to Background!")
-    }
- 
-
-    override func viewWillDisappear(_ animated: Bool) {
-        timer.invalidate()
-    }
-    
-    func updateView(newDate: Date) {
-        title = "Attend"
-        clockView?.timeToDisplay = newDate
-        dateTimeLabel?.text = newDate.asDateTimeString()
     }
     
     @objc
@@ -103,14 +91,54 @@ class MainStateViewController: GeotificationBaseViewController {
         timer.invalidate()
         timer = nil
     }
+    func updateView(newDate: Date) {
+        title = "Attend"
+        clockView?.timeToDisplay = newDate
+        dateTimeLabel?.text = newDate.asDateTimeString()
+    }
     
-    
- 
+    override func viewWillDisappear(_ animated: Bool) {
+        timer.invalidate()
+    }
 }
+
+////////////////////////////////////
+
 
 extension MainStateViewController : OnLocationUpdateDelegate{
     func onLocationUpdated(curenrtlocation: CLLocation) {
         startGeotiFication(  curenrtlocation.coordinate.latitude,curenrtlocation.coordinate.longitude);
     }
+}
+
+
+extension MainStateViewController{
+    
+    
+    
+    func requestUserStatus(){
+        
+        let succ={ (checkStatusResponse:CheckStatusResponse?) in
+            
+            print("horaaaaaai------> \(String(describing: checkStatusResponse?.data.attendStatus.msg))"
+            )
+            
+            if let statsId = try? checkStatusResponse?.data.attendStatus.status {
+                PrefUtil.setCurrentUserStatsID(userStats: statsId)
+                self.stateMessage.text=checkStatusResponse?.data.attendStatus.msg
+                
+            }
+            
+        }
+        let failureClos={
+            (err:NetworkBaseError?) in
+            print("failed ---->\(String(describing: err?.data?.msg))")
+            _ = self.generate(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+        }
+        
+        _=APIRouter.globalRequest(url: APIRouter.CHECK_STATUS_URL, bodyParameters: ["uid" : PrefUtil.getUserId() ?? "3" ], succese: succ, failure: failureClos, type: CheckStatusResponse.self)
+    }
+    
+    
 }
 

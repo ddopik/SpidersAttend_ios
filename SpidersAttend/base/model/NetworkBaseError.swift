@@ -13,6 +13,7 @@ struct NetworkBaseError : Codable {
     let data : NetworkBaseErrorData?
     let status : Bool?
  
+    // need to add helper constructor to unable user to intialize NetworkBaseError manually
     
     enum CodingKeys: String, CodingKey {
         case code = "code"
