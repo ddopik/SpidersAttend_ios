@@ -13,14 +13,15 @@ import CoreLocation
 class LoginViewController: BaseViewController {
     
     
+     
     @IBOutlet weak var inputUserName: UITextField!
-    @IBOutlet weak var userPassword: UITextField!
     
+    @IBOutlet weak var inputUserPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         super.onLocationUpdateDelegate = self
-        
+ 
         //
         //          _ = LoginViewController.generate(parent: self, messageText: "Network not available", messageTitle: "Network error", buttonText: "ok")
         
@@ -54,7 +55,7 @@ class LoginViewController: BaseViewController {
             throw ValidationError("User name","invalid userName")
         }
         
-        if !Validator.validatePassword(password : self.userPassword.text!){
+        if !Validator.validatePassword(password : self.inputUserPassword.text!){
             throw ValidationError("Password","invalid password")
             
         }
@@ -66,7 +67,7 @@ class LoginViewController: BaseViewController {
 
         let loginParameter=[
             AppConstants.APIParameterKey.username : String( self.inputUserName.text!),
-            AppConstants.APIParameterKey.pass :String(self.userPassword.text!),
+            AppConstants.APIParameterKey.pass :String(self.inputUserPassword.text!),
             AppConstants.APIParameterKey.deviceID :String(UIDevice.current.identifierForVendor?.uuidString ?? "0000"),
             AppConstants.APIParameterKey.latitude  : String (location.coordinate.latitude),
             AppConstants.APIParameterKey.longitude :String (location.coordinate.longitude)
@@ -105,10 +106,14 @@ class LoginViewController: BaseViewController {
     
 }
 extension LoginViewController:OnLocationUpdateDelegate{
+    func onLocationFencingDetemined(state: CLRegionState) {
+        return
+    }
+    
     func onLocationUpdated(curenrtlocation location: CLLocation) {
         requestLogin(location)
     }
-    
+ 
     
 }
 

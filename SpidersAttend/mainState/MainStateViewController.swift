@@ -28,11 +28,16 @@ class MainStateViewController: GeotificationBaseViewController {
         super.onLocationUpdateDelegate = self
         setCloclView()
         requestUserStatus()
-        
+        setWrapTextView(mTextView: stateMessage)
+        //
     }
     
     @IBAction func attendButton(_ sender: Any) {
         do{
+            //step ->1
+            
+            startProgress()
+            requestUserStatus()
             try startLocationServices()
         }
         catch{
@@ -45,7 +50,8 @@ class MainStateViewController: GeotificationBaseViewController {
     
     @objc  func appMovedToForeground() {
         print("App moved to ForeGround!")
-        /// recall check Api here
+        requestUserStatus()
+        
     }
     
     
@@ -107,7 +113,29 @@ extension MainStateViewController{
 
 extension MainStateViewController : OnLocationUpdateDelegate{
     func onLocationUpdated(curenrtlocation: CLLocation) {
-        startGeotiFication(  curenrtlocation.coordinate.latitude,curenrtlocation.coordinate.longitude);
+        //step -->2
+        let x=PrefUtil.getCurrentCentralLat()
+        let y=PrefUtil.getCurrentCentralLng()
+        startGeotiFication(  PrefUtil.getCurrentCentralLat(),PrefUtil.getCurrentCentralLng());
+    }
+    func onLocationFencingDetemined(state: CLRegionState) {
+        
+        //step -->4
+        switch state {
+        case .inside:
+            print("User Inside")
+     ///processed to qr
+            break
+        case .outside :
+            print("User outSide")
+
+            break
+        case .unknown:
+            print("User Unknowen Fencing")
+            break
+        default:
+            print("failed to fencing user location")
+        }
     }
 }
 
@@ -126,7 +154,9 @@ extension MainStateViewController{
             if let statsId = try? checkStatusResponse?.data.attendStatus.status {
                 PrefUtil.setCurrentUserStatsID(userStats: statsId)
                 self.stateMessage.text=checkStatusResponse?.data.attendStatus.msg
-                
+                  ///disaple progressView here
+                self.stopProgress()
+
             }
             
         }
@@ -134,6 +164,8 @@ extension MainStateViewController{
             (err:NetworkBaseError?) in
             print("failed ---->\(String(describing: err?.data?.msg))")
             _ = self.generate(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+            ///disaple progressView here
+            self.stopProgress()
         }
         
         _=APIRouter.globalRequest(url: APIRouter.CHECK_STATUS_URL, bodyParameters: ["uid" : PrefUtil.getUserId() ?? "3" ], succese: succ, failure: failureClos, type: CheckStatusResponse.self)

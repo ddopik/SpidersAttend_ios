@@ -158,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				04D9DAB222B57D88002C59E5 /* BaseViewController.swift */,
+				042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */,
 				042445D722B7ABAC0089C817 /* BaseNavigationController.swift */,
 				042C00A722BEA72B000546D0 /* model */,
 				042445D922B98EBC0089C817 /* custom_view */,
@@ -213,7 +214,6 @@
 			children = (
 				0443D46F22CB8A6900FDDE64 /* model */,
 				042F7B9022C37FC80059E5B4 /* MainStateViewController.swift */,
-				042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */,
 			);
 			path = mainState;
 			sourceTree = "<group>";

@@ -23,14 +23,20 @@ class GeotificationBaseViewController : BaseViewController{
     
     
     func startGeotiFication(_ lat:Double,_ lng:Double){
+        
+        
+        
+      
+        
+        
 //           loadAllGeotifications() ///load old fencing region
         let identifier = NSUUID().uuidString
         let note = "UserFencing"
         let eventType: Geotification.EventType = .onExit
         let coordinate = CLLocationCoordinate2D(latitude: lat, longitude:lng)
           // 1
-//        Double(PrefUtil.getCurrentCentralRadius()!)!
-        let clampedRadius = min(200.0, locationManager.maximumRegionMonitoringDistance)
+ //
+        let clampedRadius = min(PrefUtil.getCurrentCentralRadius()!, locationManager.maximumRegionMonitoringDistance)
         let geotification = Geotification(coordinate: coordinate, radius: clampedRadius,
                                           identifier: identifier, note: note, eventType: eventType)
         
@@ -91,14 +97,6 @@ class GeotificationBaseViewController : BaseViewController{
             showAlert(withTitle:"Error", message: "Geofencing is not supported on this device!")
             return
         }
-        
-//        if CLLocationManager.authorizationStatus() != .authorizedAlways {
-//            let message = """
-//      Your geotification is saved but will only be activated once you grant
-//      Geotify permission to access the device location.
-//      """
-//            showAlert(withTitle:"Warning", message: message)
-//        }
         let fenceRegion = region(with: geotification)
         locationManager.startMonitoring(for: fenceRegion)
          locationManager.requestState(for: fenceRegion)
@@ -110,6 +108,9 @@ class GeotificationBaseViewController : BaseViewController{
             locationManager.stopMonitoring(for: circularRegion)
         }
     }
+    
+    
+    
 }
  
 
