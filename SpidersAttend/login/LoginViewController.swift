@@ -13,7 +13,7 @@ import CoreLocation
 class LoginViewController: BaseViewController {
     
     
-     
+    
     @IBOutlet weak var inputUserName: UITextField!
     
     @IBOutlet weak var inputUserPassword: UITextField!
@@ -21,7 +21,7 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         super.onLocationUpdateDelegate = self
- 
+        
         //
         //          _ = LoginViewController.generate(parent: self, messageText: "Network not available", messageTitle: "Network error", buttonText: "ok")
         
@@ -32,9 +32,6 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func onLoginPressed(_ sender: Any) {
-        
-        
-        
         do  {
             try isLoginInputsValid()
             try startLocationServices()
@@ -48,23 +45,20 @@ class LoginViewController: BaseViewController {
     
     
     private func isLoginInputsValid() throws {
-        
-        
-        
         if !Validator.validUserName(userName: self.inputUserName.text!){
-            throw ValidationError("User name","invalid userName")
+            throw ValidationError(message: "User name",errorTitle: "invalid userName")
         }
         
         if !Validator.validatePassword(password : self.inputUserPassword.text!){
-            throw ValidationError("Password","invalid password")
+            throw ValidationError(message: "Password",errorTitle: "invalid password")
             
-        }
-        
+        }        
     }
     
     
     private  func requestLogin(_ location: CLLocation){
-
+        
+        super.startProgress()
         let loginParameter=[
             AppConstants.APIParameterKey.username : String( self.inputUserName.text!),
             AppConstants.APIParameterKey.pass :String(self.inputUserPassword.text!),
@@ -87,22 +81,30 @@ class LoginViewController: BaseViewController {
             PrefUtil.setUserTrackId( trackID: loginResponse?.userData?.track ?? " ")
             //            PrefUtil.setCurrentStatsMessage(  loginResponse.userData?.attendStatus?.msg!!)
             PrefUtil.setCurrentUserStatsID(  userStats: loginResponse?.attendStatus?.status ?? "-1")
-            PrefUtil.setCurrentCentralLng(  currentCentralLng: loginResponse?.userData?.lng ?? "-1")
+            PrefUtil.setCurrentCentralLng(  currentCentralLng: loginResponse?.userData?.lng ?? "0.0")
+            PrefUtil.setCurrentCentralLat(  currentCentralLat: loginResponse?.userData?.lat ?? "0.0")
             PrefUtil.setCurrentCentralRadius(  currentCentralRadious: loginResponse?.userData?.radius ?? "-1")
             //            /
-            print("suucess \(PrefUtil.getUserId())" )
-
+            print("suucess \(String(describing: PrefUtil.getUserId()))" )
+            super.stopProgress()
+            
+            self.navigateToMainStateScreen()
         }
         let failureClos={
             (err:NetworkBaseError?) in
-            print("failed ---->\(err?.data?.msg)")
+            print("failed ---->\(String(describing: err?.data?.msg))")
             _ = self.generate(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+            super.stopProgress()
+            
         }
         
         APIRouter.sendLoginRequest( loginparameters : loginParameter,success : successClos , failure : failureClos)
     }
     
-    
+    func navigateToMainStateScreen(){
+        let mainStateTabNavigationController =  self.storyboard!.instantiateViewController(withIdentifier: "MainTabViewController") as! UITabBarController
+        self.present(mainStateTabNavigationController, animated: true, completion: nil)
+    }
     
 }
 extension LoginViewController:OnLocationUpdateDelegate{
@@ -113,7 +115,7 @@ extension LoginViewController:OnLocationUpdateDelegate{
     func onLocationUpdated(curenrtlocation location: CLLocation) {
         requestLogin(location)
     }
- 
+    
     
 }
 

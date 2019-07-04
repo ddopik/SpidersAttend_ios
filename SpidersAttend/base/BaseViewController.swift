@@ -85,17 +85,17 @@ extension BaseViewController
     private func checkLocationAutorization() throws{
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
-            startLocationUpdate()
+           try startLocationUpdate()
             break
         case .authorizedWhenInUse :
             //             already got our desired permuation
             
-            startLocationUpdate()
+          try  startLocationUpdate()
             break
         case .denied :
             // promote A dialog the we need permuation
             print("locationManger ---> denied")
-            throw ValidationError("Permation","Please allow Location services")
+            throw ValidationError(message: "Permation",errorTitle: "Please allow Location services")
         case .restricted :
             break
         case .notDetermined:
@@ -112,7 +112,7 @@ extension BaseViewController
         
     }
     
-    private func startLocationUpdate(){
+    private func startLocationUpdate() throws {
         if (locationManger.location?.coordinate) != nil{
             let lat=locationManger.location?.coordinate.latitude
             let lng=locationManger.location?.coordinate.longitude
@@ -130,6 +130,7 @@ extension BaseViewController
  
             
         }else{
+            throw ValidationError(message: "failed to get current location", errorTitle: "error")
             print("checkLocationAutorization ---> location is nil")
         }
         locationManger.startUpdatingLocation()
@@ -149,10 +150,11 @@ extension BaseViewController
                 try  checkLocationAutorization()
                 
             }else{
-                _ =   generate(parent: self, messageText: "A Message", messageTitle: "A title", buttonText: "A button label")
+                _ =   generate(parent: self, messageText: "Please Allow Location services", messageTitle: "", buttonText: "Ok")
             }
         }catch{
-            _ = generate(parent: self, messageText: "", messageTitle: "Please allow location permation", buttonText: "ok")
+            print("-------->\((error as! ValidationError).message)")
+            _ = generate(parent: self, messageText: (error as! ValidationError).message, messageTitle:"", buttonText: "ok")
         }
         
     }
@@ -163,7 +165,7 @@ extension BaseViewController
 extension BaseViewController {
     
     public  func startProgress() {
-        startProgress()
+        setupUnroundedIndeterminate()
         
         constrain(unroundedIndeterminate, leftView: thinFilledIndeterminate)
     }

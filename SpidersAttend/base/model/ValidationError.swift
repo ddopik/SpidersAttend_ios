@@ -11,7 +11,7 @@ struct ValidationError: Error {
     var message: String
     var errorTitle:String
     
-    init(_ message: String,_ errorTitle:String) {
+    init(message: String,errorTitle:String) {
         self.message = message
         self.errorTitle=errorTitle
     }
