@@ -18,12 +18,15 @@ import MapKit
 }
 
 
-class BaseViewController: UIViewController ,UITextViewDelegate{
+class BaseViewController: UIViewController ,UITextViewDelegate {
     
     let locationManger = CLLocationManager()
     let progressView = UIView()
     var onLocationUpdateDelegate :OnLocationUpdateDelegate?
     var wrapTextViewList = [UITextView]()
+    let textField = UITextField(frame: CGRect(x: 20.0, y:90.0, width: 280.0, height: 44.0))
+    let languageDetails = LanguageDetails.getInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -48,7 +51,10 @@ extension BaseViewController :CLLocationManagerDelegate{
         do{
             try   checkLocationAutorization()
         }catch{
-            print("Please allow permation")
+            let errorObj = (error as! ValidationError)
+            showSimpleConfirmDialog(parent: self , messageText: errorObj.message, messageTitle: errorObj.errorTitle, buttonText: "Ok")
+            
+            print( (error as! ValidationError).message )
         }
         
     }
@@ -77,6 +83,12 @@ extension BaseViewController :CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
         print("locationManager -----> didDetermineState() \(state.rawValue)")
         onLocationUpdateDelegate?.onLocationFencingDetemined (state:state)
+
+    }
+    
+    
+    func stopLocationManger(){
+        self.locationManger.stopUpdatingLocation()
 
     }
 }
@@ -150,11 +162,11 @@ extension BaseViewController
                 try  checkLocationAutorization()
                 
             }else{
-                _ =   generate(parent: self, messageText: "Please Allow Location services", messageTitle: "", buttonText: "Ok")
+                _ =   showSimpleConfirmDialog(parent: self, messageText: "Please Allow Location services", messageTitle: "", buttonText: "Ok")
             }
         }catch{
             print("-------->\((error as! ValidationError).message)")
-            _ = generate(parent: self, messageText: (error as! ValidationError).message, messageTitle:"", buttonText: "ok")
+            _ = showSimpleConfirmDialog(parent: self, messageText: (error as! ValidationError).message, messageTitle:"", buttonText: "ok")
         }
         
     }
@@ -238,5 +250,16 @@ extension BaseViewController{
             
         }
     }
+    
+ 
 }
-
+//////////////////////
+extension BaseViewController {
+    
+    func getString(stringKey:String) -> String{
+        return self.languageDetails.LocalString(key: stringKey)
+    }
+    
+    
+   
+}

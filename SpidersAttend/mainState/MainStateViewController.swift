@@ -8,8 +8,10 @@
 
 import UIKit
 import CoreLocation
+import AVFoundation
+import QRCodeReader
 class MainStateViewController: GeotificationBaseViewController {
-    /// PaintCode used for drawing a custom clock
+ 
     
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var dateTimeLabel: UILabel!
@@ -30,6 +32,7 @@ class MainStateViewController: GeotificationBaseViewController {
         requestUserStatus()
         setWrapTextView(mTextView: stateMessage)
         //
+        
     }
     
     @IBAction func attendButton(_ sender: Any) {
@@ -128,7 +131,7 @@ extension MainStateViewController : OnLocationUpdateDelegate{
             break
         case .outside :
             print("User outSide")
-
+            
             break
         case .unknown:
             print("User Unknowen Fencing")
@@ -163,12 +166,12 @@ extension MainStateViewController{
         let failureClos={
             (err:NetworkBaseError?) in
             print("failed ---->\(String(describing: err?.data?.msg))")
-            _ = self.generate(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+            _ = self.showSimpleConfirmDialog(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
             ///disaple progressView here
             self.stopProgress()
         }
         
-        _=APIRouter.globalRequest(url: APIRouter.CHECK_STATUS_URL, bodyParameters: ["uid" : PrefUtil.getUserId() ?? "3" ], succese: succ, failure: failureClos, type: CheckStatusResponse.self)
+        _=APIRouter.makePostRequesr(url: APIRouter.CHECK_STATUS_URL, bodyParameters: ["uid" : PrefUtil.getUserId() ?? "3" ], succese: succ, failure: failureClos, type: CheckStatusResponse.self)
     }
     
     

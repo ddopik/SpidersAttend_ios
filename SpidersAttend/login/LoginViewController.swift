@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 
-class LoginViewController: BaseViewController {
+class LoginViewController: BaseViewController,UITextFieldDelegate {
     
     
     
@@ -21,16 +21,31 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         super.onLocationUpdateDelegate = self
+ 
+        self.inputUserName.delegate = self
+//        inputUserName.returnKeyType = .done
+        self.inputUserPassword.delegate = self
+//        inputUserPassword.returnKeyType = .done
         
-        //
-        //          _ = LoginViewController.generate(parent: self, messageText: "Network not available", messageTitle: "Network error", buttonText: "ok")
+ 
         
-        
-        
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         /////
     }
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
     
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
     @IBAction func onLoginPressed(_ sender: Any) {
         do  {
             try isLoginInputsValid()
@@ -39,7 +54,7 @@ class LoginViewController: BaseViewController {
             
         }catch {
             
-            _ = generate(parent: self, messageText: (error as! ValidationError).message,messageTitle:  (error as! ValidationError).errorTitle, buttonText: "Ok")
+            _ = showSimpleConfirmDialog(parent: self, messageText: (error as! ValidationError).message,messageTitle:  (error as! ValidationError).errorTitle, buttonText: "Ok")
         }
     }
     
@@ -87,13 +102,12 @@ class LoginViewController: BaseViewController {
             //            /
             print("suucess \(String(describing: PrefUtil.getUserId()))" )
             super.stopProgress()
-            
-            self.navigateToMainStateScreen()
-        }
+            NavigationManger(storyboard: self.storyboard!,viewController: self).navigateTo(target :Destinations.MainScreen)
+         }
         let failureClos={
             (err:NetworkBaseError?) in
             print("failed ---->\(String(describing: err?.data?.msg))")
-            _ = self.generate(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+            _ = self.showSimpleConfirmDialog(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
             super.stopProgress()
             
         }
@@ -101,10 +115,7 @@ class LoginViewController: BaseViewController {
         APIRouter.sendLoginRequest( loginparameters : loginParameter,success : successClos , failure : failureClos)
     }
     
-    func navigateToMainStateScreen(){
-        let mainStateTabNavigationController =  self.storyboard!.instantiateViewController(withIdentifier: "MainTabViewController") as! UITabBarController
-        self.present(mainStateTabNavigationController, animated: true, completion: nil)
-    }
+   
     
 }
 extension LoginViewController:OnLocationUpdateDelegate{
@@ -120,6 +131,25 @@ extension LoginViewController:OnLocationUpdateDelegate{
 }
 
 
+extension LoginViewController{
+    
+ 
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+        }
+        return true
+    }
+
+    // MARK: - Search Method
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        
+        textField.resignFirstResponder()
+        return true
+    }
+}
 
 
 

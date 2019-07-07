@@ -28,14 +28,17 @@
 		042F7B9822C3807A0059E5B4 /* StyleKit_Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9722C3807A0059E5B4 /* StyleKit_Clock.swift */; };
 		042F7B9C22C4BCAC0059E5B4 /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9B22C4BCAC0059E5B4 /* Geotification.swift */; };
 		042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */; };
+		043DE00A22CE0239006A084E /* QrReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE00922CE0239006A084E /* QrReaderViewController.swift */; };
+		043DE00F22D105A0006A084E /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE00E22D105A0006A084E /* MoreViewController.swift */; };
+		043DE01122D145BA006A084E /* NavigationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE01022D145BA006A084E /* NavigationManger.swift */; };
+		043DE01322D1BCAB006A084E /* LanguageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE01222D1BCAB006A084E /* LanguageDetails.swift */; };
 		0443D47122CB8A9300FDDE64 /* CheckStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443D47022CB8A9300FDDE64 /* CheckStatusResponse.swift */; };
 		0462D21722C9220F00A459CE /* Utiletes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462D21622C9220F00A459CE /* Utiletes.swift */; };
 		049D878E22BBA3A00009767B /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D878D22BBA3A00009767B /* APIRouter.swift */; };
+		04A6F61E22D2044E00D57B55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A6F62022D2044E00D57B55 /* Main.storyboard */; };
 		04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAB022B57D88002C59E5 /* AppDelegate.swift */; };
 		04D9DAB322B57D88002C59E5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAB222B57D88002C59E5 /* BaseViewController.swift */; };
-		04D9DAB622B57D88002C59E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D9DAB422B57D88002C59E5 /* Main.storyboard */; };
 		04D9DAB822B57D8A002C59E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D9DAB722B57D8A002C59E5 /* Assets.xcassets */; };
-		04D9DABB22B57D8A002C59E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D9DAB922B57D8A002C59E5 /* LaunchScreen.storyboard */; };
 		04D9DAC622B57D8A002C59E5 /* SpidersAttendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAC522B57D8A002C59E5 /* SpidersAttendTests.swift */; };
 		04D9DAD122B57D8A002C59E5 /* SpidersAttendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAD022B57D8A002C59E5 /* SpidersAttendUITests.swift */; };
 		279B1F8B62FA89DD11FE7B31 /* Pods_SpidersAttend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36E90014CA08040CAEC1421 /* Pods_SpidersAttend.framework */; };
@@ -82,15 +85,20 @@
 		042F7B9722C3807A0059E5B4 /* StyleKit_Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleKit_Clock.swift; path = "../../../../../../Downloads/ClockView-master 2/clock5/StyleKit_Clock.swift"; sourceTree = "<group>"; };
 		042F7B9B22C4BCAC0059E5B4 /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geotification.swift; path = "../../../../Downloads/Geotify/Geotify-Finished/Geotify/Geotification.swift"; sourceTree = "<group>"; };
 		042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeotificationBaseViewController.swift; sourceTree = "<group>"; };
+		043DE00922CE0239006A084E /* QrReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrReaderViewController.swift; sourceTree = "<group>"; };
+		043DE00E22D105A0006A084E /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		043DE01022D145BA006A084E /* NavigationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManger.swift; sourceTree = "<group>"; };
+		043DE01222D1BCAB006A084E /* LanguageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDetails.swift; sourceTree = "<group>"; };
 		0443D47022CB8A9300FDDE64 /* CheckStatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStatusResponse.swift; sourceTree = "<group>"; };
 		0462D21622C9220F00A459CE /* Utiletes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utiletes.swift; sourceTree = "<group>"; };
 		049D878D22BBA3A00009767B /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = "../../../../Downloads/NetworkingExample-master/Networking/APIClient/APIRouter.swift"; sourceTree = "<group>"; };
+		04A6F62422D2059200D57B55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04A6F62722D205F100D57B55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		04A6F62822D2062200D57B55 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		04D9DAAD22B57D88002C59E5 /* SpidersAttend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpidersAttend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D9DAB022B57D88002C59E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D9DAB222B57D88002C59E5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		04D9DAB522B57D88002C59E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04D9DAB722B57D8A002C59E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04D9DABA22B57D8A002C59E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04D9DABC22B57D8A002C59E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D9DAC122B57D8A002C59E5 /* SpidersAttendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpidersAttendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D9DAC522B57D8A002C59E5 /* SpidersAttendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpidersAttendTests.swift; sourceTree = "<group>"; };
@@ -185,6 +193,8 @@
 				042F7B8122C0DCB90059E5B4 /* AppConstants.swift */,
 				042F7B8622C26E7F0059E5B4 /* PrefUtil.swift */,
 				0462D21622C9220F00A459CE /* Utiletes.swift */,
+				043DE01022D145BA006A084E /* NavigationManger.swift */,
+				043DE01222D1BCAB006A084E /* LanguageDetails.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -226,6 +236,22 @@
 				042F7B9322C3801A0059E5B4 /* ClockView.swift */,
 			);
 			path = clockView;
+			sourceTree = "<group>";
+		};
+		043DE00822CE01E2006A084E /* qrReader */ = {
+			isa = PBXGroup;
+			children = (
+				043DE00922CE0239006A084E /* QrReaderViewController.swift */,
+			);
+			path = qrReader;
+			sourceTree = "<group>";
+		};
+		043DE00D22D1055F006A084E /* more */ = {
+			isa = PBXGroup;
+			children = (
+				043DE00E22D105A0006A084E /* MoreViewController.swift */,
+			);
+			path = more;
 			sourceTree = "<group>";
 		};
 		0443D46F22CB8A6900FDDE64 /* model */ = {
@@ -272,13 +298,14 @@
 				04D9DAB022B57D88002C59E5 /* AppDelegate.swift */,
 				049D877B22BB9C6B0009767B /* ApiClient */,
 				042445D622B7AB870089C817 /* base */,
-				042F7B8F22C3798A0059E5B4 /* mainState */,
-				042445D322B78F4A0089C817 /* login */,
 				04145E5222B69BCB0084222C /* splashscreen */,
+				042445D322B78F4A0089C817 /* login */,
+				042F7B8F22C3798A0059E5B4 /* mainState */,
+				043DE00822CE01E2006A084E /* qrReader */,
+				043DE00D22D1055F006A084E /* more */,
 				042C00A022BE838B000546D0 /* Util */,
-				04D9DAB422B57D88002C59E5 /* Main.storyboard */,
+				04A6F62022D2044E00D57B55 /* Main.storyboard */,
 				04D9DAB722B57D8A002C59E5 /* Assets.xcassets */,
-				04D9DAB922B57D8A002C59E5 /* LaunchScreen.storyboard */,
 				04D9DABC22B57D8A002C59E5 /* Info.plist */,
 			);
 			path = SpidersAttend;
@@ -413,8 +440,9 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
+				ar,
 			);
 			mainGroup = 04D9DAA422B57D88002C59E5;
 			productRefGroup = 04D9DAAE22B57D88002C59E5 /* Products */;
@@ -433,9 +461,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D9DABB22B57D8A002C59E5 /* LaunchScreen.storyboard in Resources */,
 				04D9DAB822B57D8A002C59E5 /* Assets.xcassets in Resources */,
-				04D9DAB622B57D88002C59E5 /* Main.storyboard in Resources */,
+				04A6F61E22D2044E00D57B55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +583,9 @@
 				042445DB22B98F5C0089C817 /* CircularProgress.swift in Sources */,
 				04145E5422B69C040084222C /* SplashViewController.swift in Sources */,
 				042C00A622BEA713000546D0 /* ValidationError.swift in Sources */,
+				043DE00A22CE0239006A084E /* QrReaderViewController.swift in Sources */,
 				04D9DAB322B57D88002C59E5 /* BaseViewController.swift in Sources */,
+				043DE01322D1BCAB006A084E /* LanguageDetails.swift in Sources */,
 				049D878E22BBA3A00009767B /* APIRouter.swift in Sources */,
 				042C00B222BECA87000546D0 /* Validator.swift in Sources */,
 				042F7B8722C26E7F0059E5B4 /* PrefUtil.swift in Sources */,
@@ -564,8 +593,10 @@
 				042445D822B7ABAC0089C817 /* BaseNavigationController.swift in Sources */,
 				042F7B7722BFB3A20059E5B4 /* LoginResponse.swift in Sources */,
 				042F7B7822BFB3A20059E5B4 /* LoginUserData.swift in Sources */,
+				043DE01122D145BA006A084E /* NavigationManger.swift in Sources */,
 				042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */,
 				042F7B9822C3807A0059E5B4 /* StyleKit_Clock.swift in Sources */,
+				043DE00F22D105A0006A084E /* MoreViewController.swift in Sources */,
 				042F7B9622C3803B0059E5B4 /* DateHelper.swift in Sources */,
 				042445DD22BA30780089C817 /* RPCircularProgress.swift in Sources */,
 				042F7B9122C37FC80059E5B4 /* MainStateViewController.swift in Sources */,
@@ -607,20 +638,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		04D9DAB422B57D88002C59E5 /* Main.storyboard */ = {
+		04A6F62022D2044E00D57B55 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				04D9DAB522B57D88002C59E5 /* Base */,
+				04A6F62422D2059200D57B55 /* Base */,
+				04A6F62722D205F100D57B55 /* en */,
+				04A6F62822D2062200D57B55 /* ar */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		04D9DAB922B57D8A002C59E5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04D9DABA22B57D8A002C59E5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			path = ../../../.Trash;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -631,6 +657,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -693,6 +720,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -750,6 +778,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GMBNU7MC9;
 				INFOPLIST_FILE = SpidersAttend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -768,6 +797,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GMBNU7MC9;
 				INFOPLIST_FILE = SpidersAttend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

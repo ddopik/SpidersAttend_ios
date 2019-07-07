@@ -1,0 +1,27 @@
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "2nO-IG-iUk"; */
+"2nO-IG-iUk.title" = "Home";
+
+/* Class = "UIButton"; normalTitle = "BUUUUU"; ObjectID = "D53-F9-ahn"; */
+"D53-F9-ahn.normalTitle" = "BUUUUU";
+
+/* Class = "UIViewController"; title = "Spiders Attend"; ObjectID = "DCw-gM-shJ"; */
+"DCw-gM-shJ.title" = "Spiders Attend";
+
+/* Class = "UITextView"; text = "state"; ObjectID = "LXg-4J-jMB"; */
+"LXg-4J-jMB.text" = "state";
+
+/* Class = "UITextField"; placeholder = "UserName"; ObjectID = "OVu-oZ-xsA"; */
+"OVu-oZ-xsA.placeholder" = "UserName";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "YUz-Ld-GWw"; */
+"YUz-Ld-GWw.normalTitle" = "Login";
+
+/* Class = "UITabBarItem"; title = "more"; ObjectID = "bPU-vS-jeV"; */
+"bPU-vS-jeV.title" = "more";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "lnv-Eo-J7l"; */
+"lnv-Eo-J7l.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "xgx-Ww-VEE"; */
+"xgx-Ww-VEE.normalTitle" = "Button";

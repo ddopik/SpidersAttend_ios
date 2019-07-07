@@ -11,27 +11,28 @@ import UIKit
 class SplashViewController: BaseViewController {
     
  
+  override  func viewDidLoad() {
+        super.viewDidLoad()
+    print("SplashViewController  ----> viewDidLoad()")
+    
+    
+     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+         if  PrefUtil.isLoggedIn(){
+ 
+            NavigationManger(storyboard: self.storyboard!, viewController: self).navigateTo(target: Destinations.MainScreen)
+         }else{
+
+
+                NavigationManger(storyboard: self.storyboard!, viewController: self).navigateTo(target: Destinations.Login)
+
+
+        }
+    })
+        
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
        
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-            if  !PrefUtil.isLoggedIn(){
-                let next = self.storyboard!.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
-                self.present(next, animated: true, completion: nil)
-            }else{
- 
- 
-                let mainStateTabNavigationController =  self.storyboard!.instantiateViewController(withIdentifier: "MainTabViewController") as! UITabBarController
-                self.present(mainStateTabNavigationController, animated: true, completion: nil)
-
-            }
-            
-       
-            
-            
-            
-            
-        })
+    
     }
 }
