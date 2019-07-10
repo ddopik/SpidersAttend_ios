@@ -161,17 +161,17 @@ class PrefUtil {
     //    }
     
     static func getCurrentCentralLat( ) -> Double {
-        return  1.50998
-//        return Double (UserDefaults.standard.string(forKey: CURRENT_CENTRAL_LAT) ?? "0.0" ) ??
+       
+        return Double (UserDefaults.standard.string(forKey: CURRENT_CENTRAL_LAT) ?? "0.0" ) as! Double
     }
     static func getCurrentCentralLng( ) -> Double {
-        return 0.1337
-//        return  Double (UserDefaults.standard.string(forKey: CURRENT_CENTRAL_LNG) ?? "0.0") ??
+    
+        return  Double (UserDefaults.standard.string(forKey: CURRENT_CENTRAL_LNG) ?? "0.0") as! Double
     }
     
   public  static func getCurrentCentralRadius() -> Double? {
-    return 20.0
-//    return Double(UserDefaults.standard.string(forKey: CURRENT_CENTRAL_RADIOUS) ?? "0.0" ) ??
+ 
+    return Double(UserDefaults.standard.string(forKey: CURRENT_CENTRAL_RADIOUS) ?? "0.0" )
     }
     
     static func getAppLanguage( ) -> String? {

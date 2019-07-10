@@ -8,10 +8,13 @@
 
 import Foundation
 import UIKit
+import CoreLocation
+
 class NavigationManger{
     
     var cuurentStoryBoard: UIStoryboard
     var currentViewController :UIViewController
+    var currentQrLocation :CLLocation?
     
     init(storyboard: UIStoryboard,viewController : UIViewController){
         self.cuurentStoryBoard = storyboard
@@ -39,6 +42,10 @@ class NavigationManger{
             currentViewController.present(loginViewController, animated: true, completion: nil)
             break
         case .QrScanner:
+//        let qrReaderViewController = cuurentStoryBoard.instantiateViewController(withIdentifier: "QrReaderViewController") as! QrReaderViewController
+       let qrReaderViewController = QrReaderViewController()
+        qrReaderViewController.cuurentQrLocation = self.currentQrLocation
+        currentViewController.present(qrReaderViewController, animated: true, completion: nil)
             break
         case .More:
             
@@ -59,4 +66,11 @@ enum Destinations{
     case Login
     case QrScanner
     case More
+}
+
+extension NavigationManger{
+    
+    func setQrViewControllerMessage(cuurentLocation : CLLocation? )  {
+        self.currentQrLocation = cuurentLocation
+    }
 }

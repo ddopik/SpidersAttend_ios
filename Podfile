@@ -11,7 +11,7 @@ target 'SpidersAttend' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'ReachabilitySwift'
   pod 'QRCodeReader.swift', '~> 10.1.0'
-  target 'SpidersAttendTests' do
+   target 'SpidersAttendTests' do
     inherit! :search_paths
     # Pods for testing
   end

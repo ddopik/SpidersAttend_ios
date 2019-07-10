@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		04145E5422B69C040084222C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04145E5322B69C040084222C /* SplashViewController.swift */; };
+		041A5F6D22D23DE900D42874 /* QrReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5F6C22D23DE900D42874 /* QrReaderViewController.swift */; };
 		042445D522B78F7B0089C817 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042445D422B78F7B0089C817 /* LoginViewController.swift */; };
 		042445D822B7ABAC0089C817 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042445D722B7ABAC0089C817 /* BaseNavigationController.swift */; };
 		042445DB22B98F5C0089C817 /* CircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042445DA22B98F5C0089C817 /* CircularProgress.swift */; };
 		042445DD22BA30780089C817 /* RPCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042445DC22BA30780089C817 /* RPCircularProgress.swift */; };
 		042C00A622BEA713000546D0 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C00A522BEA713000546D0 /* ValidationError.swift */; };
 		042C00B222BECA87000546D0 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C00B122BECA87000546D0 /* Validator.swift */; };
+		042CFB3822D5FE9B005D2D58 /* UiUtiletes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CFB3722D5FE9B005D2D58 /* UiUtiletes.swift */; };
 		042F7B7722BFB3A20059E5B4 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B7322BFB3A20059E5B4 /* LoginResponse.swift */; };
 		042F7B7822BFB3A20059E5B4 /* LoginUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B7422BFB3A20059E5B4 /* LoginUserData.swift */; };
 		042F7B7922BFB3A20059E5B4 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B7522BFB3A20059E5B4 /* LoginData.swift */; };
@@ -28,7 +30,7 @@
 		042F7B9822C3807A0059E5B4 /* StyleKit_Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9722C3807A0059E5B4 /* StyleKit_Clock.swift */; };
 		042F7B9C22C4BCAC0059E5B4 /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9B22C4BCAC0059E5B4 /* Geotification.swift */; };
 		042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */; };
-		043DE00A22CE0239006A084E /* QrReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE00922CE0239006A084E /* QrReaderViewController.swift */; };
+		0431190A22D371EF0001C161 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0431190C22D371EF0001C161 /* Localizable.strings */; };
 		043DE00F22D105A0006A084E /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE00E22D105A0006A084E /* MoreViewController.swift */; };
 		043DE01122D145BA006A084E /* NavigationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE01022D145BA006A084E /* NavigationManger.swift */; };
 		043DE01322D1BCAB006A084E /* LanguageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE01222D1BCAB006A084E /* LanguageDetails.swift */; };
@@ -65,12 +67,14 @@
 
 /* Begin PBXFileReference section */
 		04145E5322B69C040084222C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		041A5F6C22D23DE900D42874 /* QrReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrReaderViewController.swift; sourceTree = "<group>"; };
 		042445D422B78F7B0089C817 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		042445D722B7ABAC0089C817 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		042445DA22B98F5C0089C817 /* CircularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
 		042445DC22BA30780089C817 /* RPCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RPCircularProgress.swift; path = "../../../../../Downloads/RPCircularProgress-master/Source/RPCircularProgress.swift"; sourceTree = "<group>"; };
 		042C00A522BEA713000546D0 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		042C00B122BECA87000546D0 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		042CFB3722D5FE9B005D2D58 /* UiUtiletes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiUtiletes.swift; sourceTree = "<group>"; };
 		042F7B7322BFB3A20059E5B4 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = ../../../../../Downloads/Source_file_JsonCafe/LoginResponse.swift; sourceTree = "<group>"; };
 		042F7B7422BFB3A20059E5B4 /* LoginUserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginUserData.swift; path = ../../../../../Downloads/Source_file_JsonCafe/LoginUserData.swift; sourceTree = "<group>"; };
 		042F7B7522BFB3A20059E5B4 /* LoginData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginData.swift; path = ../../../../../Downloads/Source_file_JsonCafe/LoginData.swift; sourceTree = "<group>"; };
@@ -85,7 +89,8 @@
 		042F7B9722C3807A0059E5B4 /* StyleKit_Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleKit_Clock.swift; path = "../../../../../../Downloads/ClockView-master 2/clock5/StyleKit_Clock.swift"; sourceTree = "<group>"; };
 		042F7B9B22C4BCAC0059E5B4 /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geotification.swift; path = "../../../../Downloads/Geotify/Geotify-Finished/Geotify/Geotification.swift"; sourceTree = "<group>"; };
 		042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeotificationBaseViewController.swift; sourceTree = "<group>"; };
-		043DE00922CE0239006A084E /* QrReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrReaderViewController.swift; sourceTree = "<group>"; };
+		0431190922D36E8E0001C161 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		0431190B22D371EF0001C161 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		043DE00E22D105A0006A084E /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		043DE01022D145BA006A084E /* NavigationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManger.swift; sourceTree = "<group>"; };
 		043DE01222D1BCAB006A084E /* LanguageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDetails.swift; sourceTree = "<group>"; };
@@ -94,7 +99,6 @@
 		049D878D22BBA3A00009767B /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = "../../../../Downloads/NetworkingExample-master/Networking/APIClient/APIRouter.swift"; sourceTree = "<group>"; };
 		04A6F62422D2059200D57B55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04A6F62722D205F100D57B55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		04A6F62822D2062200D57B55 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		04D9DAAD22B57D88002C59E5 /* SpidersAttend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpidersAttend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D9DAB022B57D88002C59E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D9DAB222B57D88002C59E5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 				0462D21622C9220F00A459CE /* Utiletes.swift */,
 				043DE01022D145BA006A084E /* NavigationManger.swift */,
 				043DE01222D1BCAB006A084E /* LanguageDetails.swift */,
+				042CFB3722D5FE9B005D2D58 /* UiUtiletes.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -241,7 +246,7 @@
 		043DE00822CE01E2006A084E /* qrReader */ = {
 			isa = PBXGroup;
 			children = (
-				043DE00922CE0239006A084E /* QrReaderViewController.swift */,
+				041A5F6C22D23DE900D42874 /* QrReaderViewController.swift */,
 			);
 			path = qrReader;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 		04D9DAA422B57D88002C59E5 = {
 			isa = PBXGroup;
 			children = (
+				0431190C22D371EF0001C161 /* Localizable.strings */,
 				04D9DAAF22B57D88002C59E5 /* SpidersAttend */,
 				04D9DAC422B57D8A002C59E5 /* SpidersAttendTests */,
 				04D9DACF22B57D8A002C59E5 /* SpidersAttendUITests */,
@@ -462,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D9DAB822B57D8A002C59E5 /* Assets.xcassets in Resources */,
+				0431190A22D371EF0001C161 /* Localizable.strings in Resources */,
 				04A6F61E22D2044E00D57B55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,8 +589,8 @@
 				042F7B8222C0DCB90059E5B4 /* AppConstants.swift in Sources */,
 				042445DB22B98F5C0089C817 /* CircularProgress.swift in Sources */,
 				04145E5422B69C040084222C /* SplashViewController.swift in Sources */,
+				041A5F6D22D23DE900D42874 /* QrReaderViewController.swift in Sources */,
 				042C00A622BEA713000546D0 /* ValidationError.swift in Sources */,
-				043DE00A22CE0239006A084E /* QrReaderViewController.swift in Sources */,
 				04D9DAB322B57D88002C59E5 /* BaseViewController.swift in Sources */,
 				043DE01322D1BCAB006A084E /* LanguageDetails.swift in Sources */,
 				049D878E22BBA3A00009767B /* APIRouter.swift in Sources */,
@@ -595,6 +602,7 @@
 				042F7B7822BFB3A20059E5B4 /* LoginUserData.swift in Sources */,
 				043DE01122D145BA006A084E /* NavigationManger.swift in Sources */,
 				042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */,
+				042CFB3822D5FE9B005D2D58 /* UiUtiletes.swift in Sources */,
 				042F7B9822C3807A0059E5B4 /* StyleKit_Clock.swift in Sources */,
 				043DE00F22D105A0006A084E /* MoreViewController.swift in Sources */,
 				042F7B9622C3803B0059E5B4 /* DateHelper.swift in Sources */,
@@ -638,12 +646,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0431190C22D371EF0001C161 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0431190B22D371EF0001C161 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		04A6F62022D2044E00D57B55 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				04A6F62422D2059200D57B55 /* Base */,
 				04A6F62722D205F100D57B55 /* en */,
-				04A6F62822D2062200D57B55 /* ar */,
+				0431190922D36E8E0001C161 /* ar */,
 			);
 			name = Main.storyboard;
 			path = ../../../.Trash;

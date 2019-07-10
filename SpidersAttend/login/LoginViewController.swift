@@ -82,23 +82,24 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
             AppConstants.APIParameterKey.longitude :String (location.coordinate.longitude)
             ] as [String : String]
         //        dump(loginParameter)
-        let successClos={ (loginResponse: LoginData?) in
+        let successClos={ (loginResponse: LoginResponse?) in
             
+            let loginData = loginResponse?.data
             ///
             PrefUtil.setIsFirstTimeLogin(  isFirstTime: false)
             PrefUtil.setIsLoggedIn(  isLoggedIn: true)
-            PrefUtil.setUserToken(userToken: loginResponse?.userData?.token ?? "-1")
-            PrefUtil.setUserID(  userId: loginResponse?.userData?.uid ?? "-1" )
-            PrefUtil.setUserName(  userName: loginResponse?.userData?.name ?? " ")
-            PrefUtil.setUserMail(  userMail: loginResponse?.userData?.email ?? " ")
-            PrefUtil.setUserProfilePic(  profileImg: loginResponse?.userData?.img ?? " ")
-            PrefUtil.setUserGender(  userGender: loginResponse?.userData?.gender ?? " ")
-            PrefUtil.setUserTrackId( trackID: loginResponse?.userData?.track ?? " ")
+            PrefUtil.setUserToken(userToken: loginData?.userData?.token ?? "-1")
+            PrefUtil.setUserID(  userId: loginData?.userData?.uid ?? "-1" )
+            PrefUtil.setUserName(  userName: loginData?.userData?.name ?? " ")
+            PrefUtil.setUserMail(  userMail: loginData?.userData?.email ?? " ")
+            PrefUtil.setUserProfilePic(  profileImg: loginData?.userData?.img ?? " ")
+            PrefUtil.setUserGender(  userGender: loginData?.userData?.gender ?? " ")
+            PrefUtil.setUserTrackId( trackID: loginData?.userData?.track ?? " ")
             //            PrefUtil.setCurrentStatsMessage(  loginResponse.userData?.attendStatus?.msg!!)
-            PrefUtil.setCurrentUserStatsID(  userStats: loginResponse?.attendStatus?.status ?? "-1")
-            PrefUtil.setCurrentCentralLng(  currentCentralLng: loginResponse?.userData?.lng ?? "0.0")
-            PrefUtil.setCurrentCentralLat(  currentCentralLat: loginResponse?.userData?.lat ?? "0.0")
-            PrefUtil.setCurrentCentralRadius(  currentCentralRadious: loginResponse?.userData?.radius ?? "-1")
+            PrefUtil.setCurrentUserStatsID(  userStats: loginData?.attendStatus?.status ?? "-1")
+            PrefUtil.setCurrentCentralLng(  currentCentralLng: loginData?.userData?.lng ?? "0.0")
+            PrefUtil.setCurrentCentralLat(  currentCentralLat: loginData?.userData?.lat ?? "0.0")
+            PrefUtil.setCurrentCentralRadius(  currentCentralRadious: loginData?.userData?.radius ?? "-1")
             //            /
             print("suucess \(String(describing: PrefUtil.getUserId()))" )
             super.stopProgress()
@@ -112,21 +113,38 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
             
         }
         
-        APIRouter.sendLoginRequest( loginparameters : loginParameter,success : successClos , failure : failureClos)
-    }
+//        APIRouter.sendLoginRequest( loginparameters : loginParameter,success : successClos , failure : failureClos)
+        
+        
+        do {
+            try APIRouter.makePostRequesr(url: APIRouter.LOGIN_URL, bodyParameters: loginParameter, succese: successClos, failure: failureClos, type: LoginResponse.self)
+        }catch{
+            let errorObj = error as! ValidationError
+            showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)
+            self.stopProgress()
+        }    }
     
    
     
 }
 extension LoginViewController:OnLocationUpdateDelegate{
+    func onLocationUpdated(curenrtlocation: CLLocation) {
+         requestLogin(curenrtlocation)
+    }
+    
     func onLocationFencingDetemined(state: CLRegionState) {
-        return
+         
     }
     
-    func onLocationUpdated(curenrtlocation location: CLLocation) {
-        requestLogin(location)
+    func onLocationFencingFailedDetemined(error: Error) {
+        
     }
     
+    func onLocationFencingInSide(enteredRegion: CLRegion) {
+    }
+    
+    func onLocationFencingOutSide(OutedRegion: CLRegion) {
+    }
     
 }
 

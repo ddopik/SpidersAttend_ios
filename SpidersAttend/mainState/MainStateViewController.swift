@@ -8,14 +8,17 @@
 
 import UIKit
 import CoreLocation
-import AVFoundation
-import QRCodeReader
-class MainStateViewController: GeotificationBaseViewController {
- 
+
+
+class MainStateViewController :GeotificationBaseViewController {
     
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var stateMessage: UITextView!
+    @IBOutlet weak var attendBtn: UIButton!
+    
+    
+    
     @IBOutlet var tapGetureRecognizer: UITapGestureRecognizer!
     private var timer: Timer!
     private var timeToDisplay: Date? {
@@ -27,32 +30,45 @@ class MainStateViewController: GeotificationBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.onLocationUpdateDelegate = self
-        setCloclView()
-        requestUserStatus()
-        setWrapTextView(mTextView: stateMessage)
+        
         //
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        super.onLocationFencingUpdate=self
+        setCloclView()
+        requestUserStatus()
+        
+    }
+    
     @IBAction func attendButton(_ sender: Any) {
-        do{
-            //step ->1
-            
-            startProgress()
-            requestUserStatus()
-            try startLocationServices()
-        }
-        catch{
-            print("MainStateViewController ----> \(Error.self)")
-        }
+        super.onLocationUpdateDelegate = self
+        
+        setAttendBtnState(state:false)
+        requestAttendAction()
+        
     }
     
     
     
     
+    func setAttendBtnState(state :Bool){
+        if !state{
+            attendBtn.backgroundColor = .gray
+            attendBtn.isEnabled=false
+        }else{
+            attendBtn.backgroundColor = .blue
+            attendBtn.isEnabled=true
+        }
+        
+    }
+    
+    
     @objc  func appMovedToForeground() {
         print("App moved to ForeGround!")
+        
         requestUserStatus()
         
     }
@@ -101,7 +117,6 @@ extension MainStateViewController{
         timer = nil
     }
     func updateView(newDate: Date) {
-        title = "Attend"
         clockView?.timeToDisplay = newDate
         dateTimeLabel?.text = newDate.asDateTimeString()
     }
@@ -114,66 +129,147 @@ extension MainStateViewController{
 ////////////////////////////////////
 
 
-extension MainStateViewController : OnLocationUpdateDelegate{
-    func onLocationUpdated(curenrtlocation: CLLocation) {
-        //step -->2
-        let x=PrefUtil.getCurrentCentralLat()
-        let y=PrefUtil.getCurrentCentralLng()
-        startGeotiFication(  PrefUtil.getCurrentCentralLat(),PrefUtil.getCurrentCentralLng());
-    }
-    func onLocationFencingDetemined(state: CLRegionState) {
-        
-        //step -->4
-        switch state {
-        case .inside:
-            print("User Inside")
-     ///processed to qr
-            break
-        case .outside :
-            print("User outSide")
-            
-            break
-        case .unknown:
-            print("User Unknowen Fencing")
-            break
-        default:
-            print("failed to fencing user location")
-        }
-    }
-}
+
 
 
 extension MainStateViewController{
     
-    
-    
     func requestUserStatus(){
-        
-        let succ={ (checkStatusResponse:CheckStatusResponse?) in
-            
-            print("horaaaaaai------> \(String(describing: checkStatusResponse?.data.attendStatus.msg))"
-            )
-            
-            if let statsId = try? checkStatusResponse?.data.attendStatus.status {
+        startProgress()
+        let succ={ (checkStatusResponse:CheckStatusResponse?)   in
+            if let statsId =  checkStatusResponse?.data.attendStatus.status {
                 PrefUtil.setCurrentUserStatsID(userStats: statsId)
                 self.stateMessage.text=checkStatusResponse?.data.attendStatus.msg
-                  ///disaple progressView here
-                self.stopProgress()
-
+                print("requestUserStatus()-----> \(checkStatusResponse?.data.attendStatus.msg)" )
             }
-            
+            self.stopProgress()
         }
         let failureClos={
             (err:NetworkBaseError?) in
             print("failed ---->\(String(describing: err?.data?.msg))")
             _ = self.showSimpleConfirmDialog(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
-            ///disaple progressView here
             self.stopProgress()
         }
         
-        _=APIRouter.makePostRequesr(url: APIRouter.CHECK_STATUS_URL, bodyParameters: ["uid" : PrefUtil.getUserId() ?? "3" ], succese: succ, failure: failureClos, type: CheckStatusResponse.self)
+        let bodyParameter = [
+            "uid" : PrefUtil.getUserId()
+            ] as! [String : String]
+        do {
+            try APIRouter.makePostRequesr(url: APIRouter.CHECK_STATUS_URL, bodyParameters: bodyParameter, succese: succ, failure: failureClos, type: CheckStatusResponse.self)
+        }catch{
+            let errorObj = error as! ValidationError
+            showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)
+            self.stopProgress()
+        }
+        
+        
     }
     
     
+    
+    
+    ////////////////////////
+    func requestAttendAction(){
+        startProgress()
+        let succ={ (checkStatusResponse:CheckStatusResponse?)  in
+            
+            print("requestAttendAction()-----> \(checkStatusResponse?.data.attendStatus.msg) with id = \(checkStatusResponse?.data.attendStatus.status)" )
+            
+            if let statsId =  checkStatusResponse?.data.attendStatus.status {
+                PrefUtil.setCurrentUserStatsID(userStats: statsId)
+                self.stateMessage.text=checkStatusResponse?.data.attendStatus.msg
+                
+                if statsId == ApiConstant.ENDED {
+                    super.showAlert(withTitle: "Warrning", message:  checkStatusResponse?.data.attendStatus.msg)
+                    self.setAttendBtnState(state: true)
+                    self.stopProgress()
+                    return
+                }
+                
+                do{
+                    //step ->1
+                    /*
+                     start location Updater and region Fencing
+                     */
+                    try self.startLocationServices()
+                }
+                catch{
+                    print("MainStateViewController ----> \(Error.self)")
+                    self.setAttendBtnState(state: true)
+                    self.stopProgress()
+                }
+                
+                
+                
+            }
+            
+        }
+        let failureClos={
+            (err:NetworkBaseError?)   in
+            print("failed ---->\(String(describing: err?.data?.msg))")
+            _ = self.showSimpleConfirmDialog(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+            ///disaple progressView here
+            self.setAttendBtnState(state: true)
+            self.stopProgress()
+            
+        }
+        let bodyParameter = [
+            "uid" : PrefUtil.getUserId()
+            ] as! [String : String]
+        
+        
+        do {
+            try _ =  APIRouter.makePostRequesr(url: APIRouter.CHECK_STATUS_URL, bodyParameters: bodyParameter, succese: succ, failure: failureClos, type: CheckStatusResponse.self)
+        }catch{
+            let errorObj = error as! ValidationError
+            showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)
+        }
+    }
 }
 
+
+
+
+extension MainStateViewController : OnLocationFencingUpdate {
+    
+    func onDestanceGetMeasured(destance: Double) {
+        print("destance is ----> \(destance) ")
+        
+                self.setAttendBtnState(state: true)
+                self.stopProgress()
+
+      
+        if( destance <= PrefUtil.getCurrentCentralRadius()!){
+            
+            let navigationManger = NavigationManger(storyboard: self.storyboard!,viewController: self)
+            navigationManger.setQrViewControllerMessage(cuurentLocation: super.locationManager.location)
+            navigationManger.navigateTo(target :Destinations.QrScanner)
+        } else{
+                    showAlert(withTitle: "Error", message: "you are out of area")
+
+        }
+
+      
+    }
+    
+    func onUserInside() {
+//        self.setAttendBtnState(state: true)
+//        self.stopProgress()
+
+    }
+    
+    func onUserOutside() {
+//        self.setAttendBtnState(state: true)
+//        self.stopProgress()
+//        showAlert(withTitle: "alert", message: "you are out side")
+    }
+    
+    func onUserWithUnKnowenFencing() {
+//        self.setAttendBtnState(state: true)
+//        self.stopProgress()
+//        showAlert(withTitle: "alert", message: "UnKnowen Area")
+    }
+    
+    
+    
+}
