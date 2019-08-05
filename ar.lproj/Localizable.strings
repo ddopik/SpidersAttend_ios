@@ -1,7 +1,14 @@
-/* 
-  Localizable.strings
-  SpidersAttend
+ 
 
-  Created by ddopik on 7/20/19.
-  Copyright © 2019 Brandeda. All rights reserved.
-*/
+"Choose language" = "آختر اللغه";
+"Home"="الرئيسيه";
+"more" = "المزيد";
+"Attend" = "تآكيد";
+"PayRoll (CommingSoon)" = "(قريبا)  كشف المرتبات";
+"Vication (CommingSoon)" = "(قريبا)  الاجازات";
+"language" = "اللغه";
+"logout" = "خروج";
+"Arabic" = "العربيه";
+"Confirm" = "تآكيد";
+"are you sure you want to Logout ?" = "تآكيد الخروج";
+

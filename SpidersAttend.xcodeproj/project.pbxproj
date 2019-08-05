@@ -12,31 +12,36 @@
 		042445D522B78F7B0089C817 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042445D422B78F7B0089C817 /* LoginViewController.swift */; };
 		042445D822B7ABAC0089C817 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042445D722B7ABAC0089C817 /* BaseNavigationController.swift */; };
 		042445DB22B98F5C0089C817 /* CircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042445DA22B98F5C0089C817 /* CircularProgress.swift */; };
-		042445DD22BA30780089C817 /* RPCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042445DC22BA30780089C817 /* RPCircularProgress.swift */; };
+		042BCCF022E4A4FB00090D76 /* BaseUiTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BCCEF22E4A4FB00090D76 /* BaseUiTabController.swift */; };
 		042C00A622BEA713000546D0 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C00A522BEA713000546D0 /* ValidationError.swift */; };
 		042C00B222BECA87000546D0 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C00B122BECA87000546D0 /* Validator.swift */; };
 		042CFB3822D5FE9B005D2D58 /* UiUtiletes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CFB3722D5FE9B005D2D58 /* UiUtiletes.swift */; };
-		042F7B7722BFB3A20059E5B4 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B7322BFB3A20059E5B4 /* LoginResponse.swift */; };
-		042F7B7822BFB3A20059E5B4 /* LoginUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B7422BFB3A20059E5B4 /* LoginUserData.swift */; };
-		042F7B7922BFB3A20059E5B4 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B7522BFB3A20059E5B4 /* LoginData.swift */; };
-		042F7B7A22BFB3A20059E5B4 /* LoginAttendStatu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B7622BFB3A20059E5B4 /* LoginAttendStatu.swift */; };
 		042F7B8222C0DCB90059E5B4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B8122C0DCB90059E5B4 /* AppConstants.swift */; };
 		042F7B8422C1055F0059E5B4 /* NetworkBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B8322C1055F0059E5B4 /* NetworkBaseError.swift */; };
 		042F7B8722C26E7F0059E5B4 /* PrefUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B8622C26E7F0059E5B4 /* PrefUtil.swift */; };
 		042F7B8B22C378DD0059E5B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B8A22C378DD0059E5B4 /* Constants.swift */; };
 		042F7B9122C37FC80059E5B4 /* MainStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9022C37FC80059E5B4 /* MainStateViewController.swift */; };
-		042F7B9422C3801A0059E5B4 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9322C3801A0059E5B4 /* ClockView.swift */; };
-		042F7B9622C3803B0059E5B4 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9522C3803B0059E5B4 /* DateHelper.swift */; };
-		042F7B9822C3807A0059E5B4 /* StyleKit_Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9722C3807A0059E5B4 /* StyleKit_Clock.swift */; };
-		042F7B9C22C4BCAC0059E5B4 /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9B22C4BCAC0059E5B4 /* Geotification.swift */; };
 		042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */; };
-		0431190A22D371EF0001C161 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0431190C22D371EF0001C161 /* Localizable.strings */; };
 		043DE00F22D105A0006A084E /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE00E22D105A0006A084E /* MoreViewController.swift */; };
 		043DE01122D145BA006A084E /* NavigationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE01022D145BA006A084E /* NavigationManger.swift */; };
 		043DE01322D1BCAB006A084E /* LanguageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE01222D1BCAB006A084E /* LanguageDetails.swift */; };
 		0443D47122CB8A9300FDDE64 /* CheckStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443D47022CB8A9300FDDE64 /* CheckStatusResponse.swift */; };
+		04484A2C22E27B9D0057BDB3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04484A2E22E27B9D0057BDB3 /* Localizable.strings */; };
+		04484A3122E3B3B40057BDB3 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04484A3022E3B3B40057BDB3 /* LanguageManager.swift */; };
+		045BBA3622EDE1B90004569A /* LoginAttendStatu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BBA3222EDE1B90004569A /* LoginAttendStatu.swift */; };
+		045BBA3722EDE1B90004569A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BBA3322EDE1B90004569A /* LoginResponse.swift */; };
+		045BBA3822EDE1B90004569A /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BBA3422EDE1B90004569A /* LoginData.swift */; };
+		045BBA3922EDE1B90004569A /* LoginUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BBA3522EDE1B90004569A /* LoginUserData.swift */; };
+		045BBA3B22EDE28B0004569A /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BBA3A22EDE28B0004569A /* APIRouter.swift */; };
+		045BBA3D22EDE2E50004569A /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BBA3C22EDE2E50004569A /* Geotification.swift */; };
+		045BBA4322EDE4690004569A /* RPCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BBA4222EDE4690004569A /* RPCircularProgress.swift */; };
+		045BBA4622EDE60A0004569A /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BBA4522EDE60A0004569A /* ClockViewController.swift */; };
+		045BBA4822EDE6160004569A /* StyleKit_ConsensusGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BBA4722EDE6160004569A /* StyleKit_ConsensusGraph.swift */; };
+		045BBA4A22EDE6210004569A /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BBA4922EDE6210004569A /* ClockView.swift */; };
+		045BBA4C22EDE6690004569A /* StateDiagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BBA4B22EDE6690004569A /* StateDiagram.swift */; };
+		045BBA4E22EDECF80004569A /* StyleKit_Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BBA4D22EDECF80004569A /* StyleKit_Clock.swift */; };
+		045BBA5022EDF28C0004569A /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BBA4F22EDF28B0004569A /* DateHelper.swift */; };
 		0462D21722C9220F00A459CE /* Utiletes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462D21622C9220F00A459CE /* Utiletes.swift */; };
-		049D878E22BBA3A00009767B /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D878D22BBA3A00009767B /* APIRouter.swift */; };
 		04A6F61E22D2044E00D57B55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A6F62022D2044E00D57B55 /* Main.storyboard */; };
 		04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAB022B57D88002C59E5 /* AppDelegate.swift */; };
 		04D9DAB322B57D88002C59E5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAB222B57D88002C59E5 /* BaseViewController.swift */; };
@@ -71,34 +76,38 @@
 		042445D422B78F7B0089C817 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		042445D722B7ABAC0089C817 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		042445DA22B98F5C0089C817 /* CircularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
-		042445DC22BA30780089C817 /* RPCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RPCircularProgress.swift; path = "../../../../../Downloads/RPCircularProgress-master/Source/RPCircularProgress.swift"; sourceTree = "<group>"; };
+		042BCCEF22E4A4FB00090D76 /* BaseUiTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUiTabController.swift; sourceTree = "<group>"; };
 		042C00A522BEA713000546D0 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		042C00B122BECA87000546D0 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		042CFB3722D5FE9B005D2D58 /* UiUtiletes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiUtiletes.swift; sourceTree = "<group>"; };
-		042F7B7322BFB3A20059E5B4 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = ../../../../../Downloads/Source_file_JsonCafe/LoginResponse.swift; sourceTree = "<group>"; };
-		042F7B7422BFB3A20059E5B4 /* LoginUserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginUserData.swift; path = ../../../../../Downloads/Source_file_JsonCafe/LoginUserData.swift; sourceTree = "<group>"; };
-		042F7B7522BFB3A20059E5B4 /* LoginData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginData.swift; path = ../../../../../Downloads/Source_file_JsonCafe/LoginData.swift; sourceTree = "<group>"; };
-		042F7B7622BFB3A20059E5B4 /* LoginAttendStatu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginAttendStatu.swift; path = ../../../../../Downloads/Source_file_JsonCafe/LoginAttendStatu.swift; sourceTree = "<group>"; };
 		042F7B8122C0DCB90059E5B4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		042F7B8322C1055F0059E5B4 /* NetworkBaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBaseError.swift; sourceTree = "<group>"; };
 		042F7B8622C26E7F0059E5B4 /* PrefUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefUtil.swift; sourceTree = "<group>"; };
 		042F7B8A22C378DD0059E5B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		042F7B9022C37FC80059E5B4 /* MainStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStateViewController.swift; sourceTree = "<group>"; };
-		042F7B9322C3801A0059E5B4 /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockView.swift; path = "../../../../../../Downloads/ClockView-master 2/clock5/ClockView.swift"; sourceTree = "<group>"; };
-		042F7B9522C3803B0059E5B4 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateHelper.swift; path = "../../../../../../Downloads/ClockView-master 2/clock5/DateHelper.swift"; sourceTree = "<group>"; };
-		042F7B9722C3807A0059E5B4 /* StyleKit_Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleKit_Clock.swift; path = "../../../../../../Downloads/ClockView-master 2/clock5/StyleKit_Clock.swift"; sourceTree = "<group>"; };
-		042F7B9B22C4BCAC0059E5B4 /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geotification.swift; path = "../../../../Downloads/Geotify/Geotify-Finished/Geotify/Geotification.swift"; sourceTree = "<group>"; };
 		042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeotificationBaseViewController.swift; sourceTree = "<group>"; };
-		0431190922D36E8E0001C161 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
-		0431190B22D371EF0001C161 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		043DE00E22D105A0006A084E /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		043DE01022D145BA006A084E /* NavigationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManger.swift; sourceTree = "<group>"; };
 		043DE01222D1BCAB006A084E /* LanguageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDetails.swift; sourceTree = "<group>"; };
 		0443D47022CB8A9300FDDE64 /* CheckStatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStatusResponse.swift; sourceTree = "<group>"; };
+		04484A2D22E27B9D0057BDB3 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04484A2F22E27BB10057BDB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04484A3022E3B3B40057BDB3 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		045BBA3222EDE1B90004569A /* LoginAttendStatu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginAttendStatu.swift; path = ../../../../../.Trash/Source_file_JsonCafe/LoginAttendStatu.swift; sourceTree = "<group>"; };
+		045BBA3322EDE1B90004569A /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = ../../../../../.Trash/Source_file_JsonCafe/LoginResponse.swift; sourceTree = "<group>"; };
+		045BBA3422EDE1B90004569A /* LoginData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginData.swift; path = ../../../../../.Trash/Source_file_JsonCafe/LoginData.swift; sourceTree = "<group>"; };
+		045BBA3522EDE1B90004569A /* LoginUserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginUserData.swift; path = ../../../../../.Trash/Source_file_JsonCafe/LoginUserData.swift; sourceTree = "<group>"; };
+		045BBA3A22EDE28B0004569A /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = "../../../../.Trash/NetworkingExample-master/Networking/APIClient/APIRouter.swift"; sourceTree = "<group>"; };
+		045BBA3C22EDE2E50004569A /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geotification.swift; path = "../../../../Downloads/IOS_APP_repo/Geotify/Geotify-Finished/Geotify/Geotification.swift"; sourceTree = "<group>"; };
+		045BBA4222EDE4690004569A /* RPCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RPCircularProgress.swift; path = "../../../../../Downloads/IOS_APP_repo/RPCircularProgress-master/Source/RPCircularProgress.swift"; sourceTree = "<group>"; };
+		045BBA4522EDE60A0004569A /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockViewController.swift; path = "../../../../../../.Trash/ClockView-master 2/clock5/ClockViewController.swift"; sourceTree = "<group>"; };
+		045BBA4722EDE6160004569A /* StyleKit_ConsensusGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleKit_ConsensusGraph.swift; path = "../../../../../../.Trash/ClockView-master 2/clock5/StyleKit_ConsensusGraph.swift"; sourceTree = "<group>"; };
+		045BBA4922EDE6210004569A /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockView.swift; path = "../../../../../../.Trash/ClockView-master 2/clock5/ClockView.swift"; sourceTree = "<group>"; };
+		045BBA4B22EDE6690004569A /* StateDiagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StateDiagram.swift; path = "../../../../../../.Trash/ClockView-master 2/clock5/StateDiagram.swift"; sourceTree = "<group>"; };
+		045BBA4D22EDECF80004569A /* StyleKit_Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleKit_Clock.swift; path = "../../../../../../Downloads/IOS_APP_repo/ClockView-master/clock5/StyleKit_Clock.swift"; sourceTree = "<group>"; };
+		045BBA4F22EDF28B0004569A /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateHelper.swift; path = "../../../../Downloads/IOS_APP_repo/ClockView-master/clock5/DateHelper.swift"; sourceTree = "<group>"; };
 		0462D21622C9220F00A459CE /* Utiletes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utiletes.swift; sourceTree = "<group>"; };
-		049D878D22BBA3A00009767B /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = "../../../../Downloads/NetworkingExample-master/Networking/APIClient/APIRouter.swift"; sourceTree = "<group>"; };
 		04A6F62422D2059200D57B55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		04A6F62722D205F100D57B55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		04D9DAAD22B57D88002C59E5 /* SpidersAttend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpidersAttend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D9DAB022B57D88002C59E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D9DAB222B57D88002C59E5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +181,7 @@
 				04D9DAB222B57D88002C59E5 /* BaseViewController.swift */,
 				042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */,
 				042445D722B7ABAC0089C817 /* BaseNavigationController.swift */,
+				042BCCEF22E4A4FB00090D76 /* BaseUiTabController.swift */,
 				042C00A722BEA72B000546D0 /* model */,
 				042445D922B98EBC0089C817 /* custom_view */,
 			);
@@ -181,8 +191,8 @@
 		042445D922B98EBC0089C817 /* custom_view */ = {
 			isa = PBXGroup;
 			children = (
-				042F7B9222C380040059E5B4 /* clockView */,
-				042445DC22BA30780089C817 /* RPCircularProgress.swift */,
+				045BBA4422EDE5700004569A /* New Group */,
+				045BBA4222EDE4690004569A /* RPCircularProgress.swift */,
 				042445DA22B98F5C0089C817 /* CircularProgress.swift */,
 			);
 			path = custom_view;
@@ -191,7 +201,8 @@
 		042C00A022BE838B000546D0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				042F7B9B22C4BCAC0059E5B4 /* Geotification.swift */,
+				045BBA4F22EDF28B0004569A /* DateHelper.swift */,
+				045BBA3C22EDE2E50004569A /* Geotification.swift */,
 				042F7B8A22C378DD0059E5B4 /* Constants.swift */,
 				042C00B122BECA87000546D0 /* Validator.swift */,
 				042F7B8122C0DCB90059E5B4 /* AppConstants.swift */,
@@ -200,6 +211,7 @@
 				043DE01022D145BA006A084E /* NavigationManger.swift */,
 				043DE01222D1BCAB006A084E /* LanguageDetails.swift */,
 				042CFB3722D5FE9B005D2D58 /* UiUtiletes.swift */,
+				04484A3022E3B3B40057BDB3 /* LanguageManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -216,10 +228,10 @@
 		042F7B7222BFB36F0059E5B4 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				042F7B7622BFB3A20059E5B4 /* LoginAttendStatu.swift */,
-				042F7B7522BFB3A20059E5B4 /* LoginData.swift */,
-				042F7B7322BFB3A20059E5B4 /* LoginResponse.swift */,
-				042F7B7422BFB3A20059E5B4 /* LoginUserData.swift */,
+				045BBA3222EDE1B90004569A /* LoginAttendStatu.swift */,
+				045BBA3422EDE1B90004569A /* LoginData.swift */,
+				045BBA3322EDE1B90004569A /* LoginResponse.swift */,
+				045BBA3522EDE1B90004569A /* LoginUserData.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -231,16 +243,6 @@
 				042F7B9022C37FC80059E5B4 /* MainStateViewController.swift */,
 			);
 			path = mainState;
-			sourceTree = "<group>";
-		};
-		042F7B9222C380040059E5B4 /* clockView */ = {
-			isa = PBXGroup;
-			children = (
-				042F7B9722C3807A0059E5B4 /* StyleKit_Clock.swift */,
-				042F7B9522C3803B0059E5B4 /* DateHelper.swift */,
-				042F7B9322C3801A0059E5B4 /* ClockView.swift */,
-			);
-			path = clockView;
 			sourceTree = "<group>";
 		};
 		043DE00822CE01E2006A084E /* qrReader */ = {
@@ -267,10 +269,22 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		045BBA4422EDE5700004569A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				045BBA4922EDE6210004569A /* ClockView.swift */,
+				045BBA4D22EDECF80004569A /* StyleKit_Clock.swift */,
+				045BBA4B22EDE6690004569A /* StateDiagram.swift */,
+				045BBA4722EDE6160004569A /* StyleKit_ConsensusGraph.swift */,
+				045BBA4522EDE60A0004569A /* ClockViewController.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		049D877B22BB9C6B0009767B /* ApiClient */ = {
 			isa = PBXGroup;
 			children = (
-				049D878D22BBA3A00009767B /* APIRouter.swift */,
+				045BBA3A22EDE28B0004569A /* APIRouter.swift */,
 			);
 			path = ApiClient;
 			sourceTree = "<group>";
@@ -278,7 +292,7 @@
 		04D9DAA422B57D88002C59E5 = {
 			isa = PBXGroup;
 			children = (
-				0431190C22D371EF0001C161 /* Localizable.strings */,
+				04484A2E22E27B9D0057BDB3 /* Localizable.strings */,
 				04D9DAAF22B57D88002C59E5 /* SpidersAttend */,
 				04D9DAC422B57D8A002C59E5 /* SpidersAttendTests */,
 				04D9DACF22B57D8A002C59E5 /* SpidersAttendUITests */,
@@ -449,6 +463,7 @@
 				Base,
 				en,
 				ar,
+				"ar-001",
 			);
 			mainGroup = 04D9DAA422B57D88002C59E5;
 			productRefGroup = 04D9DAAE22B57D88002C59E5 /* Products */;
@@ -468,7 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D9DAB822B57D8A002C59E5 /* Assets.xcassets in Resources */,
-				0431190A22D371EF0001C161 /* Localizable.strings in Resources */,
+				04484A2C22E27B9D0057BDB3 /* Localizable.strings in Resources */,
 				04A6F61E22D2044E00D57B55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,35 +595,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				042F7B9422C3801A0059E5B4 /* ClockView.swift in Sources */,
+				045BBA4E22EDECF80004569A /* StyleKit_Clock.swift in Sources */,
 				0443D47122CB8A9300FDDE64 /* CheckStatusResponse.swift in Sources */,
 				042445D522B78F7B0089C817 /* LoginViewController.swift in Sources */,
 				042F7B8422C1055F0059E5B4 /* NetworkBaseError.swift in Sources */,
-				042F7B7922BFB3A20059E5B4 /* LoginData.swift in Sources */,
+				045BBA4822EDE6160004569A /* StyleKit_ConsensusGraph.swift in Sources */,
 				0462D21722C9220F00A459CE /* Utiletes.swift in Sources */,
+				045BBA3622EDE1B90004569A /* LoginAttendStatu.swift in Sources */,
+				045BBA3922EDE1B90004569A /* LoginUserData.swift in Sources */,
+				045BBA3B22EDE28B0004569A /* APIRouter.swift in Sources */,
 				042F7B8222C0DCB90059E5B4 /* AppConstants.swift in Sources */,
 				042445DB22B98F5C0089C817 /* CircularProgress.swift in Sources */,
 				04145E5422B69C040084222C /* SplashViewController.swift in Sources */,
 				041A5F6D22D23DE900D42874 /* QrReaderViewController.swift in Sources */,
 				042C00A622BEA713000546D0 /* ValidationError.swift in Sources */,
 				04D9DAB322B57D88002C59E5 /* BaseViewController.swift in Sources */,
+				045BBA4322EDE4690004569A /* RPCircularProgress.swift in Sources */,
 				043DE01322D1BCAB006A084E /* LanguageDetails.swift in Sources */,
-				049D878E22BBA3A00009767B /* APIRouter.swift in Sources */,
 				042C00B222BECA87000546D0 /* Validator.swift in Sources */,
+				045BBA4622EDE60A0004569A /* ClockViewController.swift in Sources */,
+				04484A3122E3B3B40057BDB3 /* LanguageManager.swift in Sources */,
 				042F7B8722C26E7F0059E5B4 /* PrefUtil.swift in Sources */,
-				042F7B7A22BFB3A20059E5B4 /* LoginAttendStatu.swift in Sources */,
+				042BCCF022E4A4FB00090D76 /* BaseUiTabController.swift in Sources */,
 				042445D822B7ABAC0089C817 /* BaseNavigationController.swift in Sources */,
-				042F7B7722BFB3A20059E5B4 /* LoginResponse.swift in Sources */,
-				042F7B7822BFB3A20059E5B4 /* LoginUserData.swift in Sources */,
 				043DE01122D145BA006A084E /* NavigationManger.swift in Sources */,
+				045BBA3D22EDE2E50004569A /* Geotification.swift in Sources */,
 				042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */,
+				045BBA4A22EDE6210004569A /* ClockView.swift in Sources */,
 				042CFB3822D5FE9B005D2D58 /* UiUtiletes.swift in Sources */,
-				042F7B9822C3807A0059E5B4 /* StyleKit_Clock.swift in Sources */,
+				045BBA4C22EDE6690004569A /* StateDiagram.swift in Sources */,
 				043DE00F22D105A0006A084E /* MoreViewController.swift in Sources */,
-				042F7B9622C3803B0059E5B4 /* DateHelper.swift in Sources */,
-				042445DD22BA30780089C817 /* RPCircularProgress.swift in Sources */,
+				045BBA3722EDE1B90004569A /* LoginResponse.swift in Sources */,
 				042F7B9122C37FC80059E5B4 /* MainStateViewController.swift in Sources */,
-				042F7B9C22C4BCAC0059E5B4 /* Geotification.swift in Sources */,
+				045BBA3822EDE1B90004569A /* LoginData.swift in Sources */,
+				045BBA5022EDF28C0004569A /* DateHelper.swift in Sources */,
 				04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */,
 				042F7B8B22C378DD0059E5B4 /* Constants.swift in Sources */,
 			);
@@ -646,10 +666,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0431190C22D371EF0001C161 /* Localizable.strings */ = {
+		04484A2E22E27B9D0057BDB3 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0431190B22D371EF0001C161 /* ar */,
+				04484A2D22E27B9D0057BDB3 /* ar */,
+				04484A2F22E27BB10057BDB3 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -658,8 +679,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				04A6F62422D2059200D57B55 /* Base */,
-				04A6F62722D205F100D57B55 /* en */,
-				0431190922D36E8E0001C161 /* ar */,
 			);
 			name = Main.storyboard;
 			path = ../../../.Trash;

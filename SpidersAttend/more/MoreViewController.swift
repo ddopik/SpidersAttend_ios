@@ -15,12 +15,16 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     var tableItems : [String]=[]
  
-    
-    
-    override func viewDidLoad() {
+   
+ 
+     override func viewDidLoad() {
         super.viewDidLoad()
-        tableItems.append(getString(stringKey: "language"))
-        tableItems.append( getString(stringKey: "logout"))
+ 
+//        self.tabBarController?.tabBar.items?[0].title = "Home".localiz()
+//        self.tabBarController?.tabBar.items?[4].title = "more".localiz()
+        
+        tableItems.append("language".localiz())
+        tableItems.append( "logout".localiz())
         
         self.moreTableView.register(UITableViewCell.self, forCellReuseIdentifier: "moreCell")
         moreTableView.delegate = self
@@ -71,18 +75,16 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     
     func showChooseLanguageDialog() {
-        let dialogMessage = UIAlertController(title: getString(stringKey: "Choose language"), message: "", preferredStyle: .alert)
+        let dialogMessage = UIAlertController(title: getString(stringKey: "Choose language"), message: "", preferredStyle: .actionSheet)
         
-        // Create OK button with action handler
-        let arabic = UIAlertAction(title: getString(stringKey: "Arabic"), style: .default, handler: { (action) -> Void in
-            LanguageDetails().changeLanguage()
-            NavigationManger(storyboard: self.storyboard!, viewController: self).navigateTo(target : Destinations.MainScreen)
+        
+         let arabic = UIAlertAction(title:   "Arabic".localiz(), style: .default, handler: { (action) -> Void in
+            LanguageManager.shared.setLanguage(language: .ar, rootViewController: self.storyboard?.instantiateInitialViewController(), animation: nil )
         })
         
         // Create Cancel button with action handlder
-        let english = UIAlertAction(title: getString(stringKey: "ِEnglish"), style: .cancel) { (action) -> Void in
-            LanguageDetails().changeLanguage()
-            NavigationManger(storyboard: self.storyboard!, viewController: self).navigateTo(target : Destinations.MainScreen)
+        let english = UIAlertAction(title: "ِEnglish".localiz(), style: .default) { (action) -> Void in
+           LanguageManager.shared.setLanguage(language: .en, rootViewController: self.storyboard?.instantiateInitialViewController(), animation: nil )
         }
 //        cancel.setValue(UIColor.red, forKey: "titleTextColor")
         
@@ -91,8 +93,17 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         dialogMessage.addAction(english)
         
         // Present dialog message to user
-        self.present(dialogMessage, animated: true, completion: nil)
+        self.present(dialogMessage, animated: true) {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissAlertController))
+            dialogMessage.view.superview?.subviews[0].addGestureRecognizer(tapGesture)
+        }
         
+       
+        
+    }
+    
+    @objc func dismissAlertController(){
+        self.dismiss(animated: true, completion: nil)
     }
 }
     

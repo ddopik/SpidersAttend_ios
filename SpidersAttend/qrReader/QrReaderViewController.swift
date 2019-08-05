@@ -43,12 +43,7 @@ class QrReaderViewController: BaseViewController,QRCodeReaderViewControllerDeleg
         
         if newStart {
         readerVC.delegate = self
-        
-        // Or by using the closure pattern
-//        readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-//             print(result)
-//        }
-        
+    
         // Presents the readerVC as modal form sheet
         readerVC.modalPresentationStyle = .formSheet
         present(readerVC, animated: true, completion: nil)

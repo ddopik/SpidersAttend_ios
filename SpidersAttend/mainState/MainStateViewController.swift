@@ -30,8 +30,24 @@ class MainStateViewController :GeotificationBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "#D8FFE8"), NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: 16) as Any], for: .normal)
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "#FFFFFF") as Any,NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: 16) as Any], for: .selected)
         
-        //
+        let font =  UIFont(name: "HelveticaNeue-Bold", size: 11)!
+        UITabBarItem.appearance().setBadgeTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        UITabBarItem.appearance().setBadgeTextAttributes([NSAttributedString.Key.font: font], for: .selected)
+
+        
+        self.tabBarController?.tabBar.items?[0].title = "Home".localiz()
+        self.tabBarController?.tabBar.items?[1].title = "PayRoll (CommingSoon)".localiz()
+        self.tabBarController?.tabBar.items?[2].title = "Vication (CommingSoon)".localiz()
+        self.tabBarController?.tabBar.items?[3].title = "Attend".localiz()
+        self.tabBarController?.tabBar.items?[4].title = "more".localiz()
+ 
+        
+        attendBtn.setTitle("attend".localiz(), for: .normal)
+      
         
     }
     
@@ -239,7 +255,7 @@ extension MainStateViewController : OnLocationFencingUpdate {
                 self.stopProgress()
 
       
-        if( destance <= PrefUtil.getCurrentCentralRadius()!){
+        if( PrefUtil.getCurrentCentralRadius()! >= destance  ){
             
             let navigationManger = NavigationManger(storyboard: self.storyboard!,viewController: self)
             navigationManger.setQrViewControllerMessage(cuurentLocation: super.locationManager.location)
