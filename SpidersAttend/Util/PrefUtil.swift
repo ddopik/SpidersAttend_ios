@@ -10,8 +10,8 @@ import Foundation
 class PrefUtil {
     
     
-    private static let ARABIC_LANG = "ar"
-    private static let ENGLISH_LANG = "en"
+     static let ARABIC_LANG = "ar"
+     static let ENGLISH_LANG = "en"
     private static let PREF_FILE_NAME = "AttendOnB"
     private static let APP_LANG = "APP_LNG"
     private static let USER_ID = "id"

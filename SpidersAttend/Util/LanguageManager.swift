@@ -22,7 +22,8 @@ class  LanguageManager {
     public var currentLanguage: Languages {
         get {
             guard let currentLang = UserDefaults.standard.string(forKey: Constants.defaultsKeys.selectedLanguage) else {
-                fatalError("Did you set the default language for the app ?")
+               return .en
+//                fatalError("Did you set the default language for the app ?")
             }
             return Languages(rawValue: currentLang)!
         }

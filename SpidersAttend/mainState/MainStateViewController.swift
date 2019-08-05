@@ -30,24 +30,24 @@ class MainStateViewController :GeotificationBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "#D8FFE8"), NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: 16) as Any], for: .normal)
-//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "#FFFFFF") as Any,NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: 16) as Any], for: .selected)
+        
+        //        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "#D8FFE8"), NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: 16) as Any], for: .normal)
+        //        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "#FFFFFF") as Any,NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: 16) as Any], for: .selected)
         
         let font =  UIFont(name: "HelveticaNeue-Bold", size: 11)!
         UITabBarItem.appearance().setBadgeTextAttributes([NSAttributedString.Key.font: font], for: .normal)
         UITabBarItem.appearance().setBadgeTextAttributes([NSAttributedString.Key.font: font], for: .selected)
-
+        
         
         self.tabBarController?.tabBar.items?[0].title = "Home".localiz()
-        self.tabBarController?.tabBar.items?[1].title = "PayRoll (CommingSoon)".localiz()
-        self.tabBarController?.tabBar.items?[2].title = "Vication (CommingSoon)".localiz()
-        self.tabBarController?.tabBar.items?[3].title = "Attend".localiz()
-        self.tabBarController?.tabBar.items?[4].title = "more".localiz()
- 
+        //        self.tabBarController?.tabBar.items?[1].title = "PayRoll (CommingSoon)".localiz()
+        //        self.tabBarController?.tabBar.items?[2].title = "Vication (CommingSoon)".localiz()
+        //        self.tabBarController?.tabBar.items?[3].title = "Attend".localiz()
+        self.tabBarController?.tabBar.items?[1].title = "more".localiz()
         
-        attendBtn.setTitle("attend".localiz(), for: .normal)
-      
+        
+        attendBtn.setTitle("Attend".localiz(), for: .normal)
+        
         
     }
     
@@ -161,17 +161,33 @@ extension MainStateViewController{
             self.stopProgress()
         }
         let failureClos={
-            (err:NetworkBaseError?) in
-            print("failed ---->\(String(describing: err?.data?.msg))")
-            _ = self.showSimpleConfirmDialog(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+            
+            //            (err:NetworkBaseError?) in
+            //            print("failed ---->\(String(describing: err?.data?.msg))")
+            //            _ = self.showSimpleConfirmDialog(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+            //            self.stopProgress()
+            (err : Any) in
+            if (err is NetworkBaseError){
+                //                (err:NetworkBaseError?)   in
+                print("failed ---->\(String(describing: (err as! NetworkBaseError).data?.msg))")
+                _ = self.showSimpleConfirmDialog(parent: self, messageText: ((err as! NetworkBaseError).data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+                ///disaple progressView here
+                
+                
+            }else{
+                _ = self.showSimpleConfirmDialog(parent: self, messageText: "Network Error",messageTitle: "Error", buttonText: "Ok")
+            }
+            
+            self.setAttendBtnState(state: true)
             self.stopProgress()
+            
         }
         
         let bodyParameter = [
             "uid" : PrefUtil.getUserId()
             ] as! [String : String]
         do {
-            try APIRouter.makePostRequesr(url: APIRouter.CHECK_STATUS_URL, bodyParameters: bodyParameter, succese: succ, failure: failureClos, type: CheckStatusResponse.self)
+            try APIRouter.makePostRequesr(url: APIRouter.CHECK_STATUS_URL, bodyParameters: bodyParameter, succese: succ, failure: failureClos as! (Any?) -> (), type: CheckStatusResponse.self)
         }catch{
             let errorObj = error as! ValidationError
             showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)
@@ -221,10 +237,17 @@ extension MainStateViewController{
             
         }
         let failureClos={
-            (err:NetworkBaseError?)   in
-            print("failed ---->\(String(describing: err?.data?.msg))")
-            _ = self.showSimpleConfirmDialog(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
-            ///disaple progressView here
+            (err : Any) in
+            if (err is NetworkBaseError){
+                //                (err:NetworkBaseError?)   in
+                print("failed ---->\(String(describing: (err as! NetworkBaseError).data?.msg))")
+                _ = self.showSimpleConfirmDialog(parent: self, messageText: ((err as! NetworkBaseError).data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+                ///disaple progressView here
+                
+                
+            }else{
+                _ = self.showSimpleConfirmDialog(parent: self, messageText: "Network Error",messageTitle: "Error", buttonText: "Ok")
+            }
             self.setAttendBtnState(state: true)
             self.stopProgress()
             
@@ -235,7 +258,7 @@ extension MainStateViewController{
         
         
         do {
-            try _ =  APIRouter.makePostRequesr(url: APIRouter.CHECK_STATUS_URL, bodyParameters: bodyParameter, succese: succ, failure: failureClos, type: CheckStatusResponse.self)
+             try _ =  APIRouter.makePostRequesr(url: APIRouter.CHECK_STATUS_URL, bodyParameters: bodyParameter, succese: succ, failure: failureClos as! (Any?) -> (), type: CheckStatusResponse.self)
         }catch{
             let errorObj = error as! ValidationError
             showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)
@@ -251,39 +274,39 @@ extension MainStateViewController : OnLocationFencingUpdate {
     func onDestanceGetMeasured(destance: Double) {
         print("destance is ----> \(destance) ")
         
-                self.setAttendBtnState(state: true)
-                self.stopProgress()
-
-      
+        self.setAttendBtnState(state: true)
+        self.stopProgress()
+        
+        
         if( PrefUtil.getCurrentCentralRadius()! >= destance  ){
             
             let navigationManger = NavigationManger(storyboard: self.storyboard!,viewController: self)
             navigationManger.setQrViewControllerMessage(cuurentLocation: super.locationManager.location)
             navigationManger.navigateTo(target :Destinations.QrScanner)
         } else{
-                    showAlert(withTitle: "Error", message: "you are out of area")
-
+            showAlert(withTitle: "Error", message: "you are out of area")
+            
         }
-
-      
+        
+        
     }
     
     func onUserInside() {
-//        self.setAttendBtnState(state: true)
-//        self.stopProgress()
-
+        //        self.setAttendBtnState(state: true)
+        //        self.stopProgress()
+        
     }
     
     func onUserOutside() {
-//        self.setAttendBtnState(state: true)
-//        self.stopProgress()
-//        showAlert(withTitle: "alert", message: "you are out side")
+        //        self.setAttendBtnState(state: true)
+        //        self.stopProgress()
+        //        showAlert(withTitle: "alert", message: "you are out side")
     }
     
     func onUserWithUnKnowenFencing() {
-//        self.setAttendBtnState(state: true)
-//        self.stopProgress()
-//        showAlert(withTitle: "alert", message: "UnKnowen Area")
+        //        self.setAttendBtnState(state: true)
+        //        self.stopProgress()
+        //        showAlert(withTitle: "alert", message: "UnKnowen Area")
     }
     
     

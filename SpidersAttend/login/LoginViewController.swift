@@ -106,18 +106,25 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
             NavigationManger(storyboard: self.storyboard!,viewController: self).navigateTo(target :Destinations.MainScreen)
          }
         let failureClos={
-            (err:NetworkBaseError?) in
-            print("failed ---->\(String(describing: err?.data?.msg))")
-            _ = self.showSimpleConfirmDialog(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
-            super.stopProgress()
-            
+            (err : Any) in
+            if (err is NetworkBaseError){
+                //                (err:NetworkBaseError?)   in
+                print("failed ---->\(String(describing: (err as! NetworkBaseError).data?.msg))")
+                _ = self.showSimpleConfirmDialog(parent: self, messageText: ((err as! NetworkBaseError).data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+                ///disaple progressView here
+                
+                
+            }else{
+                _ = self.showSimpleConfirmDialog(parent: self, messageText: "Network Error",messageTitle: "Error", buttonText: "Ok")
+            }
+             self.stopProgress()
         }
         
 //        APIRouter.sendLoginRequest( loginparameters : loginParameter,success : successClos , failure : failureClos)
         
         
         do {
-            try APIRouter.makePostRequesr(url: APIRouter.LOGIN_URL, bodyParameters: loginParameter, succese: successClos, failure: failureClos, type: LoginResponse.self)
+            try APIRouter.makePostRequesr(url: APIRouter.LOGIN_URL, bodyParameters: loginParameter, succese: successClos, failure: failureClos as! (Any?) -> (), type: LoginResponse.self)
         }catch{
             let errorObj = error as! ValidationError
             showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)

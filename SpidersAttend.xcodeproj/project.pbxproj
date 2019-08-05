@@ -22,6 +22,7 @@
 		042F7B8B22C378DD0059E5B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B8A22C378DD0059E5B4 /* Constants.swift */; };
 		042F7B9122C37FC80059E5B4 /* MainStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9022C37FC80059E5B4 /* MainStateViewController.swift */; };
 		042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */; };
+		043BA73122F86A7A00AEDEFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043BA73022F86A7900AEDEFA /* Assets.xcassets */; };
 		043DE00F22D105A0006A084E /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE00E22D105A0006A084E /* MoreViewController.swift */; };
 		043DE01122D145BA006A084E /* NavigationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE01022D145BA006A084E /* NavigationManger.swift */; };
 		043DE01322D1BCAB006A084E /* LanguageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE01222D1BCAB006A084E /* LanguageDetails.swift */; };
@@ -45,7 +46,6 @@
 		04A6F61E22D2044E00D57B55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A6F62022D2044E00D57B55 /* Main.storyboard */; };
 		04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAB022B57D88002C59E5 /* AppDelegate.swift */; };
 		04D9DAB322B57D88002C59E5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAB222B57D88002C59E5 /* BaseViewController.swift */; };
-		04D9DAB822B57D8A002C59E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D9DAB722B57D8A002C59E5 /* Assets.xcassets */; };
 		04D9DAC622B57D8A002C59E5 /* SpidersAttendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAC522B57D8A002C59E5 /* SpidersAttendTests.swift */; };
 		04D9DAD122B57D8A002C59E5 /* SpidersAttendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAD022B57D8A002C59E5 /* SpidersAttendUITests.swift */; };
 		279B1F8B62FA89DD11FE7B31 /* Pods_SpidersAttend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36E90014CA08040CAEC1421 /* Pods_SpidersAttend.framework */; };
@@ -86,6 +86,7 @@
 		042F7B8A22C378DD0059E5B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		042F7B9022C37FC80059E5B4 /* MainStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStateViewController.swift; sourceTree = "<group>"; };
 		042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeotificationBaseViewController.swift; sourceTree = "<group>"; };
+		043BA73022F86A7900AEDEFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		043DE00E22D105A0006A084E /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		043DE01022D145BA006A084E /* NavigationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManger.swift; sourceTree = "<group>"; };
 		043DE01222D1BCAB006A084E /* LanguageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDetails.swift; sourceTree = "<group>"; };
@@ -111,7 +112,6 @@
 		04D9DAAD22B57D88002C59E5 /* SpidersAttend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpidersAttend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D9DAB022B57D88002C59E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D9DAB222B57D88002C59E5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		04D9DAB722B57D8A002C59E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04D9DABC22B57D8A002C59E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D9DAC122B57D8A002C59E5 /* SpidersAttendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpidersAttendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D9DAC522B57D8A002C59E5 /* SpidersAttendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpidersAttendTests.swift; sourceTree = "<group>"; };
@@ -292,6 +292,7 @@
 		04D9DAA422B57D88002C59E5 = {
 			isa = PBXGroup;
 			children = (
+				043BA73022F86A7900AEDEFA /* Assets.xcassets */,
 				04484A2E22E27B9D0057BDB3 /* Localizable.strings */,
 				04D9DAAF22B57D88002C59E5 /* SpidersAttend */,
 				04D9DAC422B57D8A002C59E5 /* SpidersAttendTests */,
@@ -325,7 +326,6 @@
 				043DE00D22D1055F006A084E /* more */,
 				042C00A022BE838B000546D0 /* Util */,
 				04A6F62022D2044E00D57B55 /* Main.storyboard */,
-				04D9DAB722B57D8A002C59E5 /* Assets.xcassets */,
 				04D9DABC22B57D8A002C59E5 /* Info.plist */,
 			);
 			path = SpidersAttend;
@@ -482,8 +482,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D9DAB822B57D8A002C59E5 /* Assets.xcassets in Resources */,
 				04484A2C22E27B9D0057BDB3 /* Localizable.strings in Resources */,
+				043BA73122F86A7A00AEDEFA /* Assets.xcassets in Resources */,
 				04A6F61E22D2044E00D57B55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

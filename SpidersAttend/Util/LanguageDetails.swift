@@ -58,7 +58,8 @@ class LanguageDetails: NSObject {
         
         // change language
         changeLanguageTo(lang: changeTo)
-        
+        PrefUtil.setAppLang(appLang: language)
+
         print("Language changed to: \(language)")
     }
     

@@ -55,20 +55,25 @@ class QrReaderViewController: BaseViewController,QRCodeReaderViewControllerDeleg
     }
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         reader.stopScanning()
-        
-     sendAttendRequest()
+         print("**********---> "+result.value)
+        if(result.value == ApiConstant.QR_SCANNER_CONSTANT){
+            sendAttendRequest()
+        }else{
+            self.dismiss(animated: true, completion: nil)
+            showAlert(withTitle: "", message: "Wrong QrCode".localiz())
+
+
+        }
         
     
     }
-    
-    //This is an optional delegate method, that allows you to be notified when the user switches the cameraName
-    //By pressing on the switch camera button
+
     
     func readerDidCancel(_ reader: QRCodeReaderViewController) {
         reader.stopScanning()
 
         dismiss(animated: true, completion: nil)
-//         NavigationManger(storyboard: self.storyboard!,viewController: self).navigateTo(target :Destinations.Login)
+ 
     }
   
     
@@ -82,18 +87,28 @@ class QrReaderViewController: BaseViewController,QRCodeReaderViewControllerDeleg
             if let statsId =  checkStatusResponse?.data.attendStatus.status {
                 PrefUtil.setCurrentUserStatsID(userStats: statsId)
                 self.stopProgress()
+                self.dismiss(animated: true, completion: nil)
+
                 
             }
-            self.dismiss(animated: true, completion: nil)
 
+            
         }
         let failureClos={
-         (err:NetworkBaseError?) in
-            print("failed ---->\(String(describing: err?.data?.msg))")
-            _ = self.showSimpleConfirmDialog(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
-            ///disaple progressView here
-            self.stopProgress()
+            (err : Any) in
+            if (err is NetworkBaseError){
+                //                (err:NetworkBaseError?)   in
+                print("failed ---->\(String(describing: (err as! NetworkBaseError).data?.msg))")
+                _ = self.showSimpleConfirmDialog(parent: self, messageText: ((err as! NetworkBaseError).data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+                ///disaple progressView here
+                
+                
+            }else{
+                _ = self.showSimpleConfirmDialog(parent: self, messageText: "Network Error",messageTitle: "Error", buttonText: "Ok")
+            }
+             self.stopProgress()
             self.dismiss(animated: true, completion: nil)
+
 
         }
       
@@ -110,7 +125,7 @@ class QrReaderViewController: BaseViewController,QRCodeReaderViewControllerDeleg
       
         
         do {
-            try APIRouter.makePostRequesr(url: APIRouter.ATTEND_ACTION, bodyParameters: requestPatameter, succese: succ, failure: failureClos, type: CheckStatusResponse.self)
+            try APIRouter.makePostRequesr(url: APIRouter.ATTEND_ACTION, bodyParameters: requestPatameter, succese: succ, failure: failureClos as! (Any?) -> (), type: CheckStatusResponse.self)
         }catch{
             let errorObj = error as! ValidationError
             showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)

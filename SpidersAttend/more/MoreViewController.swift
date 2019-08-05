@@ -79,12 +79,15 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         
          let arabic = UIAlertAction(title:   "Arabic".localiz(), style: .default, handler: { (action) -> Void in
+            PrefUtil.setAppLang(appLang: PrefUtil.ARABIC_LANG)
             LanguageManager.shared.setLanguage(language: .ar, rootViewController: self.storyboard?.instantiateInitialViewController(), animation: nil )
         })
         
         // Create Cancel button with action handlder
         let english = UIAlertAction(title: "ِEnglish".localiz(), style: .default) { (action) -> Void in
+            PrefUtil.setAppLang(appLang: PrefUtil.ENGLISH_LANG)
            LanguageManager.shared.setLanguage(language: .en, rootViewController: self.storyboard?.instantiateInitialViewController(), animation: nil )
+
         }
 //        cancel.setValue(UIColor.red, forKey: "titleTextColor")
         
