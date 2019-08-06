@@ -30,27 +30,39 @@ class MainStateViewController :GeotificationBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "#D8FFE8"), NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: 16) as Any], for: .normal)
-        //        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "#FFFFFF") as Any,NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: 16) as Any], for: .selected)
-        
-        let font =  UIFont(name: "HelveticaNeue-Bold", size: 11)!
-        UITabBarItem.appearance().setBadgeTextAttributes([NSAttributedString.Key.font: font], for: .normal)
-        UITabBarItem.appearance().setBadgeTextAttributes([NSAttributedString.Key.font: font], for: .selected)
-        
-        
+ 
+    
+       
         self.tabBarController?.tabBar.items?[0].title = "Home".localiz()
-        //        self.tabBarController?.tabBar.items?[1].title = "PayRoll (CommingSoon)".localiz()
-        //        self.tabBarController?.tabBar.items?[2].title = "Vication (CommingSoon)".localiz()
-        //        self.tabBarController?.tabBar.items?[3].title = "Attend".localiz()
-        self.tabBarController?.tabBar.items?[1].title = "more".localiz()
+        self.tabBarController?.tabBar.items?[1].title = "Attend".localiz()
+        self.tabBarController?.tabBar.items?[2].title = "Vication".localiz()
+//        self.tabBarController?.tabBar.items?[2].badgeValue = "Comming Soon".localiz()
+        self.tabBarController?.tabBar.items?[3].title = "PayRoll".localiz()
+//        self.tabBarController?.tabBar.items?[3].badgeValue = "Comming Soon".localiz()
+        self.tabBarController?.tabBar.items?[4].title = "more".localiz()
         
+         attendBtn.setTitle("Attend".localiz(), for: .normal)
+ 
         
-        attendBtn.setTitle("Attend".localiz(), for: .normal)
+ 
+        self.tabBarController?.tabBar.setBadge(value: "Soon".localiz(), at: ((self.tabBarController?.tabBar.items!.count)!) - 3)
+        self.tabBarController?.tabBar.setBadge(value: "Soon".localiz(), at:  ((self.tabBarController?.tabBar.items!.count)!) - 2)
+
+    }
+    private func adjustTabBarText(textSize:CGFloat){
         
+        let itemCount =   (self.tabBarController?.tabBar.items!.count)! - 1
         
+        for index in (0...itemCount ){
+            self.tabBarController?.tabBar.items?[index].setBadgeTextAttributes([
+                NSAttributedString.Key.font: UIFont(name: "Helvetica-Bold", size: textSize)!
+                 ],for: .normal)
+        }
     }
     
+
+    
+  
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         super.onLocationFencingUpdate=self
@@ -311,4 +323,65 @@ extension MainStateViewController : OnLocationFencingUpdate {
     
     
     
+}
+extension UITabBar {
+    func setBadge(value: String?, at index: Int, withConfiguration configuration: TabBarBadgeConfiguration = TabBarBadgeConfiguration()) {
+        let existingBadge = subviews.first { ($0 as? TabBarBadge)?.hasIdentifier(for: index) == true }
+        existingBadge?.removeFromSuperview()
+        
+        guard let tabBarItems = items,
+            let value = value else { return }
+        
+        let itemPosition = CGFloat(index + 1)
+        let itemWidth = frame.width / CGFloat(tabBarItems.count)
+        let itemHeight = frame.height
+        
+        let badge = TabBarBadge(for: index)
+        badge.frame.size = configuration.size
+        badge.center = CGPoint(x: (itemWidth * itemPosition) - (0.5 * itemWidth) + configuration.centerOffset.x,
+                               y: (0.5 * itemHeight) + configuration.centerOffset.y)
+        badge.layer.cornerRadius = 0.5 * configuration.size.height
+        badge.clipsToBounds = true
+        badge.textAlignment = .center
+        badge.backgroundColor = configuration.backgroundColor
+        badge.font = configuration.font
+        badge.textColor = configuration.textColor
+        badge.text = value
+        
+        addSubview(badge)
+    }
+}
+
+class TabBarBadge: UILabel {
+    var identifier: String = String(describing: TabBarBadge.self)
+    
+    private func identifier(for index: Int) -> String {
+        return "\(String(describing: TabBarBadge.self))-\(index)"
+    }
+    
+    convenience init(for index: Int) {
+        self.init()
+        identifier = identifier(for: index)
+    }
+    
+    func hasIdentifier(for index: Int) -> Bool {
+        let has = identifier == identifier(for: index)
+        return has
+    }
+}
+
+class TabBarBadgeConfiguration {
+    var backgroundColor: UIColor = .red
+    var centerOffset: CGPoint = .init(x: 0, y: -9)
+    var size: CGSize = .init(width: 40, height: 17)
+    var textColor: UIColor = .white
+    var font: UIFont! = .systemFont(ofSize: 6) {
+        didSet { font = font ?? .systemFont(ofSize: 6) }
+    }
+    
+    static func construct(_ block: (TabBarBadgeConfiguration) -> Void) -> TabBarBadgeConfiguration {
+        let new = TabBarBadgeConfiguration()
+        block(new)
+        return new
+    }
 }

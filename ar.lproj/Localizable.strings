@@ -4,12 +4,14 @@
 "Home"="الرئيسيه";
 "more" = "المزيد";
 "Attend" = "تآكيد";
-"PayRoll (CommingSoon)" = "(قريبا)  كشف المرتبات";
-"Vication (CommingSoon)" = "(قريبا)  الاجازات";
+"PayRoll" = "كشف المرتبات";
+"Vication" = "الاجازات";
 "language" = "اللغه";
 "logout" = "خروج";
 "Arabic" = "العربيه";
 "Confirm" = "تآكيد";
 "are you sure you want to Logout ?" = "تآكيد الخروج";
 "Wrong QrCode" ="كود خاطئ";
+"Soon" ="قريبا";
+
 
