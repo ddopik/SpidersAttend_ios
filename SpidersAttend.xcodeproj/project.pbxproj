@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040691B722FAD275000EDA0C /* AttendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040691B622FAD275000EDA0C /* AttendViewController.swift */; };
+		040691BA22FAD2DA000EDA0C /* VicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040691B922FAD2DA000EDA0C /* VicationViewController.swift */; };
+		040691BD22FAD308000EDA0C /* PayRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040691BC22FAD308000EDA0C /* PayRollViewController.swift */; };
 		04145E5422B69C040084222C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04145E5322B69C040084222C /* SplashViewController.swift */; };
 		041A5F6D22D23DE900D42874 /* QrReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5F6C22D23DE900D42874 /* QrReaderViewController.swift */; };
 		042445D522B78F7B0089C817 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042445D422B78F7B0089C817 /* LoginViewController.swift */; };
@@ -71,6 +74,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040691B622FAD275000EDA0C /* AttendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendViewController.swift; sourceTree = "<group>"; };
+		040691B922FAD2DA000EDA0C /* VicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VicationViewController.swift; sourceTree = "<group>"; };
+		040691BC22FAD308000EDA0C /* PayRollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayRollViewController.swift; sourceTree = "<group>"; };
 		04145E5322B69C040084222C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		041A5F6C22D23DE900D42874 /* QrReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrReaderViewController.swift; sourceTree = "<group>"; };
 		042445D422B78F7B0089C817 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +164,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040691B522FAD24E000EDA0C /* attend */ = {
+			isa = PBXGroup;
+			children = (
+				040691B622FAD275000EDA0C /* AttendViewController.swift */,
+			);
+			path = attend;
+			sourceTree = "<group>";
+		};
+		040691B822FAD294000EDA0C /* vication */ = {
+			isa = PBXGroup;
+			children = (
+				040691B922FAD2DA000EDA0C /* VicationViewController.swift */,
+			);
+			path = vication;
+			sourceTree = "<group>";
+		};
+		040691BB22FAD2EB000EDA0C /* payRoll */ = {
+			isa = PBXGroup;
+			children = (
+				040691BC22FAD308000EDA0C /* PayRollViewController.swift */,
+			);
+			path = payRoll;
+			sourceTree = "<group>";
+		};
 		04145E5222B69BCB0084222C /* splashscreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +352,9 @@
 				04145E5222B69BCB0084222C /* splashscreen */,
 				042445D322B78F4A0089C817 /* login */,
 				042F7B8F22C3798A0059E5B4 /* mainState */,
+				040691B522FAD24E000EDA0C /* attend */,
+				040691B822FAD294000EDA0C /* vication */,
+				040691BB22FAD2EB000EDA0C /* payRoll */,
 				043DE00822CE01E2006A084E /* qrReader */,
 				043DE00D22D1055F006A084E /* more */,
 				042C00A022BE838B000546D0 /* Util */,
@@ -608,6 +641,7 @@
 				042445DB22B98F5C0089C817 /* CircularProgress.swift in Sources */,
 				04145E5422B69C040084222C /* SplashViewController.swift in Sources */,
 				041A5F6D22D23DE900D42874 /* QrReaderViewController.swift in Sources */,
+				040691BD22FAD308000EDA0C /* PayRollViewController.swift in Sources */,
 				042C00A622BEA713000546D0 /* ValidationError.swift in Sources */,
 				04D9DAB322B57D88002C59E5 /* BaseViewController.swift in Sources */,
 				045BBA4322EDE4690004569A /* RPCircularProgress.swift in Sources */,
@@ -620,7 +654,9 @@
 				042445D822B7ABAC0089C817 /* BaseNavigationController.swift in Sources */,
 				043DE01122D145BA006A084E /* NavigationManger.swift in Sources */,
 				045BBA3D22EDE2E50004569A /* Geotification.swift in Sources */,
+				040691BA22FAD2DA000EDA0C /* VicationViewController.swift in Sources */,
 				042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */,
+				040691B722FAD275000EDA0C /* AttendViewController.swift in Sources */,
 				045BBA4A22EDE6210004569A /* ClockView.swift in Sources */,
 				042CFB3822D5FE9B005D2D58 /* UiUtiletes.swift in Sources */,
 				045BBA4C22EDE6690004569A /* StateDiagram.swift in Sources */,
