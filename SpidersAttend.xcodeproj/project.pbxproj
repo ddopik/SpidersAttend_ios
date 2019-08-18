@@ -11,6 +11,7 @@
 		040691BA22FAD2DA000EDA0C /* VicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040691B922FAD2DA000EDA0C /* VicationViewController.swift */; };
 		040691BD22FAD308000EDA0C /* PayRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040691BC22FAD308000EDA0C /* PayRollViewController.swift */; };
 		04145E5422B69C040084222C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04145E5322B69C040084222C /* SplashViewController.swift */; };
+		0418A09B22FC580900739A3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0418A09A22FC580900739A3B /* Assets.xcassets */; };
 		041A5F6D22D23DE900D42874 /* QrReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A5F6C22D23DE900D42874 /* QrReaderViewController.swift */; };
 		042445D522B78F7B0089C817 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042445D422B78F7B0089C817 /* LoginViewController.swift */; };
 		042445D822B7ABAC0089C817 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042445D722B7ABAC0089C817 /* BaseNavigationController.swift */; };
@@ -25,7 +26,6 @@
 		042F7B8B22C378DD0059E5B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B8A22C378DD0059E5B4 /* Constants.swift */; };
 		042F7B9122C37FC80059E5B4 /* MainStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9022C37FC80059E5B4 /* MainStateViewController.swift */; };
 		042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */; };
-		043BA73122F86A7A00AEDEFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043BA73022F86A7900AEDEFA /* Assets.xcassets */; };
 		043DE00F22D105A0006A084E /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE00E22D105A0006A084E /* MoreViewController.swift */; };
 		043DE01122D145BA006A084E /* NavigationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE01022D145BA006A084E /* NavigationManger.swift */; };
 		043DE01322D1BCAB006A084E /* LanguageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE01222D1BCAB006A084E /* LanguageDetails.swift */; };
@@ -78,6 +78,7 @@
 		040691B922FAD2DA000EDA0C /* VicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VicationViewController.swift; sourceTree = "<group>"; };
 		040691BC22FAD308000EDA0C /* PayRollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayRollViewController.swift; sourceTree = "<group>"; };
 		04145E5322B69C040084222C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		0418A09A22FC580900739A3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		041A5F6C22D23DE900D42874 /* QrReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrReaderViewController.swift; sourceTree = "<group>"; };
 		042445D422B78F7B0089C817 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		042445D722B7ABAC0089C817 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 		042F7B8A22C378DD0059E5B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		042F7B9022C37FC80059E5B4 /* MainStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStateViewController.swift; sourceTree = "<group>"; };
 		042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeotificationBaseViewController.swift; sourceTree = "<group>"; };
-		043BA73022F86A7900AEDEFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		043DE00E22D105A0006A084E /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		043DE01022D145BA006A084E /* NavigationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManger.swift; sourceTree = "<group>"; };
 		043DE01222D1BCAB006A084E /* LanguageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDetails.swift; sourceTree = "<group>"; };
@@ -322,7 +322,6 @@
 		04D9DAA422B57D88002C59E5 = {
 			isa = PBXGroup;
 			children = (
-				043BA73022F86A7900AEDEFA /* Assets.xcassets */,
 				04484A2E22E27B9D0057BDB3 /* Localizable.strings */,
 				04D9DAAF22B57D88002C59E5 /* SpidersAttend */,
 				04D9DAC422B57D8A002C59E5 /* SpidersAttendTests */,
@@ -360,6 +359,7 @@
 				042C00A022BE838B000546D0 /* Util */,
 				04A6F62022D2044E00D57B55 /* Main.storyboard */,
 				04D9DABC22B57D8A002C59E5 /* Info.plist */,
+				0418A09A22FC580900739A3B /* Assets.xcassets */,
 			);
 			path = SpidersAttend;
 			sourceTree = "<group>";
@@ -516,7 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04484A2C22E27B9D0057BDB3 /* Localizable.strings in Resources */,
-				043BA73122F86A7A00AEDEFA /* Assets.xcassets in Resources */,
+				0418A09B22FC580900739A3B /* Assets.xcassets in Resources */,
 				04A6F61E22D2044E00D57B55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -858,7 +858,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Brandeda.SpidersAttend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -877,7 +877,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Brandeda.SpidersAttend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -929,6 +929,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GMBNU7MC9;
 				INFOPLIST_FILE = SpidersAttendUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -949,6 +950,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GMBNU7MC9;
 				INFOPLIST_FILE = SpidersAttendUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

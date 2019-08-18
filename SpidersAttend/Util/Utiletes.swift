@@ -29,11 +29,21 @@ extension MKMapView {
 }
 
 extension BaseViewController{
+    
     func showSimpleConfirmDialog(parent: UIViewController, messageText: String, messageTitle: String, buttonText: String) -> UIAlertController {
         let alert = UIAlertController(title: messageTitle, message: messageText, preferredStyle: UIAlertController.Style.alert)
-    
+        
         alert.addAction(UIAlertAction(title: buttonText, style: UIAlertAction.Style.cancel, handler: nil))
-        parent.present(alert, animated: true, completion: nil)
+        parent.present(alert, animated: true)
+        return alert
+    }
+    
+    func showSimpleConfirmDialog(parent: UIViewController, messageText: String, messageTitle: String, buttonText: String, onCompl :@escaping ()-> Void  ) -> UIAlertController {
+        let alert = UIAlertController(title: messageTitle, message: messageText, preferredStyle: UIAlertController.Style.alert)
+    
+        alert.addAction(UIAlertAction(title: buttonText, style: UIAlertAction.Style.cancel, handler: { action in  _ = onCompl  }))
+      
+        parent.present(alert, animated: true)
         return alert
     }
     

@@ -54,6 +54,7 @@ class QrReaderViewController: BaseViewController,QRCodeReaderViewControllerDeleg
         }
     }
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
+
         reader.stopScanning()
          print("**********---> "+result.value)
         if(result.value == ApiConstant.QR_SCANNER_CONSTANT){
@@ -61,8 +62,6 @@ class QrReaderViewController: BaseViewController,QRCodeReaderViewControllerDeleg
         }else{
             self.dismiss(animated: true, completion: nil)
             showAlert(withTitle: "", message: "Wrong QrCode".localiz())
-
-
         }
         
     
@@ -87,8 +86,9 @@ class QrReaderViewController: BaseViewController,QRCodeReaderViewControllerDeleg
             if let statsId =  checkStatusResponse?.data.attendStatus.status {
                 PrefUtil.setCurrentUserStatsID(userStats: statsId)
                 self.stopProgress()
-                self.dismiss(animated: true, completion: nil)
+                                self.dismiss(animated: true, completion: nil)
 
+                self.viewAttendMessage(currenrStatsID: statsId)
                 
             }
 
@@ -131,6 +131,18 @@ class QrReaderViewController: BaseViewController,QRCodeReaderViewControllerDeleg
             showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)
         }
         
+    }
+    
+    
+    private func viewAttendMessage(currenrStatsID:String){
+         let onComplete = {
+            self.dismiss(animated: true, completion: nil)
+        }
+        if(currenrStatsID == ApiConstant.OUT){
+              _ =  self.showSimpleConfirmDialog(parent: self, messageText: "",messageTitle: "Welcome".localiz()+" "+PrefUtil.getUserName()!, buttonText: "Ok".localiz(),onCompl: onComplete)
+        }else if(currenrStatsID == ApiConstant.ENDED){
+               _ =    self.showSimpleConfirmDialog(parent: self, messageText: "",messageTitle: "By By".localiz()+" "+PrefUtil.getUserName()!, buttonText: "Ok".localiz(),onCompl: onComplete)
+        }
     }
     
 }
