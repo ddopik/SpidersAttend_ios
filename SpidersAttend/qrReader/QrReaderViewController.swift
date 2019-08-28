@@ -125,7 +125,7 @@ class QrReaderViewController: BaseViewController,QRCodeReaderViewControllerDeleg
       
         
         do {
-            try APIRouter.makePostRequesr(url: APIRouter.ATTEND_ACTION, bodyParameters: requestPatameter, succese: succ, failure: failureClos as! (Any?) -> (), type: CheckStatusResponse.self)
+            try APIRouter.makePostRequest(url: APIRouter.ATTEND_ACTION, bodyParameters: requestPatameter, succese: succ, failure: failureClos as! (Any?) -> (), type: CheckStatusResponse.self)
         }catch{
             let errorObj = error as! ValidationError
             showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)

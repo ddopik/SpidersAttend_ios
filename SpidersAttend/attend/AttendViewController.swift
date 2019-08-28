@@ -11,10 +11,9 @@ import UIKit
 class AttendViewController: GeotificationBaseViewController {
     
     
-    @IBOutlet weak var stateMessage: UITextView!
-    @IBOutlet weak var qrAttendButton: UIButton!
-    @IBOutlet weak var statsMessage : UITextView!
-    
+     @IBOutlet weak var qrAttendButton: UIButton!
+  
+    @IBOutlet weak var statsMessage: UITextField!
     @IBOutlet weak var attendActionContainer: UIStackView!
     
     

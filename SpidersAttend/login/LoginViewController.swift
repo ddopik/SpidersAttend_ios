@@ -84,7 +84,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
         //        dump(loginParameter)
         let successClos={ (loginResponse: LoginResponse?) in
             
-            let loginData = loginResponse?.data
+            let loginData = loginResponse?.loginData
             ///
             PrefUtil.setIsFirstTimeLogin(  isFirstTime: false)
             PrefUtil.setIsLoggedIn(  isLoggedIn: true)
@@ -97,7 +97,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
             PrefUtil.setUserTrackId( trackID: loginData?.userData?.track ?? " ")
             //            PrefUtil.setCurrentStatsMessage(  loginResponse.userData?.attendStatus?.msg!!)
             PrefUtil.setCurrentUserStatsID(  userStats: loginData?.attendStatus?.status ?? "-1")
-            PrefUtil.setCurrentCentralLng(  currentCentralLng: loginData?.userData?.lng ?? "0.0")
+            PrefUtil.setCurrentCentralLng(  currentCentralLng: loginData?.userData?.Lng ?? "0.0")
             PrefUtil.setCurrentCentralLat(  currentCentralLat: loginData?.userData?.lat ?? "0.0")
             PrefUtil.setCurrentCentralRadius(  currentCentralRadious: loginData?.userData?.radius ?? "-1")
             //            /
@@ -124,7 +124,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
         
         
         do {
-            try APIRouter.makePostRequesr(url: APIRouter.LOGIN_URL, bodyParameters: loginParameter, succese: successClos, failure: failureClos as! (Any?) -> (), type: LoginResponse.self)
+            try APIRouter.makePostRequest(url: APIRouter.LOGIN_URL, bodyParameters: loginParameter, succese: successClos, failure: failureClos as! (Any?) -> (), type: LoginResponse.self)
         }catch{
             let errorObj = error as! ValidationError
             showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)
