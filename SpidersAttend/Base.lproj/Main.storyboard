@@ -113,7 +113,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgx-Ww-VEE">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgx-Ww-VEE">
                                         <rect key="frame" x="40" y="389" width="160" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -123,7 +123,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="attendButton:" destination="4b9-9m-4RM" eventType="touchUpInside" id="3PG-iZ-7uz"/>
+                                            <action selector="attendButton:" destination="4b9-9m-4RM" eventType="touchUpInside" id="Hln-GN-mez"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -151,6 +151,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="Sgq-iS-Ov5"/>
                     <connections>
+                        <outlet property="attendBtn" destination="xgx-Ww-VEE" id="nnX-dY-XI2"/>
                         <outlet property="clockView" destination="5rC-fJ-ewA" id="Bfn-Un-U7F"/>
                         <outlet property="stateMessage" destination="LXg-4J-jMB" id="5a0-Fv-Saf"/>
                     </connections>
@@ -245,7 +246,7 @@
             </objects>
             <point key="canvasLocation" x="851" y="1050"/>
         </scene>
-        <!--More View Controller-->
+        <!--more-->
         <scene sceneID="rgR-xm-0gK">
             <objects>
                 <viewController storyboardIdentifier="MoreViewController" id="Gh7-3l-yo3" customClass="MoreViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
@@ -266,7 +267,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XaS-Bk-mr4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="bPU-vS-jeV"/>
+                    <tabBarItem key="tabBarItem" title="more" image="more_ic" id="bPU-vS-jeV"/>
                     <connections>
                         <outlet property="moreTableView" destination="US1-LG-dvN" id="pEi-Px-SOa"/>
                     </connections>
@@ -371,6 +372,7 @@
                     <tabBarItem key="tabBarItem" title="Item" image="ic_attend" id="c5n-ur-F8W"/>
                     <connections>
                         <outlet property="attendActionContainer" destination="GBO-bH-WKk" id="idG-36-1VO"/>
+                        <outlet property="qrAttendButton" destination="w9l-4t-094" id="vwq-31-0Ez"/>
                         <outlet property="statsMessage" destination="nXv-4f-OQk" id="BbG-Db-Zs1"/>
                     </connections>
                 </viewController>
@@ -384,5 +386,6 @@
         <image name="ic_attend" width="32" height="32"/>
         <image name="ic_soon" width="32" height="32"/>
         <image name="ic_spidres" width="900" height="512"/>
+        <image name="more_ic" width="50" height="50"/>
     </resources>
 </document>

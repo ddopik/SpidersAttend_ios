@@ -197,9 +197,11 @@ class PrefUtil {
     
     
     static func clearPrefUtil() {
+        let tempCurrrentLang = PrefUtil.getAppLanguage()!
         if let appDomain = Bundle.main.bundleIdentifier {
             UserDefaults.standard.removePersistentDomain(forName: appDomain)
         }
+        setAppLang(appLang: tempCurrrentLang)
     }
     
 }

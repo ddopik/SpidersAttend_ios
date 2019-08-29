@@ -7,10 +7,20 @@
 //
 
 import Foundation
-
-class LoginData{
+struct LoginData : Codable {
+    let user_data : LoginUserData?
+    let attend_status : LoginAttendStatus?
     
-   public var userData: LoginUserData!
- 
-   public var attendStatus: LoginAttendStatus!
+    enum CodingKeys: String, CodingKey {
+        
+        case user_data = "user_data"
+        case attend_status = "attend_status"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        user_data = try values.decodeIfPresent(LoginUserData.self, forKey: .user_data)
+        attend_status = try values.decodeIfPresent(LoginAttendStatus.self, forKey: .attend_status)
+    }
+    
 }

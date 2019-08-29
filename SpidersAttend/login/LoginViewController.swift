@@ -84,22 +84,22 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
         //        dump(loginParameter)
         let successClos={ (loginResponse: LoginResponse?) in
             
-            let loginData = loginResponse?.loginData
+            let loginData = loginResponse?.data
             ///
             PrefUtil.setIsFirstTimeLogin(  isFirstTime: false)
             PrefUtil.setIsLoggedIn(  isLoggedIn: true)
-            PrefUtil.setUserToken(userToken: loginData?.userData?.token ?? "-1")
-            PrefUtil.setUserID(  userId: loginData?.userData?.uid ?? "-1" )
-            PrefUtil.setUserName(  userName: loginData?.userData?.name ?? " ")
-            PrefUtil.setUserMail(  userMail: loginData?.userData?.email ?? " ")
-            PrefUtil.setUserProfilePic(  profileImg: loginData?.userData?.img ?? " ")
-            PrefUtil.setUserGender(  userGender: loginData?.userData?.gender ?? " ")
-            PrefUtil.setUserTrackId( trackID: loginData?.userData?.track ?? " ")
+            PrefUtil.setUserToken(userToken: loginData?.user_data?.token ?? "-1")
+            PrefUtil.setUserID(  userId: loginData?.user_data?.uid ?? "-1" )
+            PrefUtil.setUserName(  userName: loginData?.user_data?.name ?? " ")
+            PrefUtil.setUserMail(  userMail: loginData?.user_data?.email ?? " ")
+            PrefUtil.setUserProfilePic(  profileImg: loginData?.user_data?.img ?? " ")
+            PrefUtil.setUserGender(  userGender: loginData?.user_data?.gender ?? " ")
+            PrefUtil.setUserTrackId( trackID: loginData?.user_data?.track ?? " ")
             //            PrefUtil.setCurrentStatsMessage(  loginResponse.userData?.attendStatus?.msg!!)
-            PrefUtil.setCurrentUserStatsID(  userStats: loginData?.attendStatus?.status ?? "-1")
-            PrefUtil.setCurrentCentralLng(  currentCentralLng: loginData?.userData?.Lng ?? "0.0")
-            PrefUtil.setCurrentCentralLat(  currentCentralLat: loginData?.userData?.lat ?? "0.0")
-            PrefUtil.setCurrentCentralRadius(  currentCentralRadious: loginData?.userData?.radius ?? "-1")
+            PrefUtil.setCurrentUserStatsID(  userStats: loginData?.attend_status?.status ?? "-1")
+            PrefUtil.setCurrentCentralLng(  currentCentralLng: loginData?.user_data?.lng ?? "0.0")
+            PrefUtil.setCurrentCentralLat(  currentCentralLat: loginData?.user_data?.lat ?? "0.0")
+            PrefUtil.setCurrentCentralRadius(  currentCentralRadious: loginData?.user_data?.radius ?? "-1")
             //            /
             print("suucess \(String(describing: PrefUtil.getUserId()))" )
             super.stopProgress()

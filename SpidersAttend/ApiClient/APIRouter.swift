@@ -8,9 +8,9 @@
 
 import Foundation
 import Alamofire
-import AlamofireObjectMapper
 
 class APIRouter {
+    private static var TAG :String = "APIRouter"
     
     //Network Status
     private var STATUS_OK = "200"
@@ -20,32 +20,66 @@ class APIRouter {
     private var STATUS_404 = 404
     private  var STATUS_500 = 500
     private  var STATUS_ERROR = "405"
-      var ERROR_STATE_1 = "login-400"
-       var IMAGE_BASE_URL = "https://hr-arabjet.com/en/api/uploads/thump/"
-    
-    private   var BASE_URL :String = "https://hr-arabjet.com/{lang}/api"
-    private   var LOGIN_URL = "$BASE_URL/login_check"
-        var ATTEND_ACTION_URL = "$BASE_URL/attend_action"
-        var ATTEND_CHECK_URL = "$BASE_URL/attend_check"
-        var LANGUAGE_PATH_PARAMETER="lang"
-    
-    
+    var ERROR_STATE_1 = "login-400"
+    private static var BASE_URL :String = "https://hr-arabjet.com/"
+    static var LOGIN_URL = "/api/login_check"
+    static var ATTEND_ACTION = "/api/attend_action"
+    static var CHECK_STATUS_URL = "/api/attend_check"
+    final   var LANGUAGE_PATH_PARAMETER="lang"
+    var IMAGE_BASE_URL = " https://hr-arabjet.com/en/api/uploads/thump/"
+
     
     
+   
     
-  static func makePostRequest (url: String, bodyParameters: [String : String ], succese: (Any?) ->(), failure: ((Any?) -> (), type : T.Type) ) {
+    static func makePostRequest <T : Codable>(url: String, bodyParameters: [String : String ], succese: @escaping (T?) ->(), failure: @escaping ((Any?) -> ()), type : T.Type  ) {
         
-        AF.request(url, method: .post, parameters: bodyParameters , encoding: JSONEncoding.default, headers: nil).responseJSON { response in
-            switch response.result
-            {
-            case .success(let json):
-                let jsonData = json as! Any
-                print(jsonData)
-                
-            case .failure(let error):
-                self.errorFailer(error: error)
-            }
+        
+        
+        let currentUrl : String = BASE_URL + PrefUtil.getAppLanguage()! + url
+        
+        AF.request(URL(string: currentUrl)!, method: .post, parameters: bodyParameters,encoding: URLEncoding.httpBody)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    do {
+                        let decoder = JSONDecoder()
+                        let codingData = try decoder.decode(type.self, from: response.data!)
+                        succese(codingData)
+                    }catch {
+                        print("\(TAG) ----> Error ----> Failed Parssing Api \(currentUrl)")
+                    }
+                    
+                    break
+                case .failure (let error):
+                    print("\(TAG) ----> Error ----> Failed Api \(currentUrl)")
+                     if let httpStatusCode = response.response?.statusCode {
+                        switch (httpStatusCode) {
+                        case 400:
+                            print("\(TAG) ----> Error 400 ----> Failed Api \(currentUrl)")
+                            do {
+                                let errorCodingData = try  JSONDecoder().decode(NetworkBaseError.self, from: response.data!)
+                                 failure (errorCodingData)
+                            }catch(let parserErrorExp){
+                                print("\(TAG) ----> Error parsing Network Error of \(currentUrl) + \(parserErrorExp.localizedDescription)")
+                            }
+                            break
+                        case 401:
+                            print("\(TAG) ----> Error 401 ----> Failed Api \(currentUrl)")
+                            failure(error)
+                            break
+                        default : do {
+                            failure ("Error")
+                            print("\(TAG) ----> Error unResolved Code----> Failed Api \(currentUrl)")
+                            }
+                        }
+                    }
+                    break
+                }
         }
+     
+        
         
     }
     
