@@ -13,8 +13,6 @@ struct ApiConstant {
     static let ENDED="3"
      static let QR_SCANNER_CONSTANT="https://hr-arabjet.spiderholidays.co/en/"
 
-    
-  
     struct APIParameterKey {
         static let username = "username"
         static let pass = "pass"
