@@ -24,10 +24,14 @@ protocol OnLocationFencingUpdate {
 class GeotificationBaseViewController : BaseViewController{
     var allGeotifications:[Geotification] = []
     var locationManager = CLLocationManager()
+ // this var called by locationManagerDelegate
+// then get passed to Any subViewController through OnLocationFencingUpdate Delegate
     var onLocationFencingUpdate :OnLocationFencingUpdate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.onLocationUpdateDelegate = self
+
     }
     
     

@@ -21,12 +21,15 @@ class APIRouter {
     private  var STATUS_500 = 500
     private  var STATUS_ERROR = "405"
     var ERROR_STATE_1 = "login-400"
-    private static var BASE_URL :String = "https://hr-arabjet.com/"
+//    private static var BASE_URL :String = "https://hr-arabjet.com/"
+    private static var BASE_URL :String = "https://nfc.spiderholidays.co/"
+
     static var LOGIN_URL = "/api/login_check"
     static var ATTEND_ACTION = "/api/attend_action"
     static var CHECK_STATUS_URL = "/api/attend_check"
+     static var NETWORK_ATTEND_URL = "/api/network_check"
     final   var LANGUAGE_PATH_PARAMETER="lang"
-    var IMAGE_BASE_URL = " https://hr-arabjet.com/en/api/uploads/thump/"
+    var IMAGE_BASE_URL = BASE_URL+"/en/api/uploads/thump/"
 
     
     

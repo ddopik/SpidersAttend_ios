@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040691B722FAD275000EDA0C /* AttendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040691B622FAD275000EDA0C /* AttendViewController.swift */; };
 		040691BA22FAD2DA000EDA0C /* VicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040691B922FAD2DA000EDA0C /* VicationViewController.swift */; };
 		040691BD22FAD308000EDA0C /* PayRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040691BC22FAD308000EDA0C /* PayRollViewController.swift */; };
 		04145E5422B69C040084222C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04145E5322B69C040084222C /* SplashViewController.swift */; };
@@ -46,6 +45,13 @@
 		04484A2C22E27B9D0057BDB3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04484A2E22E27B9D0057BDB3 /* Localizable.strings */; };
 		04484A3122E3B3B40057BDB3 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04484A3022E3B3B40057BDB3 /* LanguageManager.swift */; };
 		0462D21722C9220F00A459CE /* Utiletes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462D21622C9220F00A459CE /* Utiletes.swift */; };
+		047AB49B2393EF160019F259 /* AttendPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB49A2393EF160019F259 /* AttendPresenterImpl.swift */; };
+		047AB49D2393EF220019F259 /* AttendPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB49C2393EF220019F259 /* AttendPresenter.swift */; };
+		047AB49F2393EF3A0019F259 /* AttendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB49E2393EF3A0019F259 /* AttendView.swift */; };
+		047AB4A42393EF600019F259 /* AttendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4A32393EF600019F259 /* AttendViewController.swift */; };
+		047AB4A82393F5080019F259 /* MainStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4A72393F5080019F259 /* MainStateView.swift */; };
+		047AB4AA2393F5AE0019F259 /* MainStatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4A92393F5AE0019F259 /* MainStatePresenter.swift */; };
+		047AB4AC2393F5BF0019F259 /* MainStatePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4AB2393F5BF0019F259 /* MainStatePresenterImpl.swift */; };
 		04D0AE1423743C6A001A66C5 /* QrReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0AE1323743C6A001A66C5 /* QrReaderViewController.swift */; };
 		04D0AE1623743CB4001A66C5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0AE1523743CB4001A66C5 /* BaseViewController.swift */; };
 		04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAB022B57D88002C59E5 /* AppDelegate.swift */; };
@@ -72,7 +78,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		040691B622FAD275000EDA0C /* AttendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendViewController.swift; sourceTree = "<group>"; };
 		040691B922FAD2DA000EDA0C /* VicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VicationViewController.swift; sourceTree = "<group>"; };
 		040691BC22FAD308000EDA0C /* PayRollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayRollViewController.swift; sourceTree = "<group>"; };
 		04145E5322B69C040084222C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +117,13 @@
 		04484A2F22E27BB10057BDB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		04484A3022E3B3B40057BDB3 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		0462D21622C9220F00A459CE /* Utiletes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utiletes.swift; sourceTree = "<group>"; };
+		047AB49A2393EF160019F259 /* AttendPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendPresenterImpl.swift; sourceTree = "<group>"; };
+		047AB49C2393EF220019F259 /* AttendPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendPresenter.swift; sourceTree = "<group>"; };
+		047AB49E2393EF3A0019F259 /* AttendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendView.swift; sourceTree = "<group>"; };
+		047AB4A32393EF600019F259 /* AttendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AttendViewController.swift; path = ../../../../BackUp/SpidersAttend_ios/SpidersAttend/attend/AttendViewController.swift; sourceTree = "<group>"; };
+		047AB4A72393F5080019F259 /* MainStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStateView.swift; sourceTree = "<group>"; };
+		047AB4A92393F5AE0019F259 /* MainStatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatePresenter.swift; sourceTree = "<group>"; };
+		047AB4AB2393F5BF0019F259 /* MainStatePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatePresenterImpl.swift; sourceTree = "<group>"; };
 		04D0AE1323743C6A001A66C5 /* QrReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrReaderViewController.swift; sourceTree = "<group>"; };
 		04D0AE1523743CB4001A66C5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04D9DAAD22B57D88002C59E5 /* SpidersAttend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpidersAttend.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +173,8 @@
 		040691B522FAD24E000EDA0C /* attend */ = {
 			isa = PBXGroup;
 			children = (
-				040691B622FAD275000EDA0C /* AttendViewController.swift */,
+				047AB4A12393EF490019F259 /* presenter */,
+				047AB4A02393EF3F0019F259 /* view */,
 			);
 			path = attend;
 			sourceTree = "<group>";
@@ -263,6 +276,8 @@
 		042F7B8F22C3798A0059E5B4 /* mainState */ = {
 			isa = PBXGroup;
 			children = (
+				047AB4A62393F4F30019F259 /* view */,
+				047AB4A52393F4E90019F259 /* presenter */,
 				0443D46F22CB8A6900FDDE64 /* model */,
 				042F7B9022C37FC80059E5B4 /* MainStateViewController.swift */,
 			);
@@ -303,6 +318,41 @@
 				043E2E1C2317DC4500C91286 /* StyleKit_Clock.swift */,
 			);
 			path = clockViewRes;
+			sourceTree = "<group>";
+		};
+		047AB4A02393EF3F0019F259 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				047AB4A32393EF600019F259 /* AttendViewController.swift */,
+				047AB49E2393EF3A0019F259 /* AttendView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		047AB4A12393EF490019F259 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				047AB49A2393EF160019F259 /* AttendPresenterImpl.swift */,
+				047AB49C2393EF220019F259 /* AttendPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		047AB4A52393F4E90019F259 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				047AB4A92393F5AE0019F259 /* MainStatePresenter.swift */,
+				047AB4AB2393F5BF0019F259 /* MainStatePresenterImpl.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		047AB4A62393F4F30019F259 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				047AB4A72393F5080019F259 /* MainStateView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		049D877B22BB9C6B0009767B /* ApiClient */ = {
@@ -617,20 +667,26 @@
 				043E2E192317DB9000C91286 /* RPCircularProgress.swift in Sources */,
 				042C00B222BECA87000546D0 /* Validator.swift in Sources */,
 				04484A3122E3B3B40057BDB3 /* LanguageManager.swift in Sources */,
+				047AB49D2393EF220019F259 /* AttendPresenter.swift in Sources */,
+				047AB4A82393F5080019F259 /* MainStateView.swift in Sources */,
 				042F7B8722C26E7F0059E5B4 /* PrefUtil.swift in Sources */,
 				043E2DFA2315463400C91286 /* ClockView.swift in Sources */,
+				047AB4A42393EF600019F259 /* AttendViewController.swift in Sources */,
+				047AB4AA2393F5AE0019F259 /* MainStatePresenter.swift in Sources */,
 				043E2E152317DAD700C91286 /* DateHelper.swift in Sources */,
 				043E2E1D2317DC4500C91286 /* StyleKit_Clock.swift in Sources */,
+				047AB49F2393EF3A0019F259 /* AttendView.swift in Sources */,
 				042BCCF022E4A4FB00090D76 /* BaseUiTabController.swift in Sources */,
+				047AB49B2393EF160019F259 /* AttendPresenterImpl.swift in Sources */,
 				043E2DF72315463400C91286 /* ClockViewController.swift in Sources */,
 				042445D822B7ABAC0089C817 /* BaseNavigationController.swift in Sources */,
 				043E2E132317DA0200C91286 /* Geotification.swift in Sources */,
 				043DE01122D145BA006A084E /* NavigationManger.swift in Sources */,
+				047AB4AC2393F5BF0019F259 /* MainStatePresenterImpl.swift in Sources */,
 				043E2DF82315463400C91286 /* StyleKit_ConsensusGraph.swift in Sources */,
 				04D0AE1623743CB4001A66C5 /* BaseViewController.swift in Sources */,
 				040691BA22FAD2DA000EDA0C /* VicationViewController.swift in Sources */,
 				042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */,
-				040691B722FAD275000EDA0C /* AttendViewController.swift in Sources */,
 				042CFB3822D5FE9B005D2D58 /* UiUtiletes.swift in Sources */,
 				04D0AE1423743C6A001A66C5 /* QrReaderViewController.swift in Sources */,
 				043DE00F22D105A0006A084E /* MoreViewController.swift in Sources */,

@@ -21,11 +21,7 @@ class SplashViewController: BaseViewController {
  
             NavigationManger(storyboard: self.storyboard!, viewController: self).navigateTo(target: Destinations.MainScreen)
          }else{
-
-
                 NavigationManger(storyboard: self.storyboard!, viewController: self).navigateTo(target: Destinations.Login)
-
-
         }
     })
         

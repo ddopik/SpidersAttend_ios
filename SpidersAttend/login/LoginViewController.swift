@@ -20,7 +20,6 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.onLocationUpdateDelegate = self
  
         self.inputUserName.delegate = self
 //        inputUserName.returnKeyType = .done
@@ -49,9 +48,8 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
     @IBAction func onLoginPressed(_ sender: Any) {
         do  {
             try isLoginInputsValid()
+            super.onLocationUpdateDelegate = self
             try startLocationServices()
-            
-            
         }catch {
             
             _ = showSimpleConfirmDialog(parent: self, messageText: (error as! ValidationError).message,messageTitle:  (error as! ValidationError).errorTitle, buttonText: "Ok")

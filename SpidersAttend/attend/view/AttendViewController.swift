@@ -8,13 +8,7 @@
 
 import UIKit
 
-
-protocol AttendDisplayLogic:class
-{
-    func setAttendMessageStates(statsID:String)
-}
-
-class AttendViewController: GeotificationBaseViewController,AttendDisplayLogic {
+class AttendViewController: GeotificationBaseViewController {
     
     
     @IBOutlet weak var statsMessage: UITextView!
@@ -28,12 +22,11 @@ class AttendViewController: GeotificationBaseViewController,AttendDisplayLogic {
         requestUserStatus()
         
     }
-    
-    
     @IBAction func qrAttendButton(_ sender: Any) {
         super.onLocationUpdateDelegate = self
         setAttendQrBtnState(state:false)
         requestAttendAction()
+        
     }
     
     
@@ -50,6 +43,8 @@ class AttendViewController: GeotificationBaseViewController,AttendDisplayLogic {
     }
     
     func setAttendMessageStates(statsID:String){
+        
+        
         if(statsID == ApiConstant.ENTER){
             statsMessage.text = "Please select method to ".localiz()+"Attend".localiz()
             attendActionContainer.isHidden = false
@@ -179,8 +174,8 @@ extension AttendViewController{
             
             
             do {
-        APIRouter.makePostRequest(url: APIRouter.CHECK_STATUS_URL, bodyParameters: bodyParameter, succese: succ, failure: failureClos as (Any?) -> (), type: CheckStatusResponse.self)
-            }catch {
+                try _ =  APIRouter.makePostRequest(url: APIRouter.CHECK_STATUS_URL, bodyParameters: bodyParameter, succese: succ, failure: failureClos as! (Any?) -> (), type: CheckStatusResponse.self)
+            }catch{
                 let errorObj = error as! ValidationError
                 showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)
             }

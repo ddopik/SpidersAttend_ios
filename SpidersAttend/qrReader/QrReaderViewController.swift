@@ -14,7 +14,7 @@ import CoreLocation
 class QrReaderViewController: BaseViewController,QRCodeReaderViewControllerDelegate {
     var newStart :Bool = true
     var cuurentQrLocation :CLLocation?
-    ///
+     ///
     lazy var readerVC: QRCodeReaderViewController = {
         let builder = QRCodeReaderViewControllerBuilder {
             $0.reader = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
@@ -138,6 +138,8 @@ class QrReaderViewController: BaseViewController,QRCodeReaderViewControllerDeleg
          let onComplete = {
             self.dismiss(animated: true, completion: nil)
         }
+        
+        
         if(currenrStatsID == ApiConstant.OUT){
               _ =  self.showSimpleConfirmDialog(parent: self, messageText: "",messageTitle: "Welcome".localiz()+" "+PrefUtil.getUserName()!, buttonText: "Ok".localiz(),onCompl: onComplete)
         }else if(currenrStatsID == ApiConstant.ENDED){

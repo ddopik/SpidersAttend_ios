@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DCw-gM-shJ">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DCw-gM-shJ">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,38 +11,36 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="loginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="fRX-Ve-XYZ">
-                                <rect key="frame" x="40" y="244.5" width="295" height="198"/>
+                                <rect key="frame" x="40" y="354" width="334" height="198"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="50" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OVu-oZ-xsA">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="CvW-sj-cuC"/>
                                             <constraint firstAttribute="height" constant="50" id="pZx-D8-lYT"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnv-Eo-J7l">
-                                        <rect key="frame" x="0.0" y="79" width="295" height="50"/>
+                                        <rect key="frame" x="0.0" y="79" width="334" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="BQZ-bE-nUm"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="wI6-km-VKk"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUz-Ld-GWw">
-                                        <rect key="frame" x="0.0" y="158" width="295" height="40"/>
+                                        <rect key="frame" x="0.0" y="158" width="334" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="EEK-AF-L4b"/>
@@ -83,20 +79,20 @@
         <!--Home-->
         <scene sceneID="x7a-2I-ppc">
             <objects>
-                <viewController storyboardIdentifier="MainStateViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4b9-9m-4RM" customClass="MainStateViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainStateViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" interfaceStyle="light" id="4b9-9m-4RM" customClass="MainStateViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zzF-qo-cOx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="106" translatesAutoresizingMaskIntoConstraints="NO" id="VfI-m1-dOc">
-                                <rect key="frame" x="40" y="90" width="295" height="488"/>
+                                <rect key="frame" x="40" y="114" width="334" height="659"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5rC-fJ-ewA" customClass="ClockView" customModule="SpidersAttend" customModuleProvider="target">
-                                        <rect key="frame" x="42" y="0.0" width="211" height="332"/>
+                                        <rect key="frame" x="42" y="0.0" width="250" height="503"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="state" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXg-4J-jMB">
-                                        <rect key="frame" x="47" y="438" width="201" height="50"/>
+                                        <rect key="frame" x="47" y="609" width="240" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="XbR-hj-H2R"/>
@@ -104,27 +100,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgx-Ww-VEE">
-                                        <rect key="frame" x="40" y="488" width="215" height="50"/>
-                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="tKG-rS-4CO"/>
-                                        </constraints>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="attendButton:" destination="4b9-9m-4RM" eventType="touchUpInside" id="Hln-GN-mez"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="LXg-4J-jMB" secondAttribute="trailing" constant="47" id="ErM-oq-BuA"/>
                                     <constraint firstItem="5rC-fJ-ewA" firstAttribute="leading" secondItem="VfI-m1-dOc" secondAttribute="leading" constant="42" id="M8b-MZ-UaH"/>
                                     <constraint firstItem="LXg-4J-jMB" firstAttribute="leading" secondItem="VfI-m1-dOc" secondAttribute="leading" constant="47" id="myE-9l-CrF"/>
-                                    <constraint firstItem="xgx-Ww-VEE" firstAttribute="leading" secondItem="VfI-m1-dOc" secondAttribute="leading" constant="40" id="nNn-pU-Mqz"/>
                                     <constraint firstAttribute="trailing" secondItem="5rC-fJ-ewA" secondAttribute="trailing" constant="42" id="pEd-Ad-6wc"/>
-                                    <constraint firstAttribute="trailing" secondItem="xgx-Ww-VEE" secondAttribute="trailing" constant="40" id="zso-7i-dvr"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -141,8 +122,8 @@
                         <inset key="imageInsets" minX="0.0" minY="2" maxX="0.0" maxY="2"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="Sgq-iS-Ov5"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="attendBtn" destination="xgx-Ww-VEE" id="nnX-dY-XI2"/>
                         <outlet property="clockView" destination="5rC-fJ-ewA" id="Bfn-Un-U7F"/>
                         <outlet property="stateMessage" destination="LXg-4J-jMB" id="5a0-Fv-Saf"/>
                     </connections>
@@ -156,7 +137,7 @@
             <objects>
                 <viewController storyboardIdentifier="SplashViewController" title="Spiders Attend" id="DCw-gM-shJ" customClass="SplashViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VbN-4O-sCc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4Ly-fV-AFV"/>
@@ -172,9 +153,10 @@
         <!--Tab Bar Controller-->
         <scene sceneID="WbC-CE-pFM">
             <objects>
-                <tabBarController restorationIdentifier="MainTabViewController" storyboardIdentifier="MainTabViewController" automaticallyAdjustsScrollViewInsets="NO" id="jN1-ol-kAL" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="MainTabViewController" storyboardIdentifier="MainTabViewController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="jN1-ol-kAL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Jsj-he-Kba"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v9r-35-h2l">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -197,7 +179,7 @@
             <objects>
                 <viewController id="gUU-NC-0jf" customClass="VicationViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A4B-nw-Gr9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Eb3-4c-gW2"/>
@@ -213,7 +195,7 @@
             <objects>
                 <viewController id="Ypj-MB-XDl" customClass="PayRollViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bnW-td-jIf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cC2-Vo-EhK"/>
@@ -231,12 +213,11 @@
             <objects>
                 <viewController storyboardIdentifier="MoreViewController" id="Gh7-3l-yo3" customClass="MoreViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V4S-5W-QPM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="US1-LG-dvN">
-                                <rect key="frame" x="40" y="113" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="US1-LG-dvN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                                 <connections>
@@ -245,6 +226,13 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="US1-LG-dvN" firstAttribute="leading" secondItem="XaS-Bk-mr4" secondAttribute="leading" id="GVo-Zp-jF8"/>
+                            <constraint firstItem="US1-LG-dvN" firstAttribute="top" secondItem="XaS-Bk-mr4" secondAttribute="top" id="HBd-SI-sxx"/>
+                            <constraint firstItem="XaS-Bk-mr4" firstAttribute="bottom" secondItem="US1-LG-dvN" secondAttribute="bottom" id="jzR-KC-Re4"/>
+                            <constraint firstItem="XaS-Bk-mr4" firstAttribute="trailing" secondItem="US1-LG-dvN" secondAttribute="trailing" id="keI-Np-M7b"/>
+                            <constraint firstItem="US1-LG-dvN" firstAttribute="leading" secondItem="XaS-Bk-mr4" secondAttribute="leading" id="zPs-vg-FHh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XaS-Bk-mr4"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="more" image="more_ic" id="bPU-vS-jeV"/>
@@ -261,39 +249,35 @@
             <objects>
                 <viewController id="MVi-Gg-Geq" customClass="AttendViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ewb-PU-nMq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="center" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GBO-bH-WKk">
-                                <rect key="frame" x="40" y="254.5" width="295" height="333.5"/>
+                                <rect key="frame" x="40" y="335" width="334" height="448"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9l-4t-094">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="104.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="219"/>
                                         <color key="backgroundColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="QR"/>
                                         <connections>
                                             <action selector="qrAttendButton:" destination="MVi-Gg-Geq" eventType="touchUpInside" id="s1k-JB-8DQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ryw-dZ-4fq">
-                                        <rect key="frame" x="0.0" y="114.5" width="295" height="104.5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ryw-dZ-4fq">
+                                        <rect key="frame" x="0.0" y="229" width="334" height="219"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="tintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment>
-                                                    <string key="content">Network
-(Coming soon)</string>
-                                                    <attributes>
-                                                        <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <state key="normal" title="Network">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="networkAttendButton" destination="MVi-Gg-Geq" eventType="touchUpInside" id="Vg4-JM-3NT"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCq-qn-pva">
-                                        <rect key="frame" x="0.0" y="229" width="295" height="104.5"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCq-qn-pva">
+                                        <rect key="frame" x="0.0" y="448" width="334" height="0.0"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
@@ -302,7 +286,7 @@
 </string>
                                                     <attributes>
                                                         <color key="NSColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                                        <font key="NSFont" metaFont="system" size="16"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -319,7 +303,7 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JtC-xS-d0S">
-                                <rect key="frame" x="40" y="45" width="295" height="184.5"/>
+                                <rect key="frame" x="40" y="69" width="334" height="241"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -339,8 +323,10 @@
                         <viewLayoutGuide key="safeArea" id="si1-x6-6Tm"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="ic_attend" id="c5n-ur-F8W"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="attendActionContainer" destination="GBO-bH-WKk" id="idG-36-1VO"/>
+                        <outlet property="networkAttendBtn" destination="Ryw-dZ-4fq" id="flW-AO-TYP"/>
                         <outlet property="qrAttendButton" destination="w9l-4t-094" id="vwq-31-0Ez"/>
                         <outlet property="statsMessage" destination="JtC-xS-d0S" id="zQJ-HV-AxZ"/>
                     </connections>
