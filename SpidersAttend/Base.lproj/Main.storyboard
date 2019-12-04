@@ -165,30 +165,66 @@
                     <connections>
                         <segue destination="4b9-9m-4RM" kind="relationship" relationship="viewControllers" id="rHm-dB-R9m"/>
                         <segue destination="MVi-Gg-Geq" kind="relationship" relationship="viewControllers" id="Mpc-vE-v1k"/>
-                        <segue destination="gUU-NC-0jf" kind="relationship" relationship="viewControllers" id="AaS-U7-v46"/>
-                        <segue destination="Ypj-MB-XDl" kind="relationship" relationship="viewControllers" id="qKn-Df-3aA"/>
+                        <segue destination="3ri-cB-HLt" kind="relationship" relationship="viewControllers" id="OP9-54-3Y2"/>
                         <segue destination="Gh7-3l-yo3" kind="relationship" relationship="viewControllers" id="DQ9-21-VBy"/>
+                        <segue destination="Ypj-MB-XDl" kind="relationship" relationship="viewControllers" id="qKn-Df-3aA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsS-qn-mst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-891" y="272"/>
         </scene>
-        <!--Vcation-->
-        <scene sceneID="XIY-Pp-SRr">
+        <!--Approved-->
+        <scene sceneID="S6x-yg-Kgi">
             <objects>
-                <viewController id="gUU-NC-0jf" customClass="VicationViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="A4B-nw-Gr9">
+                <viewController id="WWv-op-KwE" customClass="VicationViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TTV-rm-be2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Eb3-4c-gW2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="T3m-eK-P5X"/>
                     </view>
-                    <tabBarItem key="tabBarItem" enabled="NO" title="Vcation" image="ic_soon" badgeValue="soon" id="LDA-fL-o0n"/>
+                    <tabBarItem key="tabBarItem" title="Approved" id="7Fi-7R-xAd"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z4B-ml-Vku" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4jD-kQ-VCJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47" y="1052"/>
+            <point key="canvasLocation" x="445" y="2028"/>
+        </scene>
+        <!--Pending-->
+        <scene sceneID="ULM-jm-Ulz">
+            <objects>
+                <viewController id="Cj6-Vq-zfH" customClass="PendingVacationViewController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZvD-JS-bU5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6ap-9X-zR0"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pending" id="xSJ-pP-VeQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PEc-cV-QKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-791" y="2028"/>
+        </scene>
+        <!--Vacations-->
+        <scene sceneID="tP1-Sp-oY0">
+            <objects>
+                <tabBarController id="3ri-cB-HLt" customClass="CustomTabBarController" customModule="SpidersAttend" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Vacations" image="calendar" catalog="system" id="1gB-Vo-0w3"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0FU-Pt-VLx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <outlet property="tabTest" destination="0FU-Pt-VLx" id="zML-tX-s6E"/>
+                        <segue destination="Cj6-Vq-zfH" kind="relationship" relationship="viewControllers" id="hvE-CI-I8E"/>
+                        <segue destination="WWv-op-KwE" kind="relationship" relationship="viewControllers" id="XVv-IU-GUZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aNd-AE-zQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42" y="1050"/>
         </scene>
         <!--PatRoll-->
         <scene sceneID="7lx-Kh-zCi">
@@ -273,7 +309,8 @@
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="networkAttendButton" destination="MVi-Gg-Geq" eventType="touchUpInside" id="Vg4-JM-3NT"/>
+                                            <action selector="networkAttendButton:" destination="MVi-Gg-Geq" eventType="touchUpInside" id="uwH-mD-OzO"/>
+                                            <action selector="qrAttendButton:" destination="MVi-Gg-Geq" eventType="touchUpInside" id="3T2-Jx-a3s"/>
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCq-qn-pva">
@@ -326,7 +363,6 @@
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="attendActionContainer" destination="GBO-bH-WKk" id="idG-36-1VO"/>
-                        <outlet property="networkAttendBtn" destination="Ryw-dZ-4fq" id="flW-AO-TYP"/>
                         <outlet property="qrAttendButton" destination="w9l-4t-094" id="vwq-31-0Ez"/>
                         <outlet property="statsMessage" destination="JtC-xS-d0S" id="zQJ-HV-AxZ"/>
                     </connections>
@@ -337,6 +373,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" catalog="system" width="64" height="52"/>
         <image name="home_ic" width="40" height="40"/>
         <image name="ic_attend" width="32" height="32"/>
         <image name="ic_soon" width="32" height="32"/>

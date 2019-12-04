@@ -13,5 +13,5 @@
 "are you sure you want to Logout ?" = "تآكيد الخروج";
 "Wrong QrCode" ="كود خاطئ";
 "Soon" ="قريبا";
-
+"locationError"="خطآ في الحصول علي الموقع الحالي";
 

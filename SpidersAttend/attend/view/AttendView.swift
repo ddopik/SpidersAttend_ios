@@ -7,14 +7,13 @@
 //
 
 import Foundation
-
+import CoreLocation
 protocol AttendView  {
     func setAttendBtnState(state :Bool)
     func setAttendMessageStates(statsID:String)
     func viewProgress(state:Bool)
     func viewDialogMessage(title:String,message:String)
     func viewAlertMessage(title:String,message:String)
-    func viewAttendMessage(currenrStatsID:String)
-    func navigate(dest:NavigationType)
+     func navigate(dest:NavigationType,curenrtlocation: CLLocation)
 
 }

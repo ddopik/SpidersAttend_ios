@@ -2,3 +2,6 @@
  
 
 "Attend" = "Attend";
+"error"="Error";
+"locationError"="Error getting currenr location";
+

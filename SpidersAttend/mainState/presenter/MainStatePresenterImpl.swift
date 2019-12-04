@@ -36,22 +36,13 @@ class MainStatePresenterImpl:MainStatePresenter{
                 self.mainStateView.viewProgress(state: false)
               }
               let failureClos={
-                  
-                  //            (err:NetworkBaseError?) in
-                  //            print("failed ---->\(String(describing: err?.data?.msg))")
-                  //            _ = self.showSimpleConfirmDialog(parent: self, messageText: (err?.data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
-                  //            self.stopProgress()
                   (err : Any) in
                   if (err is NetworkBaseError){
                       //                (err:NetworkBaseError?)   in
                       print("failed ---->\(String(describing: (err as! NetworkBaseError).data?.msg))")
                     self.mainStateView.viewDialogMessage(title:"Error",message:((err as! NetworkBaseError).data?.msg) ?? "failed")
-                    
-               
- 
-                      
                   }else{
-                    self.mainStateView.viewDialogMessage(title:  "Error", message: "Network Error")
+                    self.mainStateView.viewDialogMessage(title:"Error", message: "Network Error")
                    }
                   
                  self.mainStateView.viewProgress(state: false)

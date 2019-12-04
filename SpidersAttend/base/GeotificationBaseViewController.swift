@@ -137,6 +137,7 @@ class GeotificationBaseViewController : BaseViewController{
 
 extension GeotificationBaseViewController : OnLocationUpdateDelegate{
  
+ 
     
     func onLocationUpdated(curenrtlocation: CLLocation) {
         let newLocation = curenrtlocation
@@ -197,6 +198,14 @@ extension GeotificationBaseViewController : OnLocationUpdateDelegate{
         
         
     }
+    
+    func onLocationUpdateFailed(error: Error) {
+        print("MainStateViewController------>onLocationUpdateFailed()  \(error.localizedDescription) ")
+
+                 onLocationFencingUpdate?.onUserWithUnErrorFencing(error: error)
+
+     }
+     
 }
 
 

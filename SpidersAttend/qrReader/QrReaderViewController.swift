@@ -148,7 +148,8 @@ class QrReaderViewController: BaseViewController,QRCodeReaderViewControllerDeleg
     }
     
 }
-public extension UIDevice {
+
+ public extension UIDevice {
     
     static let modelName: String = {
         var systemInfo = utsname()

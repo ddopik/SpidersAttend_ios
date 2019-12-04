@@ -52,6 +52,8 @@
 		047AB4A82393F5080019F259 /* MainStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4A72393F5080019F259 /* MainStateView.swift */; };
 		047AB4AA2393F5AE0019F259 /* MainStatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4A92393F5AE0019F259 /* MainStatePresenter.swift */; };
 		047AB4AC2393F5BF0019F259 /* MainStatePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4AB2393F5BF0019F259 /* MainStatePresenterImpl.swift */; };
+		047AB4B6239677210019F259 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4B5239677210019F259 /* CustomTabBarController.swift */; };
+		047AB4B8239692660019F259 /* PendingVacationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4B7239692660019F259 /* PendingVacationViewController.swift */; };
 		04D0AE1423743C6A001A66C5 /* QrReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0AE1323743C6A001A66C5 /* QrReaderViewController.swift */; };
 		04D0AE1623743CB4001A66C5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0AE1523743CB4001A66C5 /* BaseViewController.swift */; };
 		04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAB022B57D88002C59E5 /* AppDelegate.swift */; };
@@ -124,6 +126,8 @@
 		047AB4A72393F5080019F259 /* MainStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStateView.swift; sourceTree = "<group>"; };
 		047AB4A92393F5AE0019F259 /* MainStatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatePresenter.swift; sourceTree = "<group>"; };
 		047AB4AB2393F5BF0019F259 /* MainStatePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatePresenterImpl.swift; sourceTree = "<group>"; };
+		047AB4B5239677210019F259 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		047AB4B7239692660019F259 /* PendingVacationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVacationViewController.swift; sourceTree = "<group>"; };
 		04D0AE1323743C6A001A66C5 /* QrReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrReaderViewController.swift; sourceTree = "<group>"; };
 		04D0AE1523743CB4001A66C5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04D9DAAD22B57D88002C59E5 /* SpidersAttend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpidersAttend.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				040691B922FAD2DA000EDA0C /* VicationViewController.swift */,
+				047AB4B7239692660019F259 /* PendingVacationViewController.swift */,
 			);
 			path = vication;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				045BBA4422EDE5700004569A /* clockViewRes */,
 				042445DA22B98F5C0089C817 /* CircularProgress.swift */,
 				043E2E182317DB9000C91286 /* RPCircularProgress.swift */,
+				047AB4B5239677210019F259 /* CustomTabBarController.swift */,
 			);
 			path = custom_view;
 			sourceTree = "<group>";
@@ -685,6 +691,8 @@
 				047AB4AC2393F5BF0019F259 /* MainStatePresenterImpl.swift in Sources */,
 				043E2DF82315463400C91286 /* StyleKit_ConsensusGraph.swift in Sources */,
 				04D0AE1623743CB4001A66C5 /* BaseViewController.swift in Sources */,
+				047AB4B8239692660019F259 /* PendingVacationViewController.swift in Sources */,
+				047AB4B6239677210019F259 /* CustomTabBarController.swift in Sources */,
 				040691BA22FAD2DA000EDA0C /* VicationViewController.swift in Sources */,
 				042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */,
 				042CFB3822D5FE9B005D2D58 /* UiUtiletes.swift in Sources */,

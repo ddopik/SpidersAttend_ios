@@ -46,12 +46,13 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
         }
     }
     @IBAction func onLoginPressed(_ sender: Any) {
+        self.startProgress()
         do  {
             try isLoginInputsValid()
             super.onLocationUpdateDelegate = self
             try startLocationServices()
         }catch {
-            
+                  self.stopProgress()
             _ = showSimpleConfirmDialog(parent: self, messageText: (error as! ValidationError).message,messageTitle:  (error as! ValidationError).errorTitle, buttonText: "Ok")
         }
     }
@@ -133,8 +134,19 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
     
 }
 extension LoginViewController:OnLocationUpdateDelegate{
+    func onLocationUpdateFailed(error: Error) {
+        if(error is ValidationError){
+            showAlert(withTitle: (error as! ValidationError ).message, message:  (error as! ValidationError).errorTitle)
+        }
+        showAlert(withTitle: "error".localiz(), message: "locationError".localiz())
+        super.stopLocationManger()
+          self.stopProgress()
+    }
+    
     func onLocationUpdated(curenrtlocation: CLLocation) {
          requestLogin(curenrtlocation)
+           super.stopLocationManger()
+          self.stopProgress()
     }
     
     func onLocationFencingDetemined(state: CLRegionState) {

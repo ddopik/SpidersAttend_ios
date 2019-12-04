@@ -7,8 +7,8 @@
 //
 
 import Foundation
-
+import CoreLocation
 protocol AttendPresenter {
     func requestUserStatus()
-    func sendAttendAction(attendType:NavigationType)
+    func sendAttendAction(attendType:AttendMethod,curenrtlocation: CLLocation)
   }

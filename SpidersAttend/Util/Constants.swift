@@ -30,3 +30,6 @@ struct ApiConstant {
 enum NavigationType {
     case HOME,QRReader, Network,Vacation,PayRoll
 }
+enum AttendMethod {
+    case QR,NETWORK
+}

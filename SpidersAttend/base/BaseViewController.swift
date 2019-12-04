@@ -14,10 +14,13 @@ import MapKit
 
 protocol OnLocationUpdateDelegate {
     func onLocationUpdated(curenrtlocation:CLLocation) /// this method get user in Child viewController
-    func onLocationFencingDetemined(state:CLRegionState) // instant fencing Request State
-    func onLocationFencingInSide(enteredRegion: CLRegion) // litener work with startMonitoring(region)
-    func onLocationFencingOutSide(OutedRegion: CLRegion) // litener work with startMonitoring(region)
-    func onLocationFencingFailedDetemined(error:Error)
+    func onLocationUpdateFailed(error:Error)
+    // Active this Bloc in case want to listen for Fencing updates Of cource after register you location 
+//    func onLocationFencingDetemined(state:CLRegionState) // instant fencing Request State
+//    func onLocationFencingInSide(enteredRegion: CLRegion) // litener work with startMonitoring(region)
+//    func onLocationFencingOutSide(OutedRegion: CLRegion) // litener work with startMonitoring(region)
+//    func onLocationFencingFailedDetemined(error:Error)
+    
 }
 
 
@@ -49,7 +52,9 @@ extension BaseViewController :CLLocationManagerDelegate{
         print("lat -----locationManager--> \(mLocation.coordinate.latitude)")
         print("lng -----locationManager--> \(mLocation.coordinate.longitude) ")
         onLocationUpdateDelegate?.onLocationUpdated(curenrtlocation : locationManger.location!)
-        stopLocationManger()
+    
+        //please note to stop navigationManger with  stopLocationManger() if locationUpdate Not required
+
         
     }
     
@@ -59,8 +64,7 @@ extension BaseViewController :CLLocationManagerDelegate{
         do{
             try   checkLocationAutorization()
         }catch{
-            let errorObj = (error as! ValidationError)
-            _ =  showSimpleConfirmDialog(parent: self , messageText: errorObj.message, messageTitle: errorObj.errorTitle, buttonText: "Ok")
+            onLocationUpdateDelegate?.onLocationUpdateFailed(error: error)
             print( (error as! ValidationError).message )
         }
         
@@ -69,26 +73,32 @@ extension BaseViewController :CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         if region is CLCircularRegion {
-            onLocationUpdateDelegate?.onLocationFencingInSide(enteredRegion: region)
+//            onLocationUpdateDelegate?.onLocationFencingInSide(enteredRegion: region)
             print(" user inside radious")
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         if region is CLCircularRegion {
-            onLocationUpdateDelegate?.onLocationFencingOutSide(OutedRegion: region)
+//            onLocationUpdateDelegate?.onLocationFencingOutSide(OutedRegion: region)
             print(" user outside radious")
         }
     }
     func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
         print("locationManager -----> didDetermineState() \(state.rawValue)")
-        onLocationUpdateDelegate?.onLocationFencingDetemined (state:state)
+//        onLocationUpdateDelegate?.onLocationFencingDetemined (state:state)
     }
     
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
         print("locationManager ---->monitoringDidFailFor(): \(error.localizedDescription)")
-        onLocationUpdateDelegate?.onLocationFencingFailedDetemined (error: error)
+//        onLocationUpdateDelegate?.onLocationFencingFailedDetemined (error: error)
         //        print("Monitoring failed for region with identifier: \(region!.identifier)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("locationManager ---->didFailWithError(): \(error.localizedDescription)")
+        onLocationUpdateDelegate?.onLocationUpdateFailed(error: error)
+        
     }
     func stopLocationManger(){
         self.locationManger.stopUpdatingLocation()
@@ -103,15 +113,13 @@ extension BaseViewController
      as we can't depand on Location updater delegate in case user cuurentlly did't move
      */
     private func startLocationUpdate() throws {
-        locationManger.startUpdatingLocation()
-        
-        //        if (locationManger.location?.coordinate) != nil{
-        //            onLocationUpdateDelegate?.onLocationUpdated(curenrtlocation : locationManger.location!)
-        //            return
-        //        }else{
-        //            print("locationManger ---> Location cirdinates is nil")
-        //             throw ValidationError(message: "failed to get current location", errorTitle: "error")
-        //        }
+        do{
+            try  checkLocationAutorization()
+            locationManger.startUpdatingLocation()
+        }catch{
+            onLocationUpdateDelegate?.onLocationUpdateFailed(error: error)
+            print( (error as! ValidationError).message )
+        }
     }
     
     
@@ -120,17 +128,12 @@ extension BaseViewController
             if(CLLocationManager.locationServicesEnabled()){
                 // GPS is Enabled
                 setUpLocationMangerServices()
-                
-                try  checkLocationAutorization()
-                /////////////////// those confirm dialog should be in
+                try  startLocationUpdate()
             }else{
-                _ =   showSimpleConfirmDialog(parent: self, messageText: "Please Allow Location services", messageTitle: "", buttonText: "Ok")
                 throw (ValidationError(message: "Please Allow Location services", errorTitle:""))
-                
             }
         }catch{
             print("BaseViewController -------->\((error as! ValidationError).message)")
-            _ = showSimpleConfirmDialog(parent: self, messageText: (error as! ValidationError).message, messageTitle:"", buttonText: "ok")
             throw (error)
         }
         //////////////////////
@@ -142,11 +145,9 @@ extension BaseViewController
     private func checkLocationAutorization() throws{
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
-            try startLocationUpdate()
             break
         case .authorizedWhenInUse :
             //             already got our desired permuation
-            try  startLocationUpdate()
             break
         case .denied :
             // promote A dialog the we need permuation
@@ -156,6 +157,7 @@ extension BaseViewController
             break
         case .notDetermined:
             locationManger.requestWhenInUseAuthorization()
+                throw ValidationError(message: "Permation",errorTitle: "Please allow Location services")
             print("locationManger ---> notDetermined")
             break
             

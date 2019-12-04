@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 
-class MainStateViewController :GeotificationBaseViewController,MainStateView {
+class MainStateViewController :BaseViewController,MainStateView {
  
     
 
@@ -35,8 +35,6 @@ class MainStateViewController :GeotificationBaseViewController,MainStateView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-    
         mainStatePresenter = MainStatePresenterImpl(mainStateView: self)
         self.tabBarController?.tabBar.items?[0].title = "Home".localiz()
         self.tabBarController?.tabBar.items?[1].title = "Attend".localiz()
