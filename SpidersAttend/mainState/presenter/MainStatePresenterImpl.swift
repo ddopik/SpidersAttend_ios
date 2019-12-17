@@ -26,6 +26,8 @@ class MainStatePresenterImpl:MainStatePresenter{
     
         func requestUserStatus(){
             self.mainStateView.viewProgress(state: true)
+            
+            
               let succ={ (checkStatusResponse:CheckStatusResponse?)   in
                   if let statsId =  checkStatusResponse?.data.attendStatus.status {
                       PrefUtil.setCurrentUserStatsID(userStats: statsId)
@@ -35,6 +37,8 @@ class MainStatePresenterImpl:MainStatePresenter{
                   }
                 self.mainStateView.viewProgress(state: false)
               }
+            
+            
               let failureClos={
                   (err : Any) in
                   if (err is NetworkBaseError){
@@ -52,13 +56,8 @@ class MainStatePresenterImpl:MainStatePresenter{
               let bodyParameter = [
                   "uid" : PrefUtil.getUserId()
                   ] as! [String : String]
-              do {
-                  try APIRouter.makePostRequest(url: APIRouter.CHECK_STATUS_URL, bodyParameters: bodyParameter, succese: succ, failure: failureClos as! (Any?) -> (), type: CheckStatusResponse.self)
-              }catch{
-                  let errorObj = error as! ValidationError
-                self.mainStateView.viewDialogMessage(title: errorObj.errorTitle, message: errorObj.message)
-                self.mainStateView.viewProgress(state: false)
-               }
+           APIRouter.makePostRequest(url: APIRouter.CHECK_STATUS_URL, bodyParameters: bodyParameter, succese: succ, failure: failureClos as (Any?) -> (), type: CheckStatusResponse.self)
+          
               
               
           }

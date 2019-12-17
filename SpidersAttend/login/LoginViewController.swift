@@ -73,11 +73,12 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
     private  func requestLogin(_ location: CLLocation){
         
         super.startProgress()
+        
         let loginParameter=[
             AppConstants.APIParameterKey.username : String( self.inputUserName.text!),
             AppConstants.APIParameterKey.pass :String(self.inputUserPassword.text!),
             AppConstants.APIParameterKey.deviceID :String(UIDevice.current.identifierForVendor?.uuidString ?? "0000"),
-            AppConstants.APIParameterKey.latitude  : String (location.coordinate.latitude),
+             AppConstants.APIParameterKey.latitude  : String (location.coordinate.latitude),
             AppConstants.APIParameterKey.longitude :String (location.coordinate.longitude)
             ] as [String : String]
         //        dump(loginParameter)

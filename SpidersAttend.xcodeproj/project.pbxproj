@@ -53,7 +53,17 @@
 		047AB4AA2393F5AE0019F259 /* MainStatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4A92393F5AE0019F259 /* MainStatePresenter.swift */; };
 		047AB4AC2393F5BF0019F259 /* MainStatePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4AB2393F5BF0019F259 /* MainStatePresenterImpl.swift */; };
 		047AB4B6239677210019F259 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4B5239677210019F259 /* CustomTabBarController.swift */; };
-		047AB4B8239692660019F259 /* PendingVacationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4B7239692660019F259 /* PendingVacationViewController.swift */; };
+		04CB6A0B23A6500300E57D43 /* ApprovedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A0A23A6500300E57D43 /* ApprovedViewController.swift */; };
+		04CB6A0D23A6501700E57D43 /* RejectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A0C23A6501700E57D43 /* RejectedViewController.swift */; };
+		04CB6A0F23A6669300E57D43 /* PendingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A0E23A6669300E57D43 /* PendingListViewController.swift */; };
+		04CB6A1723A6785500E57D43 /* CustomVacationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A1623A6785500E57D43 /* CustomVacationCell.swift */; };
+		04CB6A2A23A8ED7D00E57D43 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A2923A8ED7D00E57D43 /* UIView.swift */; };
+		04CB6A2C23A8FAE100E57D43 /* Vacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A2B23A8FAE100E57D43 /* Vacation.swift */; };
+		04CB6A2F23A8FB1400E57D43 /* PendingVacationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A2E23A8FB1400E57D43 /* PendingVacationResponse.swift */; };
+		04CB6A3123A8FB4F00E57D43 /* PendingVacationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A3023A8FB4F00E57D43 /* PendingVacationData.swift */; };
+		04CB6A3523A8FEEE00E57D43 /* PendingVacationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A3423A8FEEE00E57D43 /* PendingVacationPresenter.swift */; };
+		04CB6A3723A8FF3B00E57D43 /* PendingVacationPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A3623A8FF3B00E57D43 /* PendingVacationPresenterImpl.swift */; };
+		04CB6A3923A8FFD600E57D43 /* PendingVacationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A3823A8FFD600E57D43 /* PendingVacationView.swift */; };
 		04D0AE1423743C6A001A66C5 /* QrReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0AE1323743C6A001A66C5 /* QrReaderViewController.swift */; };
 		04D0AE1623743CB4001A66C5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0AE1523743CB4001A66C5 /* BaseViewController.swift */; };
 		04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAB022B57D88002C59E5 /* AppDelegate.swift */; };
@@ -127,7 +137,17 @@
 		047AB4A92393F5AE0019F259 /* MainStatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatePresenter.swift; sourceTree = "<group>"; };
 		047AB4AB2393F5BF0019F259 /* MainStatePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatePresenterImpl.swift; sourceTree = "<group>"; };
 		047AB4B5239677210019F259 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		047AB4B7239692660019F259 /* PendingVacationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVacationViewController.swift; sourceTree = "<group>"; };
+		04CB6A0A23A6500300E57D43 /* ApprovedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedViewController.swift; sourceTree = "<group>"; };
+		04CB6A0C23A6501700E57D43 /* RejectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedViewController.swift; sourceTree = "<group>"; };
+		04CB6A0E23A6669300E57D43 /* PendingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingListViewController.swift; sourceTree = "<group>"; };
+		04CB6A1623A6785500E57D43 /* CustomVacationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVacationCell.swift; sourceTree = "<group>"; };
+		04CB6A2923A8ED7D00E57D43 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		04CB6A2B23A8FAE100E57D43 /* Vacation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vacation.swift; sourceTree = "<group>"; };
+		04CB6A2E23A8FB1400E57D43 /* PendingVacationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVacationResponse.swift; sourceTree = "<group>"; };
+		04CB6A3023A8FB4F00E57D43 /* PendingVacationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVacationData.swift; sourceTree = "<group>"; };
+		04CB6A3423A8FEEE00E57D43 /* PendingVacationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVacationPresenter.swift; sourceTree = "<group>"; };
+		04CB6A3623A8FF3B00E57D43 /* PendingVacationPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVacationPresenterImpl.swift; sourceTree = "<group>"; };
+		04CB6A3823A8FFD600E57D43 /* PendingVacationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVacationView.swift; sourceTree = "<group>"; };
 		04D0AE1323743C6A001A66C5 /* QrReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrReaderViewController.swift; sourceTree = "<group>"; };
 		04D0AE1523743CB4001A66C5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04D9DAAD22B57D88002C59E5 /* SpidersAttend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpidersAttend.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,8 +206,10 @@
 		040691B822FAD294000EDA0C /* vication */ = {
 			isa = PBXGroup;
 			children = (
+				04CB6A0523A64A8500E57D43 /* rejected */,
+				04CB6A0423A64A7F00E57D43 /* approved */,
+				04CB6A0323A64A7100E57D43 /* pending */,
 				040691B922FAD2DA000EDA0C /* VicationViewController.swift */,
-				047AB4B7239692660019F259 /* PendingVacationViewController.swift */,
 			);
 			path = vication;
 			sourceTree = "<group>";
@@ -237,6 +259,7 @@
 				042445DA22B98F5C0089C817 /* CircularProgress.swift */,
 				043E2E182317DB9000C91286 /* RPCircularProgress.swift */,
 				047AB4B5239677210019F259 /* CustomTabBarController.swift */,
+				04CB6A1623A6785500E57D43 /* CustomVacationCell.swift */,
 			);
 			path = custom_view;
 			sourceTree = "<group>";
@@ -264,6 +287,7 @@
 			children = (
 				042C00A522BEA713000546D0 /* ValidationError.swift */,
 				042F7B8322C1055F0059E5B4 /* NetworkBaseError.swift */,
+				04CB6A2B23A8FAE100E57D43 /* Vacation.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -369,6 +393,67 @@
 			path = ApiClient;
 			sourceTree = "<group>";
 		};
+		04CB6A0323A64A7100E57D43 /* pending */ = {
+			isa = PBXGroup;
+			children = (
+				04CB6A3323A8FEBE00E57D43 /* presenter */,
+				04CB6A3223A8FEB500E57D43 /* view */,
+				04CB6A2D23A8FB0000E57D43 /* model */,
+			);
+			path = pending;
+			sourceTree = "<group>";
+		};
+		04CB6A0423A64A7F00E57D43 /* approved */ = {
+			isa = PBXGroup;
+			children = (
+				04CB6A0A23A6500300E57D43 /* ApprovedViewController.swift */,
+			);
+			path = approved;
+			sourceTree = "<group>";
+		};
+		04CB6A0523A64A8500E57D43 /* rejected */ = {
+			isa = PBXGroup;
+			children = (
+				04CB6A0C23A6501700E57D43 /* RejectedViewController.swift */,
+			);
+			path = rejected;
+			sourceTree = "<group>";
+		};
+		04CB6A2823A8ED1600E57D43 /* extintions */ = {
+			isa = PBXGroup;
+			children = (
+				04CB6A2923A8ED7D00E57D43 /* UIView.swift */,
+			);
+			path = extintions;
+			sourceTree = "<group>";
+		};
+		04CB6A2D23A8FB0000E57D43 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				04CB6A2E23A8FB1400E57D43 /* PendingVacationResponse.swift */,
+				04CB6A3023A8FB4F00E57D43 /* PendingVacationData.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		04CB6A3223A8FEB500E57D43 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				04CB6A0E23A6669300E57D43 /* PendingListViewController.swift */,
+				04CB6A3823A8FFD600E57D43 /* PendingVacationView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		04CB6A3323A8FEBE00E57D43 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				04CB6A3423A8FEEE00E57D43 /* PendingVacationPresenter.swift */,
+				04CB6A3623A8FF3B00E57D43 /* PendingVacationPresenterImpl.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
 		04D9DAA422B57D88002C59E5 = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +478,7 @@
 		04D9DAAF22B57D88002C59E5 /* SpidersAttend */ = {
 			isa = PBXGroup;
 			children = (
+				04CB6A2823A8ED1600E57D43 /* extintions */,
 				04D9DAB022B57D88002C59E5 /* AppDelegate.swift */,
 				049D877B22BB9C6B0009767B /* ApiClient */,
 				042445D622B7AB870089C817 /* base */,
@@ -507,6 +593,7 @@
 				TargetAttributes = {
 					04D9DAAC22B57D88002C59E5 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1120;
 					};
 					04D9DAC022B57D8A002C59E5 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -662,15 +749,21 @@
 				043E2DFE2315486E00C91286 /* LoginUserData.swift in Sources */,
 				042F7B8422C1055F0059E5B4 /* NetworkBaseError.swift in Sources */,
 				0462D21722C9220F00A459CE /* Utiletes.swift in Sources */,
+				04CB6A3923A8FFD600E57D43 /* PendingVacationView.swift in Sources */,
 				042F7B8222C0DCB90059E5B4 /* AppConstants.swift in Sources */,
 				043E2E02231549AD00C91286 /* LoginData.swift in Sources */,
+				04CB6A0B23A6500300E57D43 /* ApprovedViewController.swift in Sources */,
 				042445DB22B98F5C0089C817 /* CircularProgress.swift in Sources */,
 				04145E5422B69C040084222C /* SplashViewController.swift in Sources */,
+				04CB6A3523A8FEEE00E57D43 /* PendingVacationPresenter.swift in Sources */,
 				040691BD22FAD308000EDA0C /* PayRollViewController.swift in Sources */,
 				042C00A622BEA713000546D0 /* ValidationError.swift in Sources */,
 				043E2DFC231547BA00C91286 /* LoginAttendStatus.swift in Sources */,
+				04CB6A2A23A8ED7D00E57D43 /* UIView.swift in Sources */,
+				04CB6A0D23A6501700E57D43 /* RejectedViewController.swift in Sources */,
 				043DE01322D1BCAB006A084E /* LanguageDetails.swift in Sources */,
 				043E2E192317DB9000C91286 /* RPCircularProgress.swift in Sources */,
+				04CB6A0F23A6669300E57D43 /* PendingListViewController.swift in Sources */,
 				042C00B222BECA87000546D0 /* Validator.swift in Sources */,
 				04484A3122E3B3B40057BDB3 /* LanguageManager.swift in Sources */,
 				047AB49D2393EF220019F259 /* AttendPresenter.swift in Sources */,
@@ -679,6 +772,7 @@
 				043E2DFA2315463400C91286 /* ClockView.swift in Sources */,
 				047AB4A42393EF600019F259 /* AttendViewController.swift in Sources */,
 				047AB4AA2393F5AE0019F259 /* MainStatePresenter.swift in Sources */,
+				04CB6A2C23A8FAE100E57D43 /* Vacation.swift in Sources */,
 				043E2E152317DAD700C91286 /* DateHelper.swift in Sources */,
 				043E2E1D2317DC4500C91286 /* StyleKit_Clock.swift in Sources */,
 				047AB49F2393EF3A0019F259 /* AttendView.swift in Sources */,
@@ -690,8 +784,10 @@
 				043DE01122D145BA006A084E /* NavigationManger.swift in Sources */,
 				047AB4AC2393F5BF0019F259 /* MainStatePresenterImpl.swift in Sources */,
 				043E2DF82315463400C91286 /* StyleKit_ConsensusGraph.swift in Sources */,
+				04CB6A3123A8FB4F00E57D43 /* PendingVacationData.swift in Sources */,
+				04CB6A3723A8FF3B00E57D43 /* PendingVacationPresenterImpl.swift in Sources */,
+				04CB6A2F23A8FB1400E57D43 /* PendingVacationResponse.swift in Sources */,
 				04D0AE1623743CB4001A66C5 /* BaseViewController.swift in Sources */,
-				047AB4B8239692660019F259 /* PendingVacationViewController.swift in Sources */,
 				047AB4B6239677210019F259 /* CustomTabBarController.swift in Sources */,
 				040691BA22FAD2DA000EDA0C /* VicationViewController.swift in Sources */,
 				042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */,
@@ -704,6 +800,7 @@
 				042F7B9122C37FC80059E5B4 /* MainStateViewController.swift in Sources */,
 				04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */,
 				042F7B8B22C378DD0059E5B4 /* Constants.swift in Sources */,
+				04CB6A1723A6785500E57D43 /* CustomVacationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,7 +907,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -867,7 +964,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -882,6 +979,7 @@
 			baseConfigurationReference = 5C64277AA255D4B73834D58B /* Pods-SpidersAttend.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GMBNU7MC9;
 				INFOPLIST_FILE = SpidersAttend/Info.plist;
@@ -891,6 +989,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Brandeda.SpidersAttend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -901,6 +1000,7 @@
 			baseConfigurationReference = 539CA3F60E553A5F522A8BB8 /* Pods-SpidersAttend.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GMBNU7MC9;
 				INFOPLIST_FILE = SpidersAttend/Info.plist;
