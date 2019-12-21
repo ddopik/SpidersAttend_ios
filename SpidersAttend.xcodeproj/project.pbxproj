@@ -64,6 +64,7 @@
 		04CB6A3523A8FEEE00E57D43 /* PendingVacationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A3423A8FEEE00E57D43 /* PendingVacationPresenter.swift */; };
 		04CB6A3723A8FF3B00E57D43 /* PendingVacationPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A3623A8FF3B00E57D43 /* PendingVacationPresenterImpl.swift */; };
 		04CB6A3923A8FFD600E57D43 /* PendingVacationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A3823A8FFD600E57D43 /* PendingVacationView.swift */; };
+		04CB6A3B23ABA03500E57D43 /* PendingVacationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A3A23ABA03500E57D43 /* PendingVacationDataSource.swift */; };
 		04D0AE1423743C6A001A66C5 /* QrReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0AE1323743C6A001A66C5 /* QrReaderViewController.swift */; };
 		04D0AE1623743CB4001A66C5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0AE1523743CB4001A66C5 /* BaseViewController.swift */; };
 		04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9DAB022B57D88002C59E5 /* AppDelegate.swift */; };
@@ -148,6 +149,7 @@
 		04CB6A3423A8FEEE00E57D43 /* PendingVacationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVacationPresenter.swift; sourceTree = "<group>"; };
 		04CB6A3623A8FF3B00E57D43 /* PendingVacationPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVacationPresenterImpl.swift; sourceTree = "<group>"; };
 		04CB6A3823A8FFD600E57D43 /* PendingVacationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVacationView.swift; sourceTree = "<group>"; };
+		04CB6A3A23ABA03500E57D43 /* PendingVacationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingVacationDataSource.swift; sourceTree = "<group>"; };
 		04D0AE1323743C6A001A66C5 /* QrReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrReaderViewController.swift; sourceTree = "<group>"; };
 		04D0AE1523743CB4001A66C5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04D9DAAD22B57D88002C59E5 /* SpidersAttend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpidersAttend.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -441,6 +443,7 @@
 			children = (
 				04CB6A0E23A6669300E57D43 /* PendingListViewController.swift */,
 				04CB6A3823A8FFD600E57D43 /* PendingVacationView.swift */,
+				04CB6A3A23ABA03500E57D43 /* PendingVacationDataSource.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 				047AB4A42393EF600019F259 /* AttendViewController.swift in Sources */,
 				047AB4AA2393F5AE0019F259 /* MainStatePresenter.swift in Sources */,
 				04CB6A2C23A8FAE100E57D43 /* Vacation.swift in Sources */,
+				04CB6A3B23ABA03500E57D43 /* PendingVacationDataSource.swift in Sources */,
 				043E2E152317DAD700C91286 /* DateHelper.swift in Sources */,
 				043E2E1D2317DC4500C91286 /* StyleKit_Clock.swift in Sources */,
 				047AB49F2393EF3A0019F259 /* AttendView.swift in Sources */,

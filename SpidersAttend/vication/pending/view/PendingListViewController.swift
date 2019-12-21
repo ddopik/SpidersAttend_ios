@@ -12,22 +12,32 @@ class PendingListViewController: BaseViewController,PendingVacationView {
     
     @IBOutlet weak var pendingVacationTableView: UITableView!
     
-    var vacationList:[Vacation]=[]
-    
-    
-    func viewPendingVacations(vacationList: [Vacation]) {
-        self.vacationList = vacationList
-        self.pendingVacationTableView.reloadData()
-//        DispatchQueue.main.async {  }
-
-    }
-
     var pendingVacationPresenter :PendingVacationPresenter!
+    
+    var vacationList = [Vacation]()
+    
+    var pendingVacationDataSource: PendingVacationDataSource!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pendingVacationPresenter = PendingVacationPresenterImpl(pendingVacationView: self)
+        pendingVacationDataSource =  PendingVacationDataSource()
+        
+        self.pendingVacationTableView.dataSource = pendingVacationDataSource
+        self.pendingVacationTableView.delegate = (pendingVacationDataSource as! UITableViewDelegate)
         self.pendingVacationPresenter.getPendingVacations()
     }
+    
+    func viewPendingVacations(vacationList: [Vacation]) {
+                    pendingVacationDataSource.vacationList.insert(contentsOf: vacationList, at: 0)
+ 
+         self.pendingVacationTableView.reloadData()
+        
+    }
+    
     
     func onPendingVacationProgress(state: Bool) {
         if (state){
@@ -38,7 +48,7 @@ class PendingListViewController: BaseViewController,PendingVacationView {
     }
     
     func onPendingVacationDeleted(vacation: Vacation, state: Bool) {
-         
+        
     }
     
     
@@ -49,22 +59,22 @@ class PendingListViewController: BaseViewController,PendingVacationView {
     
     
 }
-extension PendingListViewController: UITableViewDataSource,UITableViewDelegate{
- 
-    
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return self.vacationList.count
-        }
-        
-        
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomVacationCell") as! CustomVacationCell
-            cell.setPendingVacation(vacation: vacationList[indexPath.row])
-            return cell
-        }
-        
-        
-    }
+//extension PendingListViewController: UITableViewDataSource,UITableViewDelegate{
+//
+//
+//        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//            return self.vacationList.count
+//        }
+//
+//
+//        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomVacationCell") as! CustomVacationCell
+//            cell.setPendingVacation(vacation: vacationList[indexPath.row])
+//            return cell
+//        }
+//
+//
+//    }
 
 
