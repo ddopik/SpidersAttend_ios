@@ -50,7 +50,7 @@ class AttendPresenterImpl: AttendPresenter {
         }
         
         let bodyParameter = [
-            "uid" : PrefUtil.getUserId()
+            APIRouter.UID_BODY_PARAMETER: PrefUtil.getUserId()
             ] as! [String : String]
         
         

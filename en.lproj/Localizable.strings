@@ -1,7 +1,5 @@
- 
- 
-
 "Attend" = "Attend";
 "error"="Error";
 "locationError"="Error getting currenr location";
+"error_deleting_vacation"="Error deleting vacation";
 

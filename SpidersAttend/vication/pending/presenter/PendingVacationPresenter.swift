@@ -9,5 +9,5 @@
 import Foundation
 protocol PendingVacationPresenter {
     func getPendingVacations()
-    func deletePendingVacation()
+    func deletePendingVacation(vacation: Vacation, indexPath: IndexPath)
 }

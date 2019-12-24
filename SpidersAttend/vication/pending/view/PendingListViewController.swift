@@ -11,30 +11,32 @@ import UIKit
 class PendingListViewController: BaseViewController,PendingVacationView {
     
     @IBOutlet weak var pendingVacationTableView: UITableView!
-    
     var pendingVacationPresenter :PendingVacationPresenter!
-    
-    var vacationList = [Vacation]()
-    
-    var pendingVacationDataSource: PendingVacationDataSource!
-    
+    var pendingVacationDataSource: VacationDataSource!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pendingVacationPresenter = PendingVacationPresenterImpl(pendingVacationView: self)
-        pendingVacationDataSource =  PendingVacationDataSource()
+        pendingVacationDataSource =  VacationDataSource()
         
+        self.pendingVacationDataSource.vacationCellDelegate = self
         self.pendingVacationTableView.dataSource = pendingVacationDataSource
-        self.pendingVacationTableView.delegate = (pendingVacationDataSource as! UITableViewDelegate)
-        self.pendingVacationPresenter.getPendingVacations()
+        self.pendingVacationTableView.delegate = (pendingVacationDataSource!)
+        self.pendingVacationTableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.pendingVacationPresenter.getPendingVacations()
+    }
     func viewPendingVacations(vacationList: [Vacation]) {
-                    pendingVacationDataSource.vacationList.insert(contentsOf: vacationList, at: 0)
- 
-         self.pendingVacationTableView.reloadData()
+        pendingVacationDataSource.vacationList.removeAll()
+        pendingVacationDataSource.vacationList.insert(contentsOf: vacationList, at: 0)
+        self.pendingVacationTableView.reloadData()
         
     }
     
@@ -47,8 +49,15 @@ class PendingListViewController: BaseViewController,PendingVacationView {
         }
     }
     
-    func onPendingVacationDeleted(vacation: Vacation, state: Bool) {
-        
+    func onPendingVacationDeleted(vacation: Vacation,indexPath:IndexPath, state: Bool) {
+        if(state){
+        pendingVacationDataSource.vacationList.remove(at: indexPath.row)
+           pendingVacationTableView.beginUpdates()
+           pendingVacationTableView.deleteRows(at: [indexPath], with: .automatic)
+           pendingVacationTableView.endUpdates()
+        }else{
+//            showAlert(withTitle: "error".localiz(), message: "error_deleting_vacation")
+        }
     }
     
     
@@ -58,23 +67,11 @@ class PendingListViewController: BaseViewController,PendingVacationView {
     
     
     
+    
 }
-//extension PendingListViewController: UITableViewDataSource,UITableViewDelegate{
-//
-//
-//        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//            return self.vacationList.count
-//        }
-//
-//
-//        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomVacationCell") as! CustomVacationCell
-//            cell.setPendingVacation(vacation: vacationList[indexPath.row])
-//            return cell
-//        }
-//
-//
-//    }
-
+extension PendingListViewController:VacationCellProtocol{
+    func onVacationDeleteClick(vacation: Vacation, indexPath: IndexPath) {
+        pendingVacationPresenter.deletePendingVacation(vacation: vacation, indexPath: indexPath)
+    }
+}
 

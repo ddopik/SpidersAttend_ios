@@ -10,7 +10,10 @@ import Foundation
 protocol PendingVacationView {
     func onPendingVacationProgress(state:Bool)
     func viewPendingVacations(vacationList:[Vacation])
-    func onPendingVacationDeleted(vacation:Vacation,state:Bool)
+    
+    
+    func onPendingVacationDeleted(vacation:Vacation,indexPath:IndexPath,state:Bool)
+    
     func viewError(msg:String)
     
     
