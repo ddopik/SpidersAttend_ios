@@ -29,7 +29,7 @@ class APIRouter {
     static var CHECK_STATUS_URL = "/api/attend_check"
     static var PENDING_VACATION_URL = "/api/Vacations/pending/"
     static var APPROVED_VACATION_URL = "/api/Vacations/approved/"
-    static var APPROVED_REJECTED_URL = "/api/Vacations/rejected/"
+    static var REJECTED_VACATION_URL = "/api/Vacations/rejected/"
 
     static var DELETE_PENDING_VACATION_URL = "/api/Vacations/delete/"
     

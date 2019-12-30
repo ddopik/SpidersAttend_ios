@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-SpidersAttend/Pods-SpidersAttend-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/CMTabbarView/CMTabbarView.framework
+${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework
 ${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework
 ${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework

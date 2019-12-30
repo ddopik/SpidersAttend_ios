@@ -75,6 +75,14 @@
 		04FC5B8623B255DA00DFF5CC /* ApprovedVacationPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5B8523B255DA00DFF5CC /* ApprovedVacationPresenterImpl.swift */; };
 		04FC5B8823B2605C00DFF5CC /* ApprovedVacationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5B8723B2605C00DFF5CC /* ApprovedVacationResponse.swift */; };
 		04FC5B8A23B2608A00DFF5CC /* ApprovedVacationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5B8923B2608A00DFF5CC /* ApprovedVacationData.swift */; };
+		04FC5B8F23B3627900DFF5CC /* RejectedVacationControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5B8E23B3627900DFF5CC /* RejectedVacationControllerView.swift */; };
+		04FC5B9123B3636500DFF5CC /* RejectedVacationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5B9023B3636500DFF5CC /* RejectedVacationPresenter.swift */; };
+		04FC5B9323B363EF00DFF5CC /* RejectedVacationPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5B9223B363EF00DFF5CC /* RejectedVacationPresenterImpl.swift */; };
+		04FC5B9523B3733A00DFF5CC /* RejectedVacationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5B9423B3733A00DFF5CC /* RejectedVacationResponse.swift */; };
+		04FC5B9723B3738500DFF5CC /* RejectedVacationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5B9623B3738500DFF5CC /* RejectedVacationData.swift */; };
+		04FC5B9A23B4C41400DFF5CC /* NewVacationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5B9923B4C41400DFF5CC /* NewVacationController.swift */; };
+		04FC5B9F23B8C4A500DFF5CC /* NewVacationDatePackerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FC5B9E23B8C4A400DFF5CC /* NewVacationDatePackerView.xib */; };
+		04FC5BA123B8C55100DFF5CC /* NewVacationDatePackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5BA023B8C55100DFF5CC /* NewVacationDatePackerView.swift */; };
 		373224916E35356046CB5DC0 /* Pods_SpidersAttendTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A19E310F5A98EAC1E8DB29B /* Pods_SpidersAttendTests.framework */; };
 		BC77A66F4DF90EB36BA6B058 /* Pods_SpidersAttend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F03338B41CCC994A4315B19 /* Pods_SpidersAttend.framework */; };
 		E414BA7822369FE72E86284C /* Pods_SpidersAttendUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9441EA6385963C69C1D15754 /* Pods_SpidersAttendUITests.framework */; };
@@ -171,6 +179,14 @@
 		04FC5B8523B255DA00DFF5CC /* ApprovedVacationPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedVacationPresenterImpl.swift; sourceTree = "<group>"; };
 		04FC5B8723B2605C00DFF5CC /* ApprovedVacationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedVacationResponse.swift; sourceTree = "<group>"; };
 		04FC5B8923B2608A00DFF5CC /* ApprovedVacationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedVacationData.swift; sourceTree = "<group>"; };
+		04FC5B8E23B3627900DFF5CC /* RejectedVacationControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedVacationControllerView.swift; sourceTree = "<group>"; };
+		04FC5B9023B3636500DFF5CC /* RejectedVacationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedVacationPresenter.swift; sourceTree = "<group>"; };
+		04FC5B9223B363EF00DFF5CC /* RejectedVacationPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedVacationPresenterImpl.swift; sourceTree = "<group>"; };
+		04FC5B9423B3733A00DFF5CC /* RejectedVacationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedVacationResponse.swift; sourceTree = "<group>"; };
+		04FC5B9623B3738500DFF5CC /* RejectedVacationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedVacationData.swift; sourceTree = "<group>"; };
+		04FC5B9923B4C41400DFF5CC /* NewVacationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVacationController.swift; sourceTree = "<group>"; };
+		04FC5B9E23B8C4A400DFF5CC /* NewVacationDatePackerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewVacationDatePackerView.xib; sourceTree = "<group>"; };
+		04FC5BA023B8C55100DFF5CC /* NewVacationDatePackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVacationDatePackerView.swift; sourceTree = "<group>"; };
 		074D9C217CD8BCDA9941A06E /* Pods-SpidersAttendUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpidersAttendUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpidersAttendUITests/Pods-SpidersAttendUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0A19E310F5A98EAC1E8DB29B /* Pods_SpidersAttendTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpidersAttendTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A2E42035885804893947EF /* Pods-SpidersAttendTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpidersAttendTests.debug.xcconfig"; path = "Target Support Files/Pods-SpidersAttendTests/Pods-SpidersAttendTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -222,7 +238,7 @@
 		040691B822FAD294000EDA0C /* vication */ = {
 			isa = PBXGroup;
 			children = (
-				04CB6A3A23ABA03500E57D43 /* VacationDataSource.swift */,
+				04FC5B9823B4C3F900DFF5CC /* newVacation */,
 				04CB6A0523A64A8500E57D43 /* rejected */,
 				04CB6A0423A64A7F00E57D43 /* approved */,
 				04CB6A0323A64A7100E57D43 /* pending */,
@@ -433,7 +449,9 @@
 		04CB6A0523A64A8500E57D43 /* rejected */ = {
 			isa = PBXGroup;
 			children = (
-				04CB6A0C23A6501700E57D43 /* RejectedViewController.swift */,
+				04FC5B8D23B3623B00DFF5CC /* presenter */,
+				04FC5B8C23B3623100DFF5CC /* model */,
+				04FC5B8B23B3621F00DFF5CC /* view */,
 			);
 			path = rejected;
 			sourceTree = "<group>";
@@ -544,6 +562,52 @@
 				04FC5B8523B255DA00DFF5CC /* ApprovedVacationPresenterImpl.swift */,
 			);
 			path = presenter;
+			sourceTree = "<group>";
+		};
+		04FC5B8B23B3621F00DFF5CC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				04CB6A0C23A6501700E57D43 /* RejectedViewController.swift */,
+				04FC5B8E23B3627900DFF5CC /* RejectedVacationControllerView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		04FC5B8C23B3623100DFF5CC /* model */ = {
+			isa = PBXGroup;
+			children = (
+				04FC5B9423B3733A00DFF5CC /* RejectedVacationResponse.swift */,
+				04FC5B9623B3738500DFF5CC /* RejectedVacationData.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		04FC5B8D23B3623B00DFF5CC /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				04FC5B9023B3636500DFF5CC /* RejectedVacationPresenter.swift */,
+				04FC5B9223B363EF00DFF5CC /* RejectedVacationPresenterImpl.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		04FC5B9823B4C3F900DFF5CC /* newVacation */ = {
+			isa = PBXGroup;
+			children = (
+				04FC5B9D23B8C47D00DFF5CC /* view */,
+			);
+			path = newVacation;
+			sourceTree = "<group>";
+		};
+		04FC5B9D23B8C47D00DFF5CC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				04FC5B9923B4C41400DFF5CC /* NewVacationController.swift */,
+				04CB6A3A23ABA03500E57D43 /* VacationDataSource.swift */,
+				04FC5BA023B8C55100DFF5CC /* NewVacationDatePackerView.swift */,
+				04FC5B9E23B8C4A400DFF5CC /* NewVacationDatePackerView.xib */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		06599B38EB235FEF5CFCBA09 /* Frameworks */ = {
@@ -679,6 +743,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FC5B9F23B8C4A500DFF5CC /* NewVacationDatePackerView.xib in Resources */,
 				043457C82317E66900D20414 /* Main.storyboard in Resources */,
 				04484A2C22E27B9D0057BDB3 /* Localizable.strings in Resources */,
 				0418A09B22FC580900739A3B /* Assets.xcassets in Resources */,
@@ -793,6 +858,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0443D47122CB8A9300FDDE64 /* CheckStatusResponse.swift in Sources */,
+				04FC5B9523B3733A00DFF5CC /* RejectedVacationResponse.swift in Sources */,
 				042445D522B78F7B0089C817 /* LoginViewController.swift in Sources */,
 				043E2DFE2315486E00C91286 /* LoginUserData.swift in Sources */,
 				042F7B8422C1055F0059E5B4 /* NetworkBaseError.swift in Sources */,
@@ -802,6 +868,7 @@
 				043E2E02231549AD00C91286 /* LoginData.swift in Sources */,
 				04CB6A0B23A6500300E57D43 /* ApprovedViewController.swift in Sources */,
 				042445DB22B98F5C0089C817 /* CircularProgress.swift in Sources */,
+				04FC5B8F23B3627900DFF5CC /* RejectedVacationControllerView.swift in Sources */,
 				04145E5422B69C040084222C /* SplashViewController.swift in Sources */,
 				04CB6A3523A8FEEE00E57D43 /* PendingVacationPresenter.swift in Sources */,
 				040691BD22FAD308000EDA0C /* PayRollViewController.swift in Sources */,
@@ -821,6 +888,7 @@
 				042F7B8722C26E7F0059E5B4 /* PrefUtil.swift in Sources */,
 				043E2DFA2315463400C91286 /* ClockView.swift in Sources */,
 				047AB4A42393EF600019F259 /* AttendViewController.swift in Sources */,
+				04FC5B9A23B4C41400DFF5CC /* NewVacationController.swift in Sources */,
 				047AB4AA2393F5AE0019F259 /* MainStatePresenter.swift in Sources */,
 				04CB6A2C23A8FAE100E57D43 /* Vacation.swift in Sources */,
 				04CB6A3B23ABA03500E57D43 /* VacationDataSource.swift in Sources */,
@@ -829,6 +897,7 @@
 				047AB49F2393EF3A0019F259 /* AttendView.swift in Sources */,
 				04FC5B8423B255C000DFF5CC /* ApprovedVacationPresenter.swift in Sources */,
 				042BCCF022E4A4FB00090D76 /* BaseUiTabController.swift in Sources */,
+				04FC5BA123B8C55100DFF5CC /* NewVacationDatePackerView.swift in Sources */,
 				04FC5B7923B23BDA00DFF5CC /* DeletePendingVacationResponse.swift in Sources */,
 				047AB49B2393EF160019F259 /* AttendPresenterImpl.swift in Sources */,
 				043E2DF72315463400C91286 /* ClockViewController.swift in Sources */,
@@ -851,12 +920,15 @@
 				043DE00F22D105A0006A084E /* MoreViewController.swift in Sources */,
 				043E2E002315491B00C91286 /* LoginResponse.swift in Sources */,
 				043E2DF92315463400C91286 /* StateDiagram.swift in Sources */,
+				04FC5B9123B3636500DFF5CC /* RejectedVacationPresenter.swift in Sources */,
 				043E2E042315574100C91286 /* APIRouter.swift in Sources */,
 				042F7B9122C37FC80059E5B4 /* MainStateViewController.swift in Sources */,
+				04FC5B9723B3738500DFF5CC /* RejectedVacationData.swift in Sources */,
 				04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */,
 				042F7B8B22C378DD0059E5B4 /* Constants.swift in Sources */,
 				04FC5B8823B2605C00DFF5CC /* ApprovedVacationResponse.swift in Sources */,
 				04CB6A1723A6785500E57D43 /* CustomVacationCell.swift in Sources */,
+				04FC5B9323B363EF00DFF5CC /* RejectedVacationPresenterImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,9 +16,11 @@ class VacationDataSource: NSObject, UITableViewDataSource,UITableViewDelegate  {
     
     var vacationList = [Vacation]()
     var vacationCellDelegate:VacationCellProtocol!
+    var vacationListType:VacationListType!
     
-    
-    
+    init(vacationType:VacationListType) {
+        self.vacationListType = vacationType
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,9 +33,15 @@ class VacationDataSource: NSObject, UITableViewDataSource,UITableViewDelegate  {
         let vacationCell = tableView.dequeueReusableCell(withIdentifier: "CustomVacationCell") as! CustomVacationCell
         vacationCell.setPendingVacation(vacation: vacationList[indexPath.row],currentIndexPath : indexPath)
         vacationCell.vacationDelegate = self.vacationCellDelegate
+      
+        
         return vacationCell
     }
-    
+    enum VacationListType {
+        case PENDING
+        case REJECTED
+        case APPROVED
+    }
     
      
     

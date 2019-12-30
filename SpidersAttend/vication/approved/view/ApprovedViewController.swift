@@ -24,7 +24,7 @@ class ApprovedViewController:BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         approvedVacationPresenter = ApprovedVacationPresenterImpl(approvedVacationView: self)
-        approvedVacationDataSource =  VacationDataSource()
+        approvedVacationDataSource =  VacationDataSource(vacationType: VacationDataSource.VacationListType.APPROVED)
         
  
         self.approvedVacationTableView.dataSource = approvedVacationDataSource

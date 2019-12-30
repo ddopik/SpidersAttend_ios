@@ -16,7 +16,7 @@ import UIKit
     var vacation:Vacation!
     var currentIndexPath:IndexPath!
     
-    @IBOutlet weak var vacationReason: UILabel!
+     @IBOutlet weak var vacationReason: UILabel!
     @IBOutlet weak var vacationStartDate: UILabel!
     
     @IBOutlet weak var vacationEndDate: UILabel!
@@ -24,6 +24,7 @@ import UIKit
     @IBOutlet weak var vacationDaysLeft: UILabel!
     @IBOutlet weak var vacationCreationDate: UILabel!
     
+    @IBOutlet weak var vacationDeleteBtn: UIButton!
     
     @IBAction func VacationDeleteAction(_ sender: Any) {
         vacationDelegate?.onVacationDeleteClick(vacation: self.vacation,indexPath:self.currentIndexPath)
