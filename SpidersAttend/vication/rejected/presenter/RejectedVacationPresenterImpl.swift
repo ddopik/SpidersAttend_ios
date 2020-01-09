@@ -50,6 +50,6 @@ class RejectedVacationPresenterImpl: RejectedVacationPresenter {
 
         
 
-            APIRouter.makeGetRequest( currentUrl: rejectedVacationUrl , succese: succ, failure: failureClos as (Any?) -> (), type: RejectedVacationResponse.self)
+            APIRouter.makeGetRequest( getUrl: rejectedVacationUrl , succese: succ, failure: failureClos as (Any?) -> (), type: RejectedVacationResponse.self)
     }
 }

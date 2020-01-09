@@ -33,6 +33,7 @@ class BaseViewController: UIViewController ,UITextViewDelegate {
     var wrapTextViewList = [UITextView]()
     let textField = UITextField(frame: CGRect(x: 20.0, y:90.0, width: 280.0, height: 44.0))
     let languageDetails = LanguageDetails.getInstance
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()

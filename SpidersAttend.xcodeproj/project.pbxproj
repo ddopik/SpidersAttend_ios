@@ -53,6 +53,20 @@
 		047AB4AA2393F5AE0019F259 /* MainStatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4A92393F5AE0019F259 /* MainStatePresenter.swift */; };
 		047AB4AC2393F5BF0019F259 /* MainStatePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4AB2393F5BF0019F259 /* MainStatePresenterImpl.swift */; };
 		047AB4B6239677210019F259 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4B5239677210019F259 /* CustomTabBarController.swift */; };
+		049AA3F823BCC3A600682E36 /* VacationTypesSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA3F723BCC3A600682E36 /* VacationTypesSearchViewController.swift */; };
+		049AA40523BCD94300682E36 /* ManagersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA40423BCD94300682E36 /* ManagersDataSource.swift */; };
+		049AA40723BCDAF800682E36 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA40623BCDAF800682E36 /* User.swift */; };
+		049AA40B23BCDC5100682E36 /* NewVacationDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA40A23BCDC5100682E36 /* NewVacationDataResponse.swift */; };
+		049AA40D23BCDCA400682E36 /* VacationDaysLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA40C23BCDCA400682E36 /* VacationDaysLimit.swift */; };
+		049AA40F23BCDD1500682E36 /* NewVacationDataResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA40E23BCDD1500682E36 /* NewVacationDataResponseData.swift */; };
+		049AA41623BE178800682E36 /* NewVacationControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA41523BE178800682E36 /* NewVacationControllerPresenter.swift */; };
+		049AA41823BE179400682E36 /* NewVacationControllerPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA41723BE179400682E36 /* NewVacationControllerPresenterImpl.swift */; };
+		049AA41A23BE195500682E36 /* NewVacationControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA41923BE195500682E36 /* NewVacationControllerView.swift */; };
+		049AA41C23BE1AAD00682E36 /* VacationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA41B23BE1AAD00682E36 /* VacationType.swift */; };
+		049AA41E23C22CF000682E36 /* ManagerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA41D23C22CF000682E36 /* ManagerCellView.swift */; };
+		049AA42023C3354200682E36 /* ManagersSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA41F23C3354200682E36 /* ManagersSearchViewController.swift */; };
+		049AA42223C6028700682E36 /* VacationsTypesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA42123C6028700682E36 /* VacationsTypesDataSource.swift */; };
+		049AA42423C6034600682E36 /* VacationTypeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA42323C6034600682E36 /* VacationTypeCellView.swift */; };
 		04CB6A0B23A6500300E57D43 /* ApprovedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A0A23A6500300E57D43 /* ApprovedViewController.swift */; };
 		04CB6A0D23A6501700E57D43 /* RejectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A0C23A6501700E57D43 /* RejectedViewController.swift */; };
 		04CB6A0F23A6669300E57D43 /* PendingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB6A0E23A6669300E57D43 /* PendingListViewController.swift */; };
@@ -153,6 +167,20 @@
 		047AB4A92393F5AE0019F259 /* MainStatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatePresenter.swift; sourceTree = "<group>"; };
 		047AB4AB2393F5BF0019F259 /* MainStatePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatePresenterImpl.swift; sourceTree = "<group>"; };
 		047AB4B5239677210019F259 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		049AA3F723BCC3A600682E36 /* VacationTypesSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationTypesSearchViewController.swift; sourceTree = "<group>"; };
+		049AA40423BCD94300682E36 /* ManagersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagersDataSource.swift; sourceTree = "<group>"; };
+		049AA40623BCDAF800682E36 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		049AA40A23BCDC5100682E36 /* NewVacationDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVacationDataResponse.swift; sourceTree = "<group>"; };
+		049AA40C23BCDCA400682E36 /* VacationDaysLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationDaysLimit.swift; sourceTree = "<group>"; };
+		049AA40E23BCDD1500682E36 /* NewVacationDataResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVacationDataResponseData.swift; sourceTree = "<group>"; };
+		049AA41523BE178800682E36 /* NewVacationControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVacationControllerPresenter.swift; sourceTree = "<group>"; };
+		049AA41723BE179400682E36 /* NewVacationControllerPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVacationControllerPresenterImpl.swift; sourceTree = "<group>"; };
+		049AA41923BE195500682E36 /* NewVacationControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVacationControllerView.swift; sourceTree = "<group>"; };
+		049AA41B23BE1AAD00682E36 /* VacationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationType.swift; sourceTree = "<group>"; };
+		049AA41D23C22CF000682E36 /* ManagerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerCellView.swift; sourceTree = "<group>"; };
+		049AA41F23C3354200682E36 /* ManagersSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagersSearchViewController.swift; sourceTree = "<group>"; };
+		049AA42123C6028700682E36 /* VacationsTypesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationsTypesDataSource.swift; sourceTree = "<group>"; };
+		049AA42323C6034600682E36 /* VacationTypeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationTypeCellView.swift; sourceTree = "<group>"; };
 		04CB6A0A23A6500300E57D43 /* ApprovedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedViewController.swift; sourceTree = "<group>"; };
 		04CB6A0C23A6501700E57D43 /* RejectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedViewController.swift; sourceTree = "<group>"; };
 		04CB6A0E23A6669300E57D43 /* PendingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingListViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +271,7 @@
 				04CB6A0423A64A7F00E57D43 /* approved */,
 				04CB6A0323A64A7100E57D43 /* pending */,
 				040691B922FAD2DA000EDA0C /* VicationViewController.swift */,
+				04CB6A1623A6785500E57D43 /* CustomVacationCell.swift */,
 			);
 			path = vication;
 			sourceTree = "<group>";
@@ -288,11 +317,11 @@
 		042445D922B98EBC0089C817 /* custom_view */ = {
 			isa = PBXGroup;
 			children = (
+				049AA3FB23BCC59D00682E36 /* common */,
 				045BBA4422EDE5700004569A /* clockViewRes */,
 				042445DA22B98F5C0089C817 /* CircularProgress.swift */,
 				043E2E182317DB9000C91286 /* RPCircularProgress.swift */,
 				047AB4B5239677210019F259 /* CustomTabBarController.swift */,
-				04CB6A1623A6785500E57D43 /* CustomVacationCell.swift */,
 			);
 			path = custom_view;
 			sourceTree = "<group>";
@@ -321,6 +350,7 @@
 				042C00A522BEA713000546D0 /* ValidationError.swift */,
 				042F7B8322C1055F0059E5B4 /* NetworkBaseError.swift */,
 				04CB6A2B23A8FAE100E57D43 /* Vacation.swift */,
+				049AA40623BCDAF800682E36 /* User.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -416,6 +446,53 @@
 				047AB4A72393F5080019F259 /* MainStateView.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		049AA3F523BCC36200682E36 /* managersList */ = {
+			isa = PBXGroup;
+			children = (
+				049AA40423BCD94300682E36 /* ManagersDataSource.swift */,
+				049AA41D23C22CF000682E36 /* ManagerCellView.swift */,
+				049AA41F23C3354200682E36 /* ManagersSearchViewController.swift */,
+			);
+			path = managersList;
+			sourceTree = "<group>";
+		};
+		049AA3F623BCC37400682E36 /* vacationTypeList */ = {
+			isa = PBXGroup;
+			children = (
+				049AA42123C6028700682E36 /* VacationsTypesDataSource.swift */,
+				049AA42323C6034600682E36 /* VacationTypeCellView.swift */,
+				049AA3F723BCC3A600682E36 /* VacationTypesSearchViewController.swift */,
+			);
+			path = vacationTypeList;
+			sourceTree = "<group>";
+		};
+		049AA3FB23BCC59D00682E36 /* common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		049AA40823BCDC3400682E36 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				049AA40A23BCDC5100682E36 /* NewVacationDataResponse.swift */,
+				049AA40C23BCDCA400682E36 /* VacationDaysLimit.swift */,
+				049AA40E23BCDD1500682E36 /* NewVacationDataResponseData.swift */,
+				049AA41B23BE1AAD00682E36 /* VacationType.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		049AA40923BCDC3B00682E36 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				049AA41523BE178800682E36 /* NewVacationControllerPresenter.swift */,
+				049AA41723BE179400682E36 /* NewVacationControllerPresenterImpl.swift */,
+			);
+			path = presenter;
 			sourceTree = "<group>";
 		};
 		049D877B22BB9C6B0009767B /* ApiClient */ = {
@@ -594,6 +671,8 @@
 		04FC5B9823B4C3F900DFF5CC /* newVacation */ = {
 			isa = PBXGroup;
 			children = (
+				049AA40923BCDC3B00682E36 /* presenter */,
+				049AA40823BCDC3400682E36 /* model */,
 				04FC5B9D23B8C47D00DFF5CC /* view */,
 			);
 			path = newVacation;
@@ -602,7 +681,10 @@
 		04FC5B9D23B8C47D00DFF5CC /* view */ = {
 			isa = PBXGroup;
 			children = (
+				049AA3F523BCC36200682E36 /* managersList */,
+				049AA3F623BCC37400682E36 /* vacationTypeList */,
 				04FC5B9923B4C41400DFF5CC /* NewVacationController.swift */,
+				049AA41923BE195500682E36 /* NewVacationControllerView.swift */,
 				04CB6A3A23ABA03500E57D43 /* VacationDataSource.swift */,
 				04FC5BA023B8C55100DFF5CC /* NewVacationDatePackerView.swift */,
 				04FC5B9E23B8C4A400DFF5CC /* NewVacationDatePackerView.xib */,
@@ -857,9 +939,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049AA42023C3354200682E36 /* ManagersSearchViewController.swift in Sources */,
+				049AA41C23BE1AAD00682E36 /* VacationType.swift in Sources */,
 				0443D47122CB8A9300FDDE64 /* CheckStatusResponse.swift in Sources */,
 				04FC5B9523B3733A00DFF5CC /* RejectedVacationResponse.swift in Sources */,
 				042445D522B78F7B0089C817 /* LoginViewController.swift in Sources */,
+				049AA42423C6034600682E36 /* VacationTypeCellView.swift in Sources */,
 				043E2DFE2315486E00C91286 /* LoginUserData.swift in Sources */,
 				042F7B8422C1055F0059E5B4 /* NetworkBaseError.swift in Sources */,
 				0462D21722C9220F00A459CE /* Utiletes.swift in Sources */,
@@ -876,20 +961,25 @@
 				04FC5B8623B255DA00DFF5CC /* ApprovedVacationPresenterImpl.swift in Sources */,
 				043E2DFC231547BA00C91286 /* LoginAttendStatus.swift in Sources */,
 				04CB6A2A23A8ED7D00E57D43 /* UIView.swift in Sources */,
+				049AA40B23BCDC5100682E36 /* NewVacationDataResponse.swift in Sources */,
 				04CB6A0D23A6501700E57D43 /* RejectedViewController.swift in Sources */,
 				043DE01322D1BCAB006A084E /* LanguageDetails.swift in Sources */,
 				043E2E192317DB9000C91286 /* RPCircularProgress.swift in Sources */,
 				04CB6A0F23A6669300E57D43 /* PendingListViewController.swift in Sources */,
+				049AA3F823BCC3A600682E36 /* VacationTypesSearchViewController.swift in Sources */,
 				042C00B222BECA87000546D0 /* Validator.swift in Sources */,
 				04FC5B7B23B23EBB00DFF5CC /* DeleteVacationData.swift in Sources */,
 				04484A3122E3B3B40057BDB3 /* LanguageManager.swift in Sources */,
+				049AA41E23C22CF000682E36 /* ManagerCellView.swift in Sources */,
 				047AB49D2393EF220019F259 /* AttendPresenter.swift in Sources */,
 				047AB4A82393F5080019F259 /* MainStateView.swift in Sources */,
 				042F7B8722C26E7F0059E5B4 /* PrefUtil.swift in Sources */,
+				049AA41A23BE195500682E36 /* NewVacationControllerView.swift in Sources */,
 				043E2DFA2315463400C91286 /* ClockView.swift in Sources */,
 				047AB4A42393EF600019F259 /* AttendViewController.swift in Sources */,
 				04FC5B9A23B4C41400DFF5CC /* NewVacationController.swift in Sources */,
 				047AB4AA2393F5AE0019F259 /* MainStatePresenter.swift in Sources */,
+				049AA41823BE179400682E36 /* NewVacationControllerPresenterImpl.swift in Sources */,
 				04CB6A2C23A8FAE100E57D43 /* Vacation.swift in Sources */,
 				04CB6A3B23ABA03500E57D43 /* VacationDataSource.swift in Sources */,
 				043E2E152317DAD700C91286 /* DateHelper.swift in Sources */,
@@ -911,6 +1001,8 @@
 				04CB6A2F23A8FB1400E57D43 /* PendingVacationResponse.swift in Sources */,
 				04FC5B7F23B24F9B00DFF5CC /* ApprovedVacationView.swift in Sources */,
 				04D0AE1623743CB4001A66C5 /* BaseViewController.swift in Sources */,
+				049AA40D23BCDCA400682E36 /* VacationDaysLimit.swift in Sources */,
+				049AA41623BE178800682E36 /* NewVacationControllerPresenter.swift in Sources */,
 				047AB4B6239677210019F259 /* CustomTabBarController.swift in Sources */,
 				040691BA22FAD2DA000EDA0C /* VicationViewController.swift in Sources */,
 				042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */,
@@ -926,9 +1018,13 @@
 				04FC5B9723B3738500DFF5CC /* RejectedVacationData.swift in Sources */,
 				04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */,
 				042F7B8B22C378DD0059E5B4 /* Constants.swift in Sources */,
+				049AA40F23BCDD1500682E36 /* NewVacationDataResponseData.swift in Sources */,
+				049AA40523BCD94300682E36 /* ManagersDataSource.swift in Sources */,
 				04FC5B8823B2605C00DFF5CC /* ApprovedVacationResponse.swift in Sources */,
 				04CB6A1723A6785500E57D43 /* CustomVacationCell.swift in Sources */,
 				04FC5B9323B363EF00DFF5CC /* RejectedVacationPresenterImpl.swift in Sources */,
+				049AA40723BCDAF800682E36 /* User.swift in Sources */,
+				049AA42223C6028700682E36 /* VacationsTypesDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

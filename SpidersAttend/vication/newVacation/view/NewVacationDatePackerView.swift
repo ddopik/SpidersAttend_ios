@@ -11,17 +11,30 @@ import UIKit
 class NewVacationDatePackerView : UIView{
     
     var newVacationDatePackerViewDelegate :NewVacationDatePackerViewDelegate!
+    var newVacationDatePackerClos :((_ date:Date)->())!
+    
+    @IBOutlet weak var galenderPickerView: UIDatePicker!
+    private var currentView :UIView!
     @IBOutlet weak var datePickerView: UIDatePicker!
     
+ 
     
-    private var parentView: UIView!
+    class func getInstance(parentView : UIView,dele: @escaping (_ date: Date)  ->() )-> NewVacationDatePackerView{
+        let mView = UINib(nibName: "NewVacationDatePackerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! NewVacationDatePackerView
+        
+        mView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        mView.center = CGPoint(x: parentView.bounds.midX, y: parentView.bounds.midY)
+        mView.backgroundColor = UIColor.lightGray
+        
+        mView.layer.cornerRadius = 20.0
+        mView.clipsToBounds = true
+        mView.newVacationDatePackerClos = dele
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    init (parentView : UIView){
-          self.parentView = parentView
-        super.init(frame: UIScreen.main.bounds)
+        let today = Date()
+        let tomorrow = Calendar.current.date(byAdding: .day, value: 2, to: today as Date)
+        mView.galenderPickerView.minimumDate =  tomorrow
+        mView.currentView = mView
+        return mView
     }
     
     @IBAction func OnCancelDateBtnClick(_ sender: Any) {
@@ -30,32 +43,25 @@ class NewVacationDatePackerView : UIView{
     }
     
     @IBAction func OnConfirmDateBtnClick(_ sender: Any) {
-        let dateFormat = DateFormatter()
-        dateFormat.timeStyle = DateFormatter.Style.short
-        let date = dateFormat.string(from: datePickerView.date)
-        _ = newVacationDatePackerViewDelegate?.onDateSelected(date:date)
+
+         newVacationDatePackerClos(datePickerView.date)
         self.isHidden = true
         
-    }
-    public func showDatePickerDialog() {
-//        let mframe =  CGRect(x: 0, y: 0, width: parentView.frame.width, height: parentView.frame.height )
-//        self.frame = mframe
-        let mView = UINib(nibName: "NewVacationDatePackerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
-        mView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-        mView.center = CGPoint(x: self.parentView.bounds.midX, y: self.parentView.bounds.midY)
-        mView.backgroundColor = UIColor.lightGray
- 
-        mView.layer.cornerRadius = 20.0
-        mView.clipsToBounds = true
         
-         parentView.addSubview(mView)
-     }
+//        let xx = datePickerView.date.compare(<#T##other: Date##Date#>)
+        
+    }
     
+    
+    public func showDatePickerDialog(parentView: UIView){
+        self.isHidden = false
+
+        parentView.addSubview(currentView)
+    }
 }
 
 
 
 protocol NewVacationDatePackerViewDelegate {
-    func onDateSelected(date :String)
-    func onDateDismessed ()
+     func onDateDismessed ()
 }

@@ -49,7 +49,7 @@ class ApprovedVacationPresenterImpl: ApprovedVacationPresenter {
 
     
 
-        APIRouter.makeGetRequest( currentUrl: approvedVacationUrl , succese: succ, failure: failureClos as (Any?) -> (), type: ApprovedVacationResponse.self)
+        APIRouter.makeGetRequest( getUrl: approvedVacationUrl , succese: succ, failure: failureClos as (Any?) -> (), type: ApprovedVacationResponse.self)
         
         
         

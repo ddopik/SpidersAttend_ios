@@ -14,7 +14,7 @@ class PendingListViewController: BaseViewController,PendingVacationView {
     @IBOutlet weak var pendingVacationTableView: UITableView!
     var pendingVacationPresenter :PendingVacationPresenter!
     var pendingVacationDataSource: VacationDataSource!
-    
+ 
     
     @IBOutlet weak var newActionBrn: Floaty!
     

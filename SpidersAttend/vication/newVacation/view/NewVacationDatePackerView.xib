@@ -65,6 +65,7 @@
             <viewLayoutGuide key="safeArea" id="k0V-os-cAk"/>
             <connections>
                 <outlet property="datePickerView" destination="8Fz-Ld-VC5" id="JNM-Ou-iCl"/>
+                <outlet property="galenderPickerView" destination="8Fz-Ld-VC5" id="izk-PP-UYO"/>
             </connections>
             <point key="canvasLocation" x="73.913043478260875" y="95.758928571428569"/>
         </view>

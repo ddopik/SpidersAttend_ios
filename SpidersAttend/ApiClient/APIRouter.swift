@@ -30,6 +30,8 @@ class APIRouter {
     static var PENDING_VACATION_URL = "/api/Vacations/pending/"
     static var APPROVED_VACATION_URL = "/api/Vacations/approved/"
     static var REJECTED_VACATION_URL = "/api/Vacations/rejected/"
+    static var NEW_VACATION_FORM_DATA_URL = "/api/Vacations/create"
+
 
     static var DELETE_PENDING_VACATION_URL = "/api/Vacations/delete/"
     
@@ -76,10 +78,9 @@ class APIRouter {
     }
     
     
-    static func makeGetRequest <T : Codable>(currentUrl:String,succese: @escaping (T?) ->(), failure: @escaping ((Any?) -> ()), type : T.Type  ) {
-//           let currentUrl : String = BASE_URL+PrefUtil.getAppLanguage()!+PENDING_VACATION_URL+userId
-           
-           AF.request(URL(string: currentUrl)!, method: .get,encoding: URLEncoding.httpBody)
+    static func makeGetRequest <T : Codable>(getUrl:String,succese: @escaping (T?) ->(), failure: @escaping ((Any?) -> ()), type : T.Type  ) {
+ 
+           AF.request(URL(string: getUrl)!, method: .get,encoding: URLEncoding.httpBody)
                .validate()
                .responseJSON { response in
                    switch response.result {
@@ -89,14 +90,14 @@ class APIRouter {
                            let codingData = try decoder.decode(type.self, from: response.data!)
                            succese(codingData)
                        }catch {
-                           print("\(TAG) ----> Error ----> Failed Parssing Api \(currentUrl)")
+                           print("\(TAG) ----> Error ----> Failed Parssing Api \(getUrl)")
                            failure("error")
                        }
                        
                        break
                    case .failure (let error):
-                       print("\(TAG) ----> Error ----> Failed Api \(currentUrl)")
-                       handleApiError(error: error, response: response,failure: failure,currentUrl: currentUrl)
+                       print("\(TAG) ----> Error ----> Failed Api \(getUrl)")
+                       handleApiError(error: error, response: response,failure: failure,currentUrl: getUrl)
                        break
                    }
            }
