@@ -22,6 +22,20 @@ class NewVacationController :BaseViewController,NewVacationControllerView  {
     
     @IBOutlet weak var chooseVacationTypeLabel: UILabel!
     
+    
+    
+    
+    @IBOutlet weak var vacationReasonTitle: UILabel!
+    
+    @IBOutlet weak var startDateTitle: UILabel!
+    
+    @IBOutlet weak var endDateTitle: UILabel!
+    
+    @IBOutlet weak var chooseManagerTitle: UILabel!
+    
+    
+    @IBOutlet weak var chooseVacationTypeTitle: UILabel!
+    
     var startDate,EndDate :Date!
     var selectedManager:User!
     var selectedVacationType:VacationType!
@@ -52,14 +66,13 @@ class NewVacationController :BaseViewController,NewVacationControllerView  {
             let dateFormat = DateFormatter()
             dateFormat.dateFormat = "d.M.yyyy"
             let dateVal = dateFormat.string(from: date)
-            self.startDateUiLabel.text = "  "+dateVal
+            self.startDateUiLabel.text = "  "+dateVal.replacingOccurrences(of: ".", with: "-")
             self.startDate = date
         }
         let newVacationDatePackerView =  NewVacationDatePackerView.getInstance(parentView :self.view ,dele: startDateDelegate)
         newVacationDatePackerView.showDatePickerDialog(parentView: self.view)
         
-         self.startDateUiLabel.textColor = UIColor.red
-    }
+     }
     @objc func onEndDateLabelClick(sender:UITapGestureRecognizer) {
         
         let endDateDelegate = {
@@ -67,7 +80,8 @@ class NewVacationController :BaseViewController,NewVacationControllerView  {
             let dateFormat = DateFormatter()
             dateFormat.dateFormat = "d.M.yyyy"
             let dateVal = dateFormat.string(from: date)
-            self.endDateLabel.text = "  "+dateVal
+            self.endDateLabel.text = "  "+dateVal.replacingOccurrences(of: ".", with: "-")
+            
             self.EndDate = date
         }
         
@@ -202,27 +216,31 @@ extension NewVacationController {
         var state = true
         
         if(vacationReason.text?.isEmpty == true ){
-            vacationReason.text =  "Field is Rquired".localiz()
-             vacationReason.textColor = UIColor.red
+//            vacationReason.text =  "Field is Rquired".localiz()
+             vacationReasonTitle.textColor = UIColor.red
              state = false
         }else {
               state = true
+               vacationReasonTitle.textColor = UIColor.darkGray
         }
         
         if(startDate == nil){
-            startDateUiLabel.text =  "Field is Rquired".localiz()
-             startDateUiLabel.textColor = UIColor.red
+//            startDateUiLabel.text =  "Field is Rquired".localiz()
+             startDateTitle.textColor = UIColor.red
             state = false
         }else {
+            startDateTitle.textColor = UIColor.darkGray
+
               state = true
         }
         
         
         if(EndDate == nil ){
-            endDateLabel.text =  "Field is Rquired".localiz()
-            endDateLabel.textColor = UIColor.red
+//            endDateLabel.text =  "Field is Rquired".localiz()
+            endDateTitle.textColor = UIColor.red
             state = false
         }else {
+               endDateTitle.textColor = UIColor.darkGray
               state = true
         }
         
@@ -230,6 +248,7 @@ extension NewVacationController {
         if(self.EndDate != nil && self.startDate != nil ){
             
             if(self.EndDate.timeIntervalSince(self.startDate) < 0 ){
+                // todo  return erro message here
                   state = false
             }else {
                   state = true
@@ -238,18 +257,21 @@ extension NewVacationController {
   
         
         if(selectedManager == nil){
-            chooseManagerLabel.text =  "Field is Rquired".localiz()
-             chooseManagerLabel.textColor = UIColor.red
+//            chooseManagerLabel.text =  "Field is Rquired".localiz()
+             chooseManagerTitle.textColor = UIColor.red
             state = false
         }else {
+            chooseManagerTitle.textColor = UIColor.darkGray
               state = true
         }
         
         if(selectedVacationType == nil){
-            chooseVacationTypeLabel.text =  "Field is Rquired".localiz()
-            chooseVacationTypeLabel.textColor = UIColor.red
+//            chooseVacationTypeLabel.text =  "Field is Rquired".localiz()
+            chooseVacationTypeTitle.textColor = UIColor.red
             state = false
         }else {
+            chooseVacationTypeTitle.textColor = UIColor.darkGray
+
               state = true
         }
         
