@@ -3,18 +3,34 @@
 "Choose language" = "آختر اللغه";
 "Home"="الرئيسيه";
 "more" = "المزيد";
-"Attend" = "تآكيد";
+"Attend" = "الحضور";
 "PayRoll" = "كشف المرتبات";
 "Vication" = "الاجازات";
 "language" = "اللغه";
 "logout" = "خروج";
 "Arabic" = "العربيه";
 "Confirm" = "تآكيد";
+"Please select method to " = "من فضلك اختر وسيله ";
+"your Attend has been taken fot today"="لم تم تسجيل الحضور اليوم";
 "are you sure you want to Logout ?" = "تآكيد الخروج";
 "Wrong QrCode" ="كود خاطئ";
 "Soon" ="قريبا";
 "locationError"="خطآ في الحصول علي الموقع الحالي";
 "Days"="آيام";
 "error_deleting_vacation"="لم يتم مسح الاجازه";
-
-
+"Vacation Reason" = "سبب الاجازه";
+"Start Date"="تاريخ البدء";
+"End Date"="تاريخ الانتهاء";
+"Choose Manager"="آختر المدير";
+"Choose vacation Type"="آختر نوع الاجازه";
+"Reason"="السبب";
+"Manager"="المدير";
+"Vacation Type"="نوع الاجازه";
+"Vacation End Date Should not be before start Date"="لا يمكن تحديد تازيخ الانتهاء قبل تاريخ البدئ";
+"Vacation Created successful" = "تم تسجيل الاجازه بنجاح";
+"no Rejected vacation available"="لا توجد اجازات قيد الرفض حاليا";
+"no Approved vacation available"="لا توجد اجازات تم قبولها حاليا";
+"no Pending vacation available"="لا توجد اجازات تم قبولها حاليا";
+"Pending"="قيد الانتظار";
+"Approved"="تم الموافقه";
+"Rejected"="تم الرفض";

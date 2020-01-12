@@ -8,5 +8,6 @@
 
 import Foundation
 protocol  NewVacationControllerPresenter {
-    func  getVacationData() 
+    func  getVacationData()
+    func sendNewVacationRequest(newVacationObj:NewVacationObj)
 }

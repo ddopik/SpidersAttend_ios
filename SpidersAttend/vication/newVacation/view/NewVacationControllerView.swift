@@ -13,5 +13,6 @@ protocol NewVacationControllerView{
     
     func setVacationTypes(vacationTypes: [VacationType])
     func setManagersList(managersList:[User])
+    func onVacationCreated(state:Bool)
     func viewError(title:String,body:String)
 }

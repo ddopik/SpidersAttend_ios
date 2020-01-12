@@ -13,8 +13,7 @@ class SplashViewController: BaseViewController {
  
   override  func viewDidLoad() {
         super.viewDidLoad()
-    print("SplashViewController  ----> viewDidLoad()")
-    
+ 
     
      DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
          if  PrefUtil.isLoggedIn(){

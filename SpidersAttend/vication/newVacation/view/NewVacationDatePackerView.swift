@@ -17,7 +17,7 @@ class NewVacationDatePackerView : UIView{
     private var currentView :UIView!
     @IBOutlet weak var datePickerView: UIDatePicker!
     
- 
+    
     
     class func getInstance(parentView : UIView,dele: @escaping (_ date: Date)  ->() )-> NewVacationDatePackerView{
         let mView = UINib(nibName: "NewVacationDatePackerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! NewVacationDatePackerView
@@ -29,7 +29,7 @@ class NewVacationDatePackerView : UIView{
         mView.layer.cornerRadius = 20.0
         mView.clipsToBounds = true
         mView.newVacationDatePackerClos = dele
-    
+        
         let today = Date()
         let tomorrow = Calendar.current.date(byAdding: .day, value: 2, to: today as Date)
         mView.galenderPickerView.minimumDate =  tomorrow
@@ -43,19 +43,15 @@ class NewVacationDatePackerView : UIView{
     }
     
     @IBAction func OnConfirmDateBtnClick(_ sender: Any) {
-
-         newVacationDatePackerClos(datePickerView.date)
+        
+        newVacationDatePackerClos(datePickerView.date)
         self.isHidden = true
-        
-        
-//        let xx = datePickerView.date.compare(<#T##other: Date##Date#>)
-        
     }
     
     
     public func showDatePickerDialog(parentView: UIView){
         self.isHidden = false
-
+        
         parentView.addSubview(currentView)
     }
 }
@@ -63,5 +59,5 @@ class NewVacationDatePackerView : UIView{
 
 
 protocol NewVacationDatePackerViewDelegate {
-     func onDateDismessed ()
+    func onDateDismessed ()
 }

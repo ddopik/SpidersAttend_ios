@@ -16,13 +16,16 @@ class ApprovedViewController:BaseViewController{
     var approvedVacationDataSource: VacationDataSource!
     
     
-
+    @IBOutlet weak var noApprovedVacationTitle: UILabel!
+    
     @IBOutlet weak var approvedTabBarItem: UITabBarItem!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        noApprovedVacationTitle.text = "no Approved vacation available".localiz()
         approvedVacationPresenter = ApprovedVacationPresenterImpl(approvedVacationView: self)
         approvedVacationDataSource =  VacationDataSource(vacationType: VacationDataSource.VacationListType.APPROVED)
         
@@ -52,13 +55,14 @@ extension ApprovedViewController : ApprovedVacationView{
     }
     
     func viewApprovedVacations(vacationList: [Vacation]) {
-          approvedVacationDataSource.vacationList.removeAll()
+        noApprovedVacationTitle.isHidden = true
+        approvedVacationDataSource.vacationList.removeAll()
           approvedVacationDataSource.vacationList.insert(contentsOf: vacationList, at: 0)
           self.approvedVacationTableView.reloadData()
           
       }
     
     func viewError(msg: String) {
-         
+        noApprovedVacationTitle.isHidden = false
     }
 }

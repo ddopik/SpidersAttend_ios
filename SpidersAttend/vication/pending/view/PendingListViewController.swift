@@ -15,11 +15,19 @@ class PendingListViewController: BaseViewController,PendingVacationView {
     var pendingVacationPresenter :PendingVacationPresenter!
     var pendingVacationDataSource: VacationDataSource!
  
+    @IBOutlet weak var noPendingVacationAvailaibleLabel: UILabel!
     
     @IBOutlet weak var newActionBrn: Floaty!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarController?.tabBar.items?[0].title = "Pending".localiz()
+          self.tabBarController?.tabBar.items?[1].title = "Approved".localiz()
+          self.tabBarController?.tabBar.items?[2].title = "Rejected".localiz()
+        
+        
+        noPendingVacationAvailaibleLabel.text = "no Pending vacation available".localiz()
         pendingVacationPresenter = PendingVacationPresenterImpl(pendingVacationView: self)
         pendingVacationDataSource =  VacationDataSource(vacationType: VacationDataSource.VacationListType.PENDING)
         
@@ -34,6 +42,8 @@ class PendingListViewController: BaseViewController,PendingVacationView {
         
     }
     
+    
+ 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
@@ -49,6 +59,9 @@ class PendingListViewController: BaseViewController,PendingVacationView {
         self.pendingVacationPresenter.getPendingVacations()
     }
     func viewPendingVacations(vacationList: [Vacation]) {
+        
+        noPendingVacationAvailaibleLabel.isHidden = true
+
         pendingVacationDataSource.vacationList.removeAll()
         pendingVacationDataSource.vacationList.insert(contentsOf: vacationList, at: 0)
         self.pendingVacationTableView.reloadData()
@@ -77,18 +90,10 @@ class PendingListViewController: BaseViewController,PendingVacationView {
     
     
     func viewError(msg: String) {
-        
+        noPendingVacationAvailaibleLabel.isHidden = false
     }
     
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //
-    //
-    //        if segue.identifier == "NEW_VACATION"{
-    //            performSegue(withIdentifier: "NEW_VACATION", sender: nil)
-    //         }
-    //    }
-    
+ 
     
 }
 extension PendingListViewController:VacationCellProtocol{
