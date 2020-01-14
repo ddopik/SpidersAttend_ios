@@ -32,6 +32,8 @@ class APIRouter {
     static var REJECTED_VACATION_URL = "/api/Vacations/rejected/"
     static var NEW_VACATION_FORM_DATA_URL = "/api/Vacations/create"
     static var NEW_VACATION_REQUEST_URL = "/api/Vacations/create_action"
+    static var PAY_ROLL_DATA_URL = "/api/payroll"
+
 
 
 

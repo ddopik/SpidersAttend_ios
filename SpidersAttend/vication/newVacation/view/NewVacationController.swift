@@ -128,7 +128,7 @@ class NewVacationController :BaseViewController,NewVacationControllerView  {
         }
         
         if(segue.identifier == "vations_type_search_controller" ){
-            let vacationTypesSearchViewController = segue.destination as! VacationTypesSearchViewController
+            let vacationTypesSearchViewController  = segue.destination as! VacationTypesSearchViewController
             vacationTypesSearchViewController.setVacationTypesList(vacationTypeList: self.vacationTypeList)
             vacationTypesSearchViewController.vacationTypesDelegate = self
             

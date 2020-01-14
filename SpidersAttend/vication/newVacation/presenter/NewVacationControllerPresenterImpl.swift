@@ -89,8 +89,9 @@ class NewVacationControllerPresenterImpl :NewVacationControllerPresenter{
         
         
         let parameter :[String:String]=["uid":PrefUtil.getUserId()!,"reason":newVacationObj.vacationReason,"start_date":newVacationObj.vacationStartDate,"end_date":newVacationObj.vacationEndDate,"request_to":newVacationObj.vacationManager,"vacations_type_id":newVacationObj.vacationType]
+        let currentUrl : String = APIRouter.BASE_URL + APIRouter.PAY_ROLL_DATA_URL
         
-         APIRouter.makePostRequest(url:APIRouter.NEW_VACATION_REQUEST_URL,bodyParameters:parameter , succese: succ, failure: failureClos as (Any?) -> (), type: VacationRequestResponse.self)
+         APIRouter.makePostRequest(url:currentUrl,bodyParameters:parameter , succese: succ, failure: failureClos as (Any?) -> (), type: VacationRequestResponse.self)
         
     }
     

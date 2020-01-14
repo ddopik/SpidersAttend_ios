@@ -25,7 +25,7 @@ class ApprovedViewController:BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        noApprovedVacationTitle.text = "no Approved vacation available".localiz()
+        noApprovedVacationTitle.text = "No Approved vacation available".localiz()
         approvedVacationPresenter = ApprovedVacationPresenterImpl(approvedVacationView: self)
         approvedVacationDataSource =  VacationDataSource(vacationType: VacationDataSource.VacationListType.APPROVED)
         

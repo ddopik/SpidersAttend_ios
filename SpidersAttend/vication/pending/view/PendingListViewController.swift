@@ -27,7 +27,7 @@ class PendingListViewController: BaseViewController,PendingVacationView {
           self.tabBarController?.tabBar.items?[2].title = "Rejected".localiz()
         
         
-        noPendingVacationAvailaibleLabel.text = "no Pending vacation available".localiz()
+        noPendingVacationAvailaibleLabel.text = "No Pending vacation available".localiz()
         pendingVacationPresenter = PendingVacationPresenterImpl(pendingVacationView: self)
         pendingVacationDataSource =  VacationDataSource(vacationType: VacationDataSource.VacationListType.PENDING)
         

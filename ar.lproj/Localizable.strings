@@ -28,9 +28,10 @@
 "Vacation Type"="نوع الاجازه";
 "Vacation End Date Should not be before start Date"="لا يمكن تحديد تازيخ الانتهاء قبل تاريخ البدئ";
 "Vacation Created successful" = "تم تسجيل الاجازه بنجاح";
-"no Rejected vacation available"="لا توجد اجازات قيد الرفض حاليا";
-"no Approved vacation available"="لا توجد اجازات تم قبولها حاليا";
-"no Pending vacation available"="لا توجد اجازات تم قبولها حاليا";
+"No Rejected vacation available"="لا توجد اجازات قيد الرفض حاليا";
+"No Approved vacation available"="لا توجد اجازات تم قبولها حاليا";
+"No Pending vacation available"="لا توجد اجازات تم قبولها حاليا";
+"No PayRoll data avaialaible"="لا يوجد كشف بالمرتبات حاليا";
 "Pending"="قيد الانتظار";
 "Approved"="تم الموافقه";
 "Rejected"="تم الرفض";
