@@ -1,5 +1,3 @@
- 
-
 "Choose language" = "آختر اللغه";
 "Home"="الرئيسيه";
 "more" = "المزيد";
@@ -35,3 +33,20 @@
 "Pending"="قيد الانتظار";
 "Approved"="تم الموافقه";
 "Rejected"="تم الرفض";
+"Day in month"= "عدد الايام في الشهر ";
+"work days"="ايام العمل";
+"Total Attend days"="آيام الحضور ";
+"Total missing days"="آيام مفقوده ";
+"Total leave days"="ايام الانصراف ";
+"Total national days"="الاجازات الوطنيه";
+"Total no show days"=  "اجمالي ايام لانصراف بدون اذن " ;
+"Remaining leave days"="المتبقي لايام الانصراف";
+"Total late days"="اجمالي آيام التآخير";
+"Total late hours"="آجمالي الساعات المتآخره";
+"Un completed times"="الوقت غير المكتمل";
+"Benefits ammount"="كميه المستحقات";
+"Deductions amount"="كمية الخصومات ";
+"Missing leave days"="اجمالي ايام الانصراف";
+"PayRoll year"="رواتب العام ";
+"PayRoll month"="رواتب الشهر";
+"Total salary" = "المبلغ الكلي";

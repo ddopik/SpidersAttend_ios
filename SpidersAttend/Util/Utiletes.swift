@@ -75,3 +75,12 @@ extension BaseViewController{
 }
  
 
+ extension String {
+     func prepending(prefix: String) -> String {
+         return prefix + self
+     }
+    func apendingTo(sufix: String) -> String {
+           return self + sufix
+       }
+ }
+

@@ -51,6 +51,8 @@ class PayRollDetailViewController :BaseViewController {
     @IBOutlet weak var unCompleteTimeLabel: UILabel!
     @IBOutlet weak var unCompleteTimeVal: UILabel!
     
+    @IBOutlet weak var benifitsAmountLabel: UILabel!
+    @IBOutlet weak var benifitsAmountVal: UILabel!
     
     @IBOutlet weak var DeductionsAmountLabel: UILabel!
     @IBOutlet weak var DeductionsAmountVal: UILabel!
@@ -73,6 +75,7 @@ class PayRollDetailViewController :BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setInputsVal()
+        setInputsLabel()
     }
     
     
@@ -84,14 +87,58 @@ class PayRollDetailViewController :BaseViewController {
     
     
     private func setInputsLabel(){
+        dayInMonthLabel.text = "Day in month".localiz().apendingTo(sufix:" : ")
         
+        workDaysLabel.text = "work days".localiz().apendingTo(sufix:" : ")
+    
+        attendDaysLabel.text = "Total Attend days".localiz().apendingTo(sufix:" : ")
+        
+        
+        missingDaysLabel.text = "Total missing days".localiz().apendingTo(sufix:" : ")
+        
+        leaveDaysLabel.text = "Total leave days".localiz().apendingTo(sufix:" : ")
+        
+        
+        nationalDaysLabel.text = "Total national days".localiz().apendingTo(sufix:" : ")
+        
+        
+        noShowDays.text = "Total no show days".localiz().apendingTo(sufix:" : ")
+        
+        remainingLeaveDaysLabel.text = "Remaining leave days".localiz().apendingTo(sufix:" : ")
+        
+        
+        lateDaysLabel.text = "Total late days".localiz().apendingTo(sufix:" : ")
+        
+        lateHoursLabel.text = "Total late hours".localiz().apendingTo(sufix:" : ")
+        
+        
+        benifitsAmountLabel.text = "Benefits ammount".localiz().apendingTo(sufix:" : ")
+        
+        unCompleteTimeLabel.text = "Un completed times".localiz().apendingTo(sufix:" : ")
+        
+        
+        DeductionsAmountLabel.text = "Deductions amount".localiz().apendingTo(sufix:" : ")
+        
+        
+        missingLeaveDaysLabel.text = "Missing leave days".localiz().apendingTo(sufix:" : ")
+        
+        totalSaleryLabel.text = "Total salary".localiz().apendingTo(sufix:" : ")
+        
+        
+        payRollYearLabel.text = "PayRoll year".localiz().apendingTo(sufix:" : ")
+        
+        
+        payRollMonthLabel.text = "PayRoll month".localiz().apendingTo(sufix:" : ")
     }
     
     private func setInputsVal(){
+        print("------->  \( currentPayRoll?.workdays) ----->   \( currentPayRoll?.id)" )
+        
         
         dayInMonthVal.text = currentPayRoll?.daysInMonth
         workDaysVal.text = currentPayRoll?.workdays
-         attendDaysVal.text = currentPayRoll?.empTotalAttendDays
+        
+        attendDaysVal.text = currentPayRoll?.empTotalAttendDays
         missingDaysVal.text = currentPayRoll?.empTotalMissingDays
         
         leaveDaysVal.text = currentPayRoll?.empTotalLeaveDays
@@ -102,9 +149,11 @@ class PayRollDetailViewController :BaseViewController {
         lateHoursVal.text = currentPayRoll?.empTotalLateHours
         
         unCompleteTimeVal.text = currentPayRoll?.empTotalUncomplateTimes
+        
+        benifitsAmountVal.text = currentPayRoll?.empTotalBenefitsAmount
         DeductionsAmountVal.text = currentPayRoll?.empTotalDeductionsAmount
         missingLeaveDaysVal.text =  currentPayRoll?.empTotalMissingLeaveDays
-        totalSaleryVal.text = currentPayRoll?.totalSalary
+        totalSaleryVal.text = currentPayRoll?.totalSalary.trimmingCharacters(in: .whitespaces)
         payRollYearVal.text = currentPayRoll?.payrollYear
         payRollMonthVal.text = currentPayRoll?.payrollMonth
         
