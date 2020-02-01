@@ -65,7 +65,7 @@ class PendingVacationPresenterImpl:PendingVacationPresenter {
                let succ={ (deletePendingVacationResponse:DeletePendingVacationResponse?)   in
                    if let statsId =  deletePendingVacationResponse?.status {
                        self.pendingVacationView.onPendingVacationProgress(state: false)
-                    self.pendingVacationView.onPendingVacationDeleted(vacation: vacation, indexPath: indexPath, state: true)
+                    self.pendingVacationView.onPendingVacationDeleted(vacation: vacation,  state: true)
                    }
                }
                

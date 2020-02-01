@@ -20,13 +20,13 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-        self.inputUserName.delegate = self
-//        inputUserName.returnKeyType = .done
-        self.inputUserPassword.delegate = self
-//        inputUserPassword.returnKeyType = .done
         
- 
+        self.inputUserName.delegate = self
+        //        inputUserName.returnKeyType = .done
+        self.inputUserPassword.delegate = self
+        //        inputUserPassword.returnKeyType = .done
+        
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -52,11 +52,14 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
             super.onLocationUpdateDelegate = self
             try startLocationServices()
         }catch {
-                  self.stopProgress()
+            self.stopProgress()
             _ = showSimpleConfirmDialog(parent: self, messageText: (error as! ValidationError).message,messageTitle:  (error as! ValidationError).errorTitle, buttonText: "Ok")
         }
     }
     
+    @IBAction func onloginAsGuestBtnClick(_ sender: Any) {
+        requestTrailLogin()
+    }
     
     private func isLoginInputsValid() throws {
         if !Validator.validUserName(userName: self.inputUserName.text!){
@@ -78,7 +81,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
             AppConstants.APIParameterKey.username : String( self.inputUserName.text!),
             AppConstants.APIParameterKey.pass :String(self.inputUserPassword.text!),
             AppConstants.APIParameterKey.deviceID :String(UIDevice.current.identifierForVendor?.uuidString ?? "0000"),
-             AppConstants.APIParameterKey.latitude  : String (location.coordinate.latitude),
+            AppConstants.APIParameterKey.latitude  : String (location.coordinate.latitude),
             AppConstants.APIParameterKey.longitude :String (location.coordinate.longitude)
             ] as [String : String]
         //        dump(loginParameter)
@@ -104,7 +107,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
             print("suucess \(String(describing: PrefUtil.getUserId()))" )
             super.stopProgress()
             NavigationManger(storyboard: self.storyboard!,viewController: self).navigateTo(target :Destinations.MainScreen)
-         }
+        }
         let failureClos={
             (err : Any) in
             if (err is NetworkBaseError){
@@ -117,10 +120,10 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
             }else{
                 _ = self.showSimpleConfirmDialog(parent: self, messageText: "Network Error",messageTitle: "Error", buttonText: "Ok")
             }
-             self.stopProgress()
+            self.stopProgress()
         }
         
-//        APIRouter.sendLoginRequest( loginparameters : loginParameter,success : successClos , failure : failureClos)
+        
         
         
         do {
@@ -131,9 +134,58 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
             self.stopProgress()
         }    }
     
-   
-    
-}
+    private  func requestTrailLogin(){
+        
+        super.startProgress()
+        
+        let successClos={ (loginResponse: LoginResponse?) in
+            
+            let loginData = loginResponse?.data
+            ///
+            PrefUtil.setIsFirstTimeLogin(  isFirstTime: false)
+            PrefUtil.setIsLoggedIn(  isLoggedIn: true)
+            PrefUtil.setUserToken(userToken: loginData?.user_data?.token ?? "-1")
+            PrefUtil.setUserID(  userId: loginData?.user_data?.uid ?? "-1" )
+            PrefUtil.setUserName(  userName: loginData?.user_data?.name ?? " ")
+            PrefUtil.setUserMail(  userMail: loginData?.user_data?.email ?? " ")
+            PrefUtil.setUserProfilePic(  profileImg: loginData?.user_data?.img ?? " ")
+            PrefUtil.setUserGender(  userGender: loginData?.user_data?.gender ?? " ")
+            PrefUtil.setUserTrackId( trackID: loginData?.user_data?.track ?? " ")
+            //            PrefUtil.setCurrentStatsMessage(  loginResponse.userData?.attendStatus?.msg!!)
+            PrefUtil.setCurrentUserStatsID(  userStats: loginData?.attend_status?.status ?? "-1")
+            PrefUtil.setCurrentCentralLng(  currentCentralLng: loginData?.user_data?.lng ?? "0.0")
+            PrefUtil.setCurrentCentralLat(  currentCentralLat: loginData?.user_data?.lat ?? "0.0")
+            PrefUtil.setCurrentCentralRadius(  currentCentralRadious: loginData?.user_data?.radius ?? "-1")
+            //            /
+            print("suucess \(String(describing: PrefUtil.getUserId()))" )
+            super.stopProgress()
+            NavigationManger(storyboard: self.storyboard!,viewController: self).navigateTo(target :Destinations.MainScreen)
+        }
+        let failureClos={
+            (err : Any) in
+            if (err is NetworkBaseError){
+                //                (err:NetworkBaseError?)   in
+                print("failed ---->\(String(describing: (err as! NetworkBaseError).data?.msg))")
+                _ = self.showSimpleConfirmDialog(parent: self, messageText: ((err as! NetworkBaseError).data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
+                ///disaple progressView here
+                
+                
+            }else{
+                _ = self.showSimpleConfirmDialog(parent: self, messageText: "Network Error",messageTitle: "Error", buttonText: "Ok")
+            }
+            self.stopProgress()
+        }
+         let url : String = APIRouter.BASE_URL + PrefUtil.getAppLanguage()! + APIRouter.TRAIL_LOGIN_URL
+        APIRouter.makeGetRequest(getUrl:url, succese: successClos, failure: failureClos as (Any?) -> (), type: LoginResponse.self)
+        
+                //    catch{
+        //        let errorObj = error as! ValidationError
+        //        showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)
+        //        self.stopProgress()
+        
+    }
+
+    }
 extension LoginViewController:OnLocationUpdateDelegate{
     func onLocationUpdateFailed(error: Error) {
         if(error is ValidationError){
@@ -141,17 +193,17 @@ extension LoginViewController:OnLocationUpdateDelegate{
         }
         showAlert(withTitle: "error".localiz(), message: "locationError".localiz())
         super.stopLocationManger()
-          self.stopProgress()
+        self.stopProgress()
     }
     
     func onLocationUpdated(curenrtlocation: CLLocation) {
-         requestLogin(curenrtlocation)
-           super.stopLocationManger()
-          self.stopProgress()
+        requestLogin(curenrtlocation)
+        super.stopLocationManger()
+        self.stopProgress()
     }
     
     func onLocationFencingDetemined(state: CLRegionState) {
-         
+        
     }
     
     func onLocationFencingFailedDetemined(error: Error) {
@@ -169,7 +221,7 @@ extension LoginViewController:OnLocationUpdateDelegate{
 
 extension LoginViewController{
     
- 
+    
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n") {
@@ -177,7 +229,7 @@ extension LoginViewController{
         }
         return true
     }
-
+    
     // MARK: - Search Method
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {

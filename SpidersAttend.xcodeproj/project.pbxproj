@@ -25,7 +25,10 @@
 		042F7B9122C37FC80059E5B4 /* MainStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7B9022C37FC80059E5B4 /* MainStateViewController.swift */; };
 		042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */; };
 		043457C82317E66900D20414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043457CA2317E66900D20414 /* Main.storyboard */; };
-		043DE00F22D105A0006A084E /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE00E22D105A0006A084E /* MoreViewController.swift */; };
+		0435C2E723D865BF008EECA5 /* UserManagementStatsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435C2E623D865BF008EECA5 /* UserManagementStatsResponse.swift */; };
+		0435C2E923D86603008EECA5 /* UserManagementStatsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435C2E823D86603008EECA5 /* UserManagementStatsData.swift */; };
+		0435C2EB23D870A2008EECA5 /* VacationManagmentTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435C2EA23D870A2008EECA5 /* VacationManagmentTabBarController.swift */; };
+		043DE00F22D105A0006A084E /* EditAppSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE00E22D105A0006A084E /* EditAppSettingViewController.swift */; };
 		043DE01122D145BA006A084E /* NavigationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE01022D145BA006A084E /* NavigationManger.swift */; };
 		043DE01322D1BCAB006A084E /* LanguageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DE01222D1BCAB006A084E /* LanguageDetails.swift */; };
 		043E2DF72315463400C91286 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E2DF32315463300C91286 /* ClockViewController.swift */; };
@@ -44,11 +47,15 @@
 		0443D47122CB8A9300FDDE64 /* CheckStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443D47022CB8A9300FDDE64 /* CheckStatusResponse.swift */; };
 		04484A2C22E27B9D0057BDB3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04484A2E22E27B9D0057BDB3 /* Localizable.strings */; };
 		04484A3122E3B3B40057BDB3 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04484A3022E3B3B40057BDB3 /* LanguageManager.swift */; };
+		0461A05323D0644A007C181A /* MainControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461A05223D0644A007C181A /* MainControllers.swift */; };
+		0461A05523D0647B007C181A /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461A05423D0647B007C181A /* StringUtil.swift */; };
+		0461A05B23D065B9007C181A /* PendingManagmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461A05A23D065B9007C181A /* PendingManagmentViewController.swift */; };
+		0461A05D23D065EA007C181A /* ApprovedManagmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461A05C23D065EA007C181A /* ApprovedManagmentViewController.swift */; };
+		0461A05F23D06601007C181A /* RejectedManagmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461A05E23D06601007C181A /* RejectedManagmentViewController.swift */; };
 		0462D21722C9220F00A459CE /* Utiletes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462D21622C9220F00A459CE /* Utiletes.swift */; };
 		047AB49B2393EF160019F259 /* AttendPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB49A2393EF160019F259 /* AttendPresenterImpl.swift */; };
 		047AB49D2393EF220019F259 /* AttendPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB49C2393EF220019F259 /* AttendPresenter.swift */; };
 		047AB49F2393EF3A0019F259 /* AttendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB49E2393EF3A0019F259 /* AttendView.swift */; };
-		047AB4A42393EF600019F259 /* AttendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4A32393EF600019F259 /* AttendViewController.swift */; };
 		047AB4A82393F5080019F259 /* MainStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4A72393F5080019F259 /* MainStateView.swift */; };
 		047AB4AA2393F5AE0019F259 /* MainStatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4A92393F5AE0019F259 /* MainStatePresenter.swift */; };
 		047AB4AC2393F5BF0019F259 /* MainStatePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AB4AB2393F5BF0019F259 /* MainStatePresenterImpl.swift */; };
@@ -110,6 +117,26 @@
 		04FC5B9F23B8C4A500DFF5CC /* NewVacationDatePackerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FC5B9E23B8C4A400DFF5CC /* NewVacationDatePackerView.xib */; };
 		04FC5BA123B8C55100DFF5CC /* NewVacationDatePackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5BA023B8C55100DFF5CC /* NewVacationDatePackerView.swift */; };
 		373224916E35356046CB5DC0 /* Pods_SpidersAttendTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A19E310F5A98EAC1E8DB29B /* Pods_SpidersAttendTests.framework */; };
+		BB9CF1F723E06E8100A27B81 /* ManagmentVacationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CF1F623E06E8100A27B81 /* ManagmentVacationData.swift */; };
+		BB9CF1F923E06EDA00A27B81 /* ManagmentVacationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CF1F823E06EDA00A27B81 /* ManagmentVacationResponse.swift */; };
+		BB9CF1FB23E0826E00A27B81 /* ManagmentVacationApproveResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CF1FA23E0826E00A27B81 /* ManagmentVacationApproveResponse.swift */; };
+		BB9CF1FD23E082A300A27B81 /* ManagmentVacationApproveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CF1FC23E082A300A27B81 /* ManagmentVacationApproveData.swift */; };
+		BB9CF1FF23E0835600A27B81 /* RejectPendingVacationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CF1FE23E0835600A27B81 /* RejectPendingVacationResponse.swift */; };
+		BB9CF20123E083EE00A27B81 /* RejectPendingVacationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CF20023E083EE00A27B81 /* RejectPendingVacationData.swift */; };
+		BB9CF20E23E19EB800A27B81 /* RejectReasonPopUpViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CF20C23E19EB800A27B81 /* RejectReasonPopUpViewViewController.swift */; };
+		BB9CF20F23E19EB800A27B81 /* RejectReasonPopUpViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB9CF20D23E19EB800A27B81 /* RejectReasonPopUpViewViewController.xib */; };
+		BBCDB80823DA1EC600A3348E /* AttendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB80723DA1EC600A3348E /* AttendViewController.swift */; };
+		BBCDB80C23DEEA1C00A3348E /* PendingManagmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB80B23DEEA1C00A3348E /* PendingManagmentView.swift */; };
+		BBCDB80E23DEEAC200A3348E /* PendingManagmentVacationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB80D23DEEAC200A3348E /* PendingManagmentVacationPresenter.swift */; };
+		BBCDB81023DEEACF00A3348E /* PendingManagmentVacationPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB80F23DEEACF00A3348E /* PendingManagmentVacationPresenterImpl.swift */; };
+		BBCDB81523DF2CAA00A3348E /* ApprovedManagmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB81423DF2CAA00A3348E /* ApprovedManagmentView.swift */; };
+		BBCDB81723DF2D0200A3348E /* ApprovedManagmentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB81623DF2D0200A3348E /* ApprovedManagmentPresenter.swift */; };
+		BBCDB81923DF2D2300A3348E /* ApprovedManagmentPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB81823DF2D2300A3348E /* ApprovedManagmentPresenterImpl.swift */; };
+		BBCDB81E23E0564600A3348E /* RejectedManagmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB81D23E0564600A3348E /* RejectedManagmentView.swift */; };
+		BBCDB82023E0569E00A3348E /* RejectedManagmentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB81F23E0569E00A3348E /* RejectedManagmentPresenter.swift */; };
+		BBCDB82223E056C500A3348E /* RejectedManagmentPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB82123E056C500A3348E /* RejectedManagmentPresenterImpl.swift */; };
+		BBCDB82423E0672500A3348E /* ApprovedManagmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB82323E0672500A3348E /* ApprovedManagmentResponse.swift */; };
+		BBCDB82623E0675A00A3348E /* ApprovedManagmentVacationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB82523E0675A00A3348E /* ApprovedManagmentVacationData.swift */; };
 		BC77A66F4DF90EB36BA6B058 /* Pods_SpidersAttend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F03338B41CCC994A4315B19 /* Pods_SpidersAttend.framework */; };
 		E414BA7822369FE72E86284C /* Pods_SpidersAttendUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9441EA6385963C69C1D15754 /* Pods_SpidersAttendUITests.framework */; };
 /* End PBXBuildFile section */
@@ -150,7 +177,10 @@
 		042F7B9022C37FC80059E5B4 /* MainStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStateViewController.swift; sourceTree = "<group>"; };
 		042F7BA322C4E0090059E5B4 /* GeotificationBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeotificationBaseViewController.swift; sourceTree = "<group>"; };
 		043457C92317E66900D20414 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		043DE00E22D105A0006A084E /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		0435C2E623D865BF008EECA5 /* UserManagementStatsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementStatsResponse.swift; sourceTree = "<group>"; };
+		0435C2E823D86603008EECA5 /* UserManagementStatsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementStatsData.swift; sourceTree = "<group>"; };
+		0435C2EA23D870A2008EECA5 /* VacationManagmentTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationManagmentTabBarController.swift; sourceTree = "<group>"; };
+		043DE00E22D105A0006A084E /* EditAppSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAppSettingViewController.swift; sourceTree = "<group>"; };
 		043DE01022D145BA006A084E /* NavigationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManger.swift; sourceTree = "<group>"; };
 		043DE01222D1BCAB006A084E /* LanguageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDetails.swift; sourceTree = "<group>"; };
 		043E2DF32315463300C91286 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
@@ -170,11 +200,15 @@
 		04484A2D22E27B9D0057BDB3 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		04484A2F22E27BB10057BDB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		04484A3022E3B3B40057BDB3 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		0461A05223D0644A007C181A /* MainControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainControllers.swift; sourceTree = "<group>"; };
+		0461A05423D0647B007C181A /* StringUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
+		0461A05A23D065B9007C181A /* PendingManagmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingManagmentViewController.swift; sourceTree = "<group>"; };
+		0461A05C23D065EA007C181A /* ApprovedManagmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedManagmentViewController.swift; sourceTree = "<group>"; };
+		0461A05E23D06601007C181A /* RejectedManagmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedManagmentViewController.swift; sourceTree = "<group>"; };
 		0462D21622C9220F00A459CE /* Utiletes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utiletes.swift; sourceTree = "<group>"; };
 		047AB49A2393EF160019F259 /* AttendPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendPresenterImpl.swift; sourceTree = "<group>"; };
 		047AB49C2393EF220019F259 /* AttendPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendPresenter.swift; sourceTree = "<group>"; };
 		047AB49E2393EF3A0019F259 /* AttendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendView.swift; sourceTree = "<group>"; };
-		047AB4A32393EF600019F259 /* AttendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AttendViewController.swift; path = ../../../../BackUp/SpidersAttend_ios/SpidersAttend/attend/AttendViewController.swift; sourceTree = "<group>"; };
 		047AB4A72393F5080019F259 /* MainStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStateView.swift; sourceTree = "<group>"; };
 		047AB4A92393F5AE0019F259 /* MainStatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatePresenter.swift; sourceTree = "<group>"; };
 		047AB4AB2393F5BF0019F259 /* MainStatePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatePresenterImpl.swift; sourceTree = "<group>"; };
@@ -247,6 +281,26 @@
 		5C64277AA255D4B73834D58B /* Pods-SpidersAttend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpidersAttend.debug.xcconfig"; path = "Target Support Files/Pods-SpidersAttend/Pods-SpidersAttend.debug.xcconfig"; sourceTree = "<group>"; };
 		5F03338B41CCC994A4315B19 /* Pods_SpidersAttend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpidersAttend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9441EA6385963C69C1D15754 /* Pods_SpidersAttendUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpidersAttendUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB9CF1F623E06E8100A27B81 /* ManagmentVacationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagmentVacationData.swift; sourceTree = "<group>"; };
+		BB9CF1F823E06EDA00A27B81 /* ManagmentVacationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagmentVacationResponse.swift; sourceTree = "<group>"; };
+		BB9CF1FA23E0826E00A27B81 /* ManagmentVacationApproveResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagmentVacationApproveResponse.swift; sourceTree = "<group>"; };
+		BB9CF1FC23E082A300A27B81 /* ManagmentVacationApproveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagmentVacationApproveData.swift; sourceTree = "<group>"; };
+		BB9CF1FE23E0835600A27B81 /* RejectPendingVacationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectPendingVacationResponse.swift; sourceTree = "<group>"; };
+		BB9CF20023E083EE00A27B81 /* RejectPendingVacationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectPendingVacationData.swift; sourceTree = "<group>"; };
+		BB9CF20C23E19EB800A27B81 /* RejectReasonPopUpViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectReasonPopUpViewViewController.swift; sourceTree = "<group>"; };
+		BB9CF20D23E19EB800A27B81 /* RejectReasonPopUpViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RejectReasonPopUpViewViewController.xib; sourceTree = "<group>"; };
+		BBCDB80723DA1EC600A3348E /* AttendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendViewController.swift; sourceTree = "<group>"; };
+		BBCDB80B23DEEA1C00A3348E /* PendingManagmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingManagmentView.swift; sourceTree = "<group>"; };
+		BBCDB80D23DEEAC200A3348E /* PendingManagmentVacationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingManagmentVacationPresenter.swift; sourceTree = "<group>"; };
+		BBCDB80F23DEEACF00A3348E /* PendingManagmentVacationPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingManagmentVacationPresenterImpl.swift; sourceTree = "<group>"; };
+		BBCDB81423DF2CAA00A3348E /* ApprovedManagmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedManagmentView.swift; sourceTree = "<group>"; };
+		BBCDB81623DF2D0200A3348E /* ApprovedManagmentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedManagmentPresenter.swift; sourceTree = "<group>"; };
+		BBCDB81823DF2D2300A3348E /* ApprovedManagmentPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedManagmentPresenterImpl.swift; sourceTree = "<group>"; };
+		BBCDB81D23E0564600A3348E /* RejectedManagmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedManagmentView.swift; sourceTree = "<group>"; };
+		BBCDB81F23E0569E00A3348E /* RejectedManagmentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedManagmentPresenter.swift; sourceTree = "<group>"; };
+		BBCDB82123E056C500A3348E /* RejectedManagmentPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedManagmentPresenterImpl.swift; sourceTree = "<group>"; };
+		BBCDB82323E0672500A3348E /* ApprovedManagmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedManagmentResponse.swift; sourceTree = "<group>"; };
+		BBCDB82523E0675A00A3348E /* ApprovedManagmentVacationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedManagmentVacationData.swift; sourceTree = "<group>"; };
 		D082345CA561664EB5443E29 /* Pods-SpidersAttendUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpidersAttendUITests.release.xcconfig"; path = "Target Support Files/Pods-SpidersAttendUITests/Pods-SpidersAttendUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -414,7 +468,7 @@
 		043DE00D22D1055F006A084E /* more */ = {
 			isa = PBXGroup;
 			children = (
-				043DE00E22D105A0006A084E /* MoreViewController.swift */,
+				043DE00E22D105A0006A084E /* EditAppSettingViewController.swift */,
 			);
 			path = more;
 			sourceTree = "<group>";
@@ -423,6 +477,8 @@
 			isa = PBXGroup;
 			children = (
 				0443D47022CB8A9300FDDE64 /* CheckStatusResponse.swift */,
+				0435C2E623D865BF008EECA5 /* UserManagementStatsResponse.swift */,
+				0435C2E823D86603008EECA5 /* UserManagementStatsData.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -439,11 +495,52 @@
 			path = clockViewRes;
 			sourceTree = "<group>";
 		};
+		0461A05623D0649E007C181A /* vacationmanagment */ = {
+			isa = PBXGroup;
+			children = (
+				BB9CF1F523E06E6B00A27B81 /* model */,
+				0461A05723D064B9007C181A /* pendingVacationManagment */,
+				0461A05823D06576007C181A /* approvedVacationManagment */,
+				0461A05923D06588007C181A /* rejectedVacationManagment */,
+				0435C2EA23D870A2008EECA5 /* VacationManagmentTabBarController.swift */,
+			);
+			path = vacationmanagment;
+			sourceTree = "<group>";
+		};
+		0461A05723D064B9007C181A /* pendingVacationManagment */ = {
+			isa = PBXGroup;
+			children = (
+				BBCDB80A23DEEA0300A3348E /* presenter */,
+				BBCDB80923DEE9F900A3348E /* view */,
+			);
+			path = pendingVacationManagment;
+			sourceTree = "<group>";
+		};
+		0461A05823D06576007C181A /* approvedVacationManagment */ = {
+			isa = PBXGroup;
+			children = (
+				BBCDB81323DF2C8D00A3348E /* model */,
+				BBCDB81223DF2C8700A3348E /* presenter */,
+				BBCDB81123DF2C8000A3348E /* view */,
+			);
+			path = approvedVacationManagment;
+			sourceTree = "<group>";
+		};
+		0461A05923D06588007C181A /* rejectedVacationManagment */ = {
+			isa = PBXGroup;
+			children = (
+				BBCDB81C23E055EF00A3348E /* presenter */,
+				BBCDB81B23E055E900A3348E /* model */,
+				BBCDB81A23E055E400A3348E /* view */,
+			);
+			path = rejectedVacationManagment;
+			sourceTree = "<group>";
+		};
 		047AB4A02393EF3F0019F259 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				047AB4A32393EF600019F259 /* AttendViewController.swift */,
 				047AB49E2393EF3A0019F259 /* AttendView.swift */,
+				BBCDB80723DA1EC600A3348E /* AttendViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -597,6 +694,8 @@
 			isa = PBXGroup;
 			children = (
 				04CB6A2923A8ED7D00E57D43 /* UIView.swift */,
+				0461A05223D0644A007C181A /* MainControllers.swift */,
+				0461A05423D0647B007C181A /* StringUtil.swift */,
 			);
 			path = extintions;
 			sourceTree = "<group>";
@@ -666,6 +765,7 @@
 				040691BB22FAD2EB000EDA0C /* payRoll */,
 				043DE00822CE01E2006A084E /* qrReader */,
 				043DE00D22D1055F006A084E /* more */,
+				0461A05623D0649E007C181A /* vacationmanagment */,
 				042C00A022BE838B000546D0 /* Util */,
 				043457CA2317E66900D20414 /* Main.storyboard */,
 				04D9DABC22B57D8A002C59E5 /* Info.plist */,
@@ -773,6 +873,99 @@
 				D082345CA561664EB5443E29 /* Pods-SpidersAttendUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BB9CF1F523E06E6B00A27B81 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BB9CF1F623E06E8100A27B81 /* ManagmentVacationData.swift */,
+				BB9CF1F823E06EDA00A27B81 /* ManagmentVacationResponse.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BB9CF20B23E19E6C00A27B81 /* confirmReasomPopUP */ = {
+			isa = PBXGroup;
+			children = (
+				BB9CF20C23E19EB800A27B81 /* RejectReasonPopUpViewViewController.swift */,
+				BB9CF20D23E19EB800A27B81 /* RejectReasonPopUpViewViewController.xib */,
+			);
+			path = confirmReasomPopUP;
+			sourceTree = "<group>";
+		};
+		BBCDB80923DEE9F900A3348E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BB9CF20B23E19E6C00A27B81 /* confirmReasomPopUP */,
+				BBCDB80B23DEEA1C00A3348E /* PendingManagmentView.swift */,
+				0461A05A23D065B9007C181A /* PendingManagmentViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BBCDB80A23DEEA0300A3348E /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BBCDB80D23DEEAC200A3348E /* PendingManagmentVacationPresenter.swift */,
+				BBCDB80F23DEEACF00A3348E /* PendingManagmentVacationPresenterImpl.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		BBCDB81123DF2C8000A3348E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				0461A05C23D065EA007C181A /* ApprovedManagmentViewController.swift */,
+				BBCDB81423DF2CAA00A3348E /* ApprovedManagmentView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BBCDB81223DF2C8700A3348E /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BBCDB81623DF2D0200A3348E /* ApprovedManagmentPresenter.swift */,
+				BBCDB81823DF2D2300A3348E /* ApprovedManagmentPresenterImpl.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		BBCDB81323DF2C8D00A3348E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BBCDB82323E0672500A3348E /* ApprovedManagmentResponse.swift */,
+				BBCDB82523E0675A00A3348E /* ApprovedManagmentVacationData.swift */,
+				BB9CF1FA23E0826E00A27B81 /* ManagmentVacationApproveResponse.swift */,
+				BB9CF1FC23E082A300A27B81 /* ManagmentVacationApproveData.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BBCDB81A23E055E400A3348E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				0461A05E23D06601007C181A /* RejectedManagmentViewController.swift */,
+				BBCDB81D23E0564600A3348E /* RejectedManagmentView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BBCDB81B23E055E900A3348E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BB9CF1FE23E0835600A27B81 /* RejectPendingVacationResponse.swift */,
+				BB9CF20023E083EE00A27B81 /* RejectPendingVacationData.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BBCDB81C23E055EF00A3348E /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BBCDB81F23E0569E00A3348E /* RejectedManagmentPresenter.swift */,
+				BBCDB82123E056C500A3348E /* RejectedManagmentPresenterImpl.swift */,
+			);
+			path = presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -887,6 +1080,7 @@
 			files = (
 				04FC5B9F23B8C4A500DFF5CC /* NewVacationDatePackerView.xib in Resources */,
 				043457C82317E66900D20414 /* Main.storyboard in Resources */,
+				BB9CF20F23E19EB800A27B81 /* RejectReasonPopUpViewViewController.xib in Resources */,
 				04484A2C22E27B9D0057BDB3 /* Localizable.strings in Resources */,
 				0418A09B22FC580900739A3B /* Assets.xcassets in Resources */,
 			);
@@ -1001,31 +1195,40 @@
 			files = (
 				049AA42023C3354200682E36 /* ManagersSearchViewController.swift in Sources */,
 				049AA41C23BE1AAD00682E36 /* VacationType.swift in Sources */,
+				BB9CF1FB23E0826E00A27B81 /* ManagmentVacationApproveResponse.swift in Sources */,
 				0443D47122CB8A9300FDDE64 /* CheckStatusResponse.swift in Sources */,
 				04FC5B9523B3733A00DFF5CC /* RejectedVacationResponse.swift in Sources */,
+				BB9CF1FD23E082A300A27B81 /* ManagmentVacationApproveData.swift in Sources */,
 				042445D522B78F7B0089C817 /* LoginViewController.swift in Sources */,
 				049AA42423C6034600682E36 /* VacationTypeCellView.swift in Sources */,
+				BBCDB82023E0569E00A3348E /* RejectedManagmentPresenter.swift in Sources */,
 				043E2DFE2315486E00C91286 /* LoginUserData.swift in Sources */,
 				042F7B8422C1055F0059E5B4 /* NetworkBaseError.swift in Sources */,
 				0462D21722C9220F00A459CE /* Utiletes.swift in Sources */,
 				04A6FE0B23CCAA9000657E53 /* PayRollDetailViewController.swift in Sources */,
 				04CB6A3923A8FFD600E57D43 /* PendingVacationView.swift in Sources */,
 				042F7B8222C0DCB90059E5B4 /* AppConstants.swift in Sources */,
+				BBCDB82223E056C500A3348E /* RejectedManagmentPresenterImpl.swift in Sources */,
 				043E2E02231549AD00C91286 /* LoginData.swift in Sources */,
 				04CB6A0B23A6500300E57D43 /* ApprovedViewController.swift in Sources */,
 				042445DB22B98F5C0089C817 /* CircularProgress.swift in Sources */,
 				04FC5B8F23B3627900DFF5CC /* RejectedVacationControllerView.swift in Sources */,
 				04145E5422B69C040084222C /* SplashViewController.swift in Sources */,
 				04CB6A3523A8FEEE00E57D43 /* PendingVacationPresenter.swift in Sources */,
+				BBCDB80823DA1EC600A3348E /* AttendViewController.swift in Sources */,
 				040691BD22FAD308000EDA0C /* PayRollViewController.swift in Sources */,
+				BBCDB82423E0672500A3348E /* ApprovedManagmentResponse.swift in Sources */,
+				BB9CF1F923E06EDA00A27B81 /* ManagmentVacationResponse.swift in Sources */,
 				042C00A622BEA713000546D0 /* ValidationError.swift in Sources */,
 				04FC5B8623B255DA00DFF5CC /* ApprovedVacationPresenterImpl.swift in Sources */,
 				043E2DFC231547BA00C91286 /* LoginAttendStatus.swift in Sources */,
 				04CB6A2A23A8ED7D00E57D43 /* UIView.swift in Sources */,
+				BB9CF20E23E19EB800A27B81 /* RejectReasonPopUpViewViewController.swift in Sources */,
 				049AA40B23BCDC5100682E36 /* NewVacationDataResponse.swift in Sources */,
 				04CB6A0D23A6501700E57D43 /* RejectedViewController.swift in Sources */,
 				043DE01322D1BCAB006A084E /* LanguageDetails.swift in Sources */,
 				043E2E192317DB9000C91286 /* RPCircularProgress.swift in Sources */,
+				BBCDB81723DF2D0200A3348E /* ApprovedManagmentPresenter.swift in Sources */,
 				04A6FDF623CB482600657E53 /* VacationRequestData.swift in Sources */,
 				04CB6A0F23A6669300E57D43 /* PendingListViewController.swift in Sources */,
 				049AA3F823BCC3A600682E36 /* VacationTypesSearchViewController.swift in Sources */,
@@ -1035,13 +1238,17 @@
 				04A6FDF823CB6AD200657E53 /* PayRollCellView.swift in Sources */,
 				04484A3122E3B3B40057BDB3 /* LanguageManager.swift in Sources */,
 				049AA41E23C22CF000682E36 /* ManagerCellView.swift in Sources */,
+				BBCDB81023DEEACF00A3348E /* PendingManagmentVacationPresenterImpl.swift in Sources */,
 				04A6FDF223CB46B000657E53 /* NewVacationObj.swift in Sources */,
+				0435C2EB23D870A2008EECA5 /* VacationManagmentTabBarController.swift in Sources */,
 				047AB49D2393EF220019F259 /* AttendPresenter.swift in Sources */,
+				BBCDB81E23E0564600A3348E /* RejectedManagmentView.swift in Sources */,
 				047AB4A82393F5080019F259 /* MainStateView.swift in Sources */,
+				BB9CF20123E083EE00A27B81 /* RejectPendingVacationData.swift in Sources */,
 				042F7B8722C26E7F0059E5B4 /* PrefUtil.swift in Sources */,
 				049AA41A23BE195500682E36 /* NewVacationControllerView.swift in Sources */,
+				0435C2E723D865BF008EECA5 /* UserManagementStatsResponse.swift in Sources */,
 				043E2DFA2315463400C91286 /* ClockView.swift in Sources */,
-				047AB4A42393EF600019F259 /* AttendViewController.swift in Sources */,
 				04FC5B9A23B4C41400DFF5CC /* NewVacationController.swift in Sources */,
 				047AB4AA2393F5AE0019F259 /* MainStatePresenter.swift in Sources */,
 				049AA41823BE179400682E36 /* NewVacationControllerPresenterImpl.swift in Sources */,
@@ -1050,6 +1257,7 @@
 				04A6FE0923CC675B00657E53 /* PayRollDataSource.swift in Sources */,
 				043E2E152317DAD700C91286 /* DateHelper.swift in Sources */,
 				04A6FE0123CC63ED00657E53 /* PayrollRequestResponse.swift in Sources */,
+				0461A05323D0644A007C181A /* MainControllers.swift in Sources */,
 				04A6FDFD23CB6FC000657E53 /* PayRollPresenter.swift in Sources */,
 				043E2E1D2317DC4500C91286 /* StyleKit_Clock.swift in Sources */,
 				04A6FDFF23CB6FD100657E53 /* PayRollPresenterImpl.swift in Sources */,
@@ -1060,15 +1268,20 @@
 				04FC5BA123B8C55100DFF5CC /* NewVacationDatePackerView.swift in Sources */,
 				04FC5B7923B23BDA00DFF5CC /* DeletePendingVacationResponse.swift in Sources */,
 				047AB49B2393EF160019F259 /* AttendPresenterImpl.swift in Sources */,
+				BBCDB81923DF2D2300A3348E /* ApprovedManagmentPresenterImpl.swift in Sources */,
 				043E2DF72315463400C91286 /* ClockViewController.swift in Sources */,
 				042445D822B7ABAC0089C817 /* BaseNavigationController.swift in Sources */,
 				043E2E132317DA0200C91286 /* Geotification.swift in Sources */,
 				04A6FE0523CC649900657E53 /* Payroll.swift in Sources */,
 				043DE01122D145BA006A084E /* NavigationManger.swift in Sources */,
+				0461A05B23D065B9007C181A /* PendingManagmentViewController.swift in Sources */,
 				047AB4AC2393F5BF0019F259 /* MainStatePresenterImpl.swift in Sources */,
+				BBCDB81523DF2CAA00A3348E /* ApprovedManagmentView.swift in Sources */,
 				043E2DF82315463400C91286 /* StyleKit_ConsensusGraph.swift in Sources */,
+				BBCDB80E23DEEAC200A3348E /* PendingManagmentVacationPresenter.swift in Sources */,
 				04CB6A3123A8FB4F00E57D43 /* PendingVacationData.swift in Sources */,
 				04CB6A3723A8FF3B00E57D43 /* PendingVacationPresenterImpl.swift in Sources */,
+				0461A05D23D065EA007C181A /* ApprovedManagmentViewController.swift in Sources */,
 				04CB6A2F23A8FB1400E57D43 /* PendingVacationResponse.swift in Sources */,
 				04FC5B7F23B24F9B00DFF5CC /* ApprovedVacationView.swift in Sources */,
 				04D0AE1623743CB4001A66C5 /* BaseViewController.swift in Sources */,
@@ -1076,20 +1289,27 @@
 				049AA41623BE178800682E36 /* NewVacationControllerPresenter.swift in Sources */,
 				047AB4B6239677210019F259 /* CustomTabBarController.swift in Sources */,
 				040691BA22FAD2DA000EDA0C /* VicationViewController.swift in Sources */,
+				BB9CF1F723E06E8100A27B81 /* ManagmentVacationData.swift in Sources */,
 				042F7BA422C4E0090059E5B4 /* GeotificationBaseViewController.swift in Sources */,
 				042CFB3822D5FE9B005D2D58 /* UiUtiletes.swift in Sources */,
 				04A6FE0323CC648700657E53 /* PayrollRequestData.swift in Sources */,
+				BB9CF1FF23E0835600A27B81 /* RejectPendingVacationResponse.swift in Sources */,
 				04D0AE1423743C6A001A66C5 /* QrReaderViewController.swift in Sources */,
 				04FC5B8A23B2608A00DFF5CC /* ApprovedVacationData.swift in Sources */,
-				043DE00F22D105A0006A084E /* MoreViewController.swift in Sources */,
+				0461A05F23D06601007C181A /* RejectedManagmentViewController.swift in Sources */,
+				043DE00F22D105A0006A084E /* EditAppSettingViewController.swift in Sources */,
 				043E2E002315491B00C91286 /* LoginResponse.swift in Sources */,
 				043E2DF92315463400C91286 /* StateDiagram.swift in Sources */,
 				04FC5B9123B3636500DFF5CC /* RejectedVacationPresenter.swift in Sources */,
+				BBCDB82623E0675A00A3348E /* ApprovedManagmentVacationData.swift in Sources */,
 				043E2E042315574100C91286 /* APIRouter.swift in Sources */,
+				0435C2E923D86603008EECA5 /* UserManagementStatsData.swift in Sources */,
 				042F7B9122C37FC80059E5B4 /* MainStateViewController.swift in Sources */,
 				04FC5B9723B3738500DFF5CC /* RejectedVacationData.swift in Sources */,
 				04D9DAB122B57D88002C59E5 /* AppDelegate.swift in Sources */,
 				042F7B8B22C378DD0059E5B4 /* Constants.swift in Sources */,
+				0461A05523D0647B007C181A /* StringUtil.swift in Sources */,
+				BBCDB80C23DEEA1C00A3348E /* PendingManagmentView.swift in Sources */,
 				049AA40F23BCDD1500682E36 /* NewVacationDataResponseData.swift in Sources */,
 				049AA40523BCD94300682E36 /* ManagersDataSource.swift in Sources */,
 				04FC5B8823B2605C00DFF5CC /* ApprovedVacationResponse.swift in Sources */,

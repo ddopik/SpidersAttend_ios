@@ -12,7 +12,7 @@ protocol PendingVacationView {
     func viewPendingVacations(vacationList:[Vacation])
     
     
-    func onPendingVacationDeleted(vacation:Vacation,indexPath:IndexPath,state:Bool)
+    func onPendingVacationDeleted(vacation:Vacation,state:Bool)
     
     func viewError(msg:String)
     

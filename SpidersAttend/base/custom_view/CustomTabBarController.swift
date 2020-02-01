@@ -18,11 +18,10 @@ class CustomTabBarController: UITabBarController {
                 [NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size:   16)!],
                 for: .normal)
 
-        
     }
      override func viewDidLayoutSubviews(){
         tabBar.frame = CGRect(x: 0, y:  0, width: tabBar.frame.size.width, height:tabBar.frame.size.height)
-        tabBar.itemPositioning = UITabBar.ItemPositioning.fill
+        tabBar.itemPositioning = UITabBar.ItemPositioning.centered
     }
     
    

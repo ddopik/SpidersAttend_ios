@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Floaty
 class ApprovedViewController:BaseViewController{
     
     
@@ -15,6 +16,7 @@ class ApprovedViewController:BaseViewController{
     var approvedVacationPresenter :ApprovedVacationPresenter!
     var approvedVacationDataSource: VacationDataSource!
     
+    @IBOutlet weak var newVacationBtn: Floaty!
     
     @IBOutlet weak var noApprovedVacationTitle: UILabel!
     
@@ -24,7 +26,7 @@ class ApprovedViewController:BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        newVacationBtn.fabDelegate = self
         noApprovedVacationTitle.text = "No Approved vacation available".localiz()
         approvedVacationPresenter = ApprovedVacationPresenterImpl(approvedVacationView: self)
         approvedVacationDataSource =  VacationDataSource(vacationType: VacationDataSource.VacationListType.APPROVED)
@@ -42,7 +44,11 @@ class ApprovedViewController:BaseViewController{
     }
     
   
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+        
+    }
 }
 
 extension ApprovedViewController : ApprovedVacationView{
@@ -64,5 +70,11 @@ extension ApprovedViewController : ApprovedVacationView{
     
     func viewError(msg: String) {
         noApprovedVacationTitle.isHidden = false
+    }
+}
+extension ApprovedViewController: FloatyDelegate {
+    func emptyFloatySelected(_ floaty: Floaty) {
+        self.tabBarController?.tabBar.isHidden = true
+        self.performSegue(withIdentifier: "new_vacation", sender: nil)
     }
 }

@@ -70,3 +70,13 @@ extension BaseViewController {
         }}
     
 }
+extension UITextField {
+open override func awakeFromNib() {
+        super.awakeFromNib()
+    if PrefUtil.getAppLanguage() == PrefUtil.ARABIC_LANG {
+            if textAlignment == .natural {
+                self.textAlignment = .right
+            }
+        }
+    }
+}

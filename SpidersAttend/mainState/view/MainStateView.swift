@@ -13,4 +13,5 @@ protocol MainStateView {
      func viewProgress(state:Bool)
     func  showMessage(withTitle title: String?, message: String?)
     func viewDialogMessage(title:String,message:String)
+    func setManagmentControll(state:Bool)
 }

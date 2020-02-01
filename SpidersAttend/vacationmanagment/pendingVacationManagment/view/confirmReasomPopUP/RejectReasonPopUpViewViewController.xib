@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RejectReasonPopUpViewViewController" customModule="SpidersAttend" customModuleProvider="target">
+            <connections>
+                <outlet property="reasonView" destination="5VK-pK-4Xr" id="d4X-zp-1Om"/>
+                <outlet property="vacationReasinlabel" destination="FUz-sk-hQJ" id="A6M-HW-euN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQt-YT-gc9">
+                    <rect key="frame" x="87" y="136" width="240" height="150"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zUm-do-mxv">
+                            <rect key="frame" x="10" y="111" width="220" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b17-2V-sG9">
+                                    <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="Confirm">
+                                        <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onConfirmClick:" destination="-1" eventType="touchUpInside" id="OdN-YB-0bP"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkC-0T-nsA">
+                                    <rect key="frame" x="111" y="0.0" width="109" height="30"/>
+                                    <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onCancelClick:" destination="-1" eventType="touchUpInside" id="nWO-xE-Fkm"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reason" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5VK-pK-4Xr">
+                            <rect key="frame" x="10" y="47" width="220" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please specify A reason" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUz-sk-hQJ">
+                            <rect key="frame" x="29" y="8" width="182" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="5VK-pK-4Xr" firstAttribute="top" secondItem="lQt-YT-gc9" secondAttribute="top" constant="47" id="6Yj-Yy-nqo"/>
+                        <constraint firstItem="5VK-pK-4Xr" firstAttribute="leading" secondItem="lQt-YT-gc9" secondAttribute="leading" constant="10" id="93y-EC-9di"/>
+                        <constraint firstItem="zUm-do-mxv" firstAttribute="top" secondItem="5VK-pK-4Xr" secondAttribute="bottom" constant="30" id="CTP-nl-dk7"/>
+                        <constraint firstItem="FUz-sk-hQJ" firstAttribute="leading" secondItem="lQt-YT-gc9" secondAttribute="leading" constant="29" id="HdJ-yv-oEq"/>
+                        <constraint firstAttribute="trailing" secondItem="zUm-do-mxv" secondAttribute="trailing" constant="10" id="JoG-Uo-WKA"/>
+                        <constraint firstItem="zUm-do-mxv" firstAttribute="leading" secondItem="lQt-YT-gc9" secondAttribute="leading" constant="10" id="ggy-dz-DjZ"/>
+                        <constraint firstItem="FUz-sk-hQJ" firstAttribute="top" secondItem="lQt-YT-gc9" secondAttribute="top" constant="8" id="h1S-rw-2fi"/>
+                        <constraint firstItem="5VK-pK-4Xr" firstAttribute="top" secondItem="FUz-sk-hQJ" secondAttribute="bottom" constant="18" id="hWF-ez-PhC"/>
+                        <constraint firstItem="FUz-sk-hQJ" firstAttribute="centerX" secondItem="lQt-YT-gc9" secondAttribute="centerX" id="hdp-Z4-ODa"/>
+                        <constraint firstAttribute="trailing" secondItem="5VK-pK-4Xr" secondAttribute="trailing" constant="10" id="kdH-P1-ZwB"/>
+                        <constraint firstAttribute="bottom" secondItem="zUm-do-mxv" secondAttribute="bottom" constant="10" id="oyv-Dx-JL4"/>
+                        <constraint firstAttribute="trailing" secondItem="FUz-sk-hQJ" secondAttribute="trailing" constant="29" id="uGl-Cd-2fG"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lQt-YT-gc9" secondAttribute="trailing" constant="87" id="ahG-Vp-IZX"/>
+                <constraint firstItem="lQt-YT-gc9" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="lI5-Fe-FXo"/>
+                <constraint firstItem="lQt-YT-gc9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="87" id="rh4-2O-9ro"/>
+                <constraint firstItem="lQt-YT-gc9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yjp-aE-Q2v"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="139" y="120"/>
+        </view>
+    </objects>
+</document>

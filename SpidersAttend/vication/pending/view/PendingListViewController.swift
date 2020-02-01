@@ -17,7 +17,7 @@ class PendingListViewController: BaseViewController,PendingVacationView {
  
     @IBOutlet weak var noPendingVacationAvailaibleLabel: UILabel!
     
-    @IBOutlet weak var newActionBrn: Floaty!
+    @IBOutlet weak var newVacationBtn: Floaty!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class PendingListViewController: BaseViewController,PendingVacationView {
           self.tabBarController?.tabBar.items?[2].title = "Rejected".localiz()
         
         
-        noPendingVacationAvailaibleLabel.text = "No Pending vacation available".localiz()
+        noPendingVacationAvailaibleLabel?.text = "No Pending vacation available".localiz()
         pendingVacationPresenter = PendingVacationPresenterImpl(pendingVacationView: self)
         pendingVacationDataSource =  VacationDataSource(vacationType: VacationDataSource.VacationListType.PENDING)
         
@@ -37,7 +37,7 @@ class PendingListViewController: BaseViewController,PendingVacationView {
         self.pendingVacationTableView.tableFooterView = UIView(frame: CGRect.zero)
         self.pendingVacationPresenter.getPendingVacations()
         
-        newActionBrn.fabDelegate = self
+        newVacationBtn?.fabDelegate = self
         
         
     }
@@ -60,7 +60,7 @@ class PendingListViewController: BaseViewController,PendingVacationView {
     }
     func viewPendingVacations(vacationList: [Vacation]) {
         
-        noPendingVacationAvailaibleLabel.isHidden = true
+        noPendingVacationAvailaibleLabel?.isHidden = true
 
         pendingVacationDataSource.vacationList.removeAll()
         pendingVacationDataSource.vacationList.insert(contentsOf: vacationList, at: 0)
@@ -77,30 +77,35 @@ class PendingListViewController: BaseViewController,PendingVacationView {
         }
     }
     
-    func onPendingVacationDeleted(vacation: Vacation,indexPath:IndexPath, state: Bool) {
+    func onPendingVacationDeleted(vacation: Vacation, state: Bool) {
         if(state){
-            pendingVacationDataSource.vacationList.remove(at: indexPath.row)
-            pendingVacationTableView.beginUpdates()
-            pendingVacationTableView.deleteRows(at: [indexPath], with: .automatic)
-            pendingVacationTableView.endUpdates()
+            pendingVacationDataSource.removeVacation(vacation: vacation, tableView: pendingVacationTableView)
+            if (pendingVacationDataSource.vacationList.count <= 0){
+                noPendingVacationAvailaibleLabel?.isHidden = false
+            }else{
+                noPendingVacationAvailaibleLabel?.isHidden = true
+            }
         }else{
-            //            showAlert(withTitle: "error".localiz(), message: "error_deleting_vacation")
+            showAlert(withTitle: "error".localiz(), message: "Drror Deleting Vacation".localiz())
         }
     }
     
     
     func viewError(msg: String) {
-        noPendingVacationAvailaibleLabel.isHidden = false
+        noPendingVacationAvailaibleLabel?.isHidden = false
     }
     
  
     
 }
 extension PendingListViewController:VacationCellProtocol{
+
+    
     func onVacationDeleteClick(vacation: Vacation, indexPath: IndexPath) {
         pendingVacationPresenter.deletePendingVacation(vacation: vacation, indexPath: indexPath)
     }
 }
+
 
 extension PendingListViewController: FloatyDelegate {
     func emptyFloatySelected(_ floaty: Floaty) {

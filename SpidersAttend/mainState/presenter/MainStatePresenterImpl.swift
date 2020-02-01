@@ -11,6 +11,8 @@ import Foundation
 class MainStatePresenterImpl:MainStatePresenter{
  
     
+ 
+    
     
     var mainStateView:MainStateView!
  
@@ -61,6 +63,42 @@ class MainStatePresenterImpl:MainStatePresenter{
               
               
           }
-
+    func getUserManagmentStats() {
+           self.mainStateView.viewProgress(state: true)
+                    
+                    
+                      let succ={ (userManagementStatsResponse:UserManagementStatsResponse?)   in
+                        if let _ =  userManagementStatsResponse?.data.isManager {
+                            self.mainStateView.setManagmentControll(state : true)
+                          }
+                        else{
+                            self.mainStateView.setManagmentControll(state : false)
+                        }
+                        
+                        self.mainStateView.viewProgress(state: false)
+                      }
+                    
+                    
+                      let failureClos={
+                          (err : Any) in
+                          if (err is NetworkBaseError){
+                              //                (err:NetworkBaseError?)   in
+                              print("failed ---->\(String(describing: (err as! NetworkBaseError).data?.msg))")
+                            self.mainStateView.viewDialogMessage(title:"Error",message:((err as! NetworkBaseError).data?.msg) ?? "failed")
+                          }else{
+                            self.mainStateView.viewDialogMessage(title:"Error", message: "Network Error")
+                           }
+                          
+                         self.mainStateView.viewProgress(state: false)
+         
+                      }
+                      
+                      let bodyParameter = [
+                          "uid" : PrefUtil.getUserId()
+                          ] as! [String : String]
+                   APIRouter.makePostRequest(url: APIRouter.CHECK_USER_MANAGMENT_STATS_URL, bodyParameters: bodyParameter, succese: succ, failure: failureClos as (Any?) -> (), type: UserManagementStatsResponse.self)
+                  
+                      
+     }
 }
  

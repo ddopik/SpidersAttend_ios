@@ -11,17 +11,20 @@ import CoreLocation
 
 
 class MainStateViewController :BaseViewController,MainStateView {
- 
     
-
+    
+    
+    
+    
+    
+   
+    
     
  
- 
-     
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var stateMessage: UITextView!
- 
+    var vacationManagmentViewController:VacationManagmentTabBarController!
     var mainStatePresenter: MainStatePresenter!
     
     @IBOutlet var tapGetureRecognizer: UITapGestureRecognizer!
@@ -39,40 +42,42 @@ class MainStateViewController :BaseViewController,MainStateView {
         self.tabBarController?.tabBar.items?[0].title = "Home".localiz()
         self.tabBarController?.tabBar.items?[1].title = "Attend".localiz()
         self.tabBarController?.tabBar.items?[2].title = "Vication".localiz()
-         self.tabBarController?.tabBar.items?[3].title = "PayRoll".localiz()
-         self.tabBarController?.tabBar.items?[4].title = "more".localiz()
+        self.tabBarController?.tabBar.items?[3].title = "PayRoll".localiz()
+        self.tabBarController?.tabBar.items?[4].title = "edit".localiz()
+        self.tabBarController?.tabBar.items?[4].title = "Vacation Managment".localiz()
+
+        vacationManagmentViewController = tabBarController?.viewControllers?[5] as? VacationManagmentTabBarController
+
+        adjustTabBarText(textSize: FONTS.MAIN_TAB_BAR_FONT_SIZE)
         
- 
-    
     }
     
     
     
     
     private func adjustTabBarText(textSize:CGFloat){
-        
-        let itemCount =   (self.tabBarController?.tabBar.items!.count)! - 1
-        
-        for index in (0...itemCount ){
-            self.tabBarController?.tabBar.items?[index].setBadgeTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: "Helvetica-Bold", size: textSize)!
-                 ],for: .normal)
-        }
+        let appearance = UITabBarItem.appearance()
+               let attributes: [NSAttributedString.Key: AnyObject] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue):UIFont(name: "American Typewriter", size: textSize)!]
+               appearance.setTitleTextAttributes(attributes, for: .normal)
+
+ 
     }
     
-
     
-  
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-         setCloclView()
+        setCloclView()
         mainStatePresenter.requestUserStatus()
+        mainStatePresenter.getUserManagmentStats()
+   
         
     }
- 
     
     
- 
+    
+    
     
     func viewProgress(state: Bool) {
         if(state){
@@ -80,19 +85,44 @@ class MainStateViewController :BaseViewController,MainStateView {
         }else{
             stopProgress()
         }
-     }
+    }
     
     func viewUserStatsMessage(userStatsMessage:String){
         self.stateMessage.text  = userStatsMessage
     }
-     func showMessage(withTitle title: String?, message: String?) {
-           showAlert(withTitle: title, message: message)
-      }
-      
-    func viewDialogMessage(title: String, message: String) {
-         self.showSimpleConfirmDialog(parent: self, messageText: message,messageTitle: title, buttonText: "Ok")
+    
+    /*
+     * Handle vacation managment visabilty
+     */
+    func setManagmentControll(state: Bool) {
+        tabBarController?.viewControllers?.count
+        if(!state){
+            if ( tabBarController?.viewControllers?.count ?? 0 >= 6 )
+            {
+                tabBarController?.viewControllers?[4].title = "edit".localiz()
+               tabBarController?.viewControllers?.removeLast()
+            }
+        }
+            else {
+                if  (tabBarController?.viewControllers?.count ?? 0 <= 5) {
+                    tabBarController?.viewControllers?.append(vacationManagmentViewController)
+                    tabBarController?.viewControllers?[4].title = "edit".localiz()
+                    tabBarController?.viewControllers?[5].title = "Vacation Managment".localiz()
+
+                }
+
+            }
+        
+        
     }
-  
+    func showMessage(withTitle title: String?, message: String?) {
+        showAlert(withTitle: title, message: message)
+    }
+    
+    func viewDialogMessage(title: String, message: String) {
+        self.showSimpleConfirmDialog(parent: self, messageText: message,messageTitle: title, buttonText: "Ok")
+    }
+    
     
     @objc  func appMovedToForeground() {
         print("App moved to ForeGround!")

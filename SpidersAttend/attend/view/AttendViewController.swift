@@ -2,223 +2,200 @@
 //  AttendViewController.swift
 //  SpidersAttend
 //
-//  Created by ddopik on 8/7/19.
-//  Copyright © 2019 Brandeda. All rights reserved.
+//  Created by Abd Alla maged on 1/23/20.
+//  Copyright © 2020 Brandeda. All rights reserved.
 //
 
+import Foundation
+//
+// AttendViewController.swift
+// SpidersAttend
+//
+// Created by ddopik on 8/7/19.
+// Copyright © 2019 Brandeda. All rights reserved.
+//
 import UIKit
-
-class AttendViewController: GeotificationBaseViewController {
-    
-    
-    @IBOutlet weak var statsMessage: UITextView!
-    @IBOutlet weak var qrAttendButton: UIButton!
-    @IBOutlet weak var attendActionContainer: UIStackView!
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        super.onLocationFencingUpdate=self
-        requestUserStatus()
-        
+import CoreLocation
+class AttendViewController: BaseViewController {
+   
+   
+   
+  @IBOutlet weak var statsMessage: UITextView!
+  @IBOutlet weak var qrAttendButton: UIButton!
+  @IBOutlet weak var attendActionContainer: UIStackView!
+   
+  private  var currentAttendMethod :AttendMethod!
+  private var attendPresenter: AttendPresenter!
+   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    super.onLocationUpdateDelegate = self
+    attendPresenter = AttendPresenterImpl(attendView: self)
+  }
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    attendPresenter.requestUserStatus()
+     
+  }
+   
+   
+  @IBAction func qrAttendButton(_ sender: Any) {
+    // Call back found through locationDelegate
+    do{
+      currentAttendMethod = AttendMethod.QR
+      try super.startLocationServices()
     }
-    @IBAction func qrAttendButton(_ sender: Any) {
-        super.onLocationUpdateDelegate = self
-        setAttendQrBtnState(state:false)
-        requestAttendAction()
-        
+    catch{
+      showAlert(withTitle: "Error", message: error.localizedDescription)
+      stopLocationManger()
     }
-    
-    
-    
-    func setAttendQrBtnState(state :Bool){
-        if !state{
-            //            qrAttendButton.backgroundColor = .gray
-            qrAttendButton.isEnabled=false
-        }else{
-            //            qrAttendButton.backgroundColor = .blue
-            qrAttendButton.isEnabled=true
-        }
-        
+     
+  }
+   
+   
+  @IBAction func networkAttendButton(_ sender: Any) {
+    // Call back found through locationDelegate
+    do{
+      currentAttendMethod = AttendMethod.NETWORK
+      try super.startLocationServices()
     }
-    
-    func setAttendMessageStates(statsID:String){
-        
-        
-        if(statsID == ApiConstant.ENTER){
-            statsMessage.text = "Please select method to ".localiz()+"Attend".localiz()
-            attendActionContainer.isHidden = false
-            
-        }else if(statsID == ApiConstant.OUT){
-            statsMessage.text = "Please select method to ".localiz()+"Leave".localiz()
-            attendActionContainer.isHidden = false
-            
-        }
-        else if(statsID == ApiConstant.ENDED){
-            statsMessage.text = "your Attend has been taken fot today"
-            attendActionContainer.isHidden = true
-        }
+    catch{
+      showAlert(withTitle: "Error", message: error.localizedDescription)
+      stopLocationManger()
     }
+     
+  }
+   
+   
 }
-
+extension AttendViewController:AttendView{
+   
+  func requestAttendAction(){
+     
+    startProgress()
+    do{
+      //step ->1
+      /*
+       start location Updater and region Fencing
+       */
+      try self.startLocationServices()
+    }
+    catch{
+      print("AttendViewController ----> \(Error.self)")
+      self.stopProgress()
+    }
+  }
+   
+}
 extension AttendViewController{
-    
-    func requestUserStatus(){
-        startProgress()
-        let succ={ (checkStatusResponse:CheckStatusResponse?)   in
-            if let statsId =  checkStatusResponse?.data.attendStatus.status {
-                PrefUtil.setCurrentUserStatsID(userStats: statsId)
-                self.setAttendMessageStates(statsID:(checkStatusResponse?.data.attendStatus.status)!)
-                
-                print("requestUserStatus()-----> \(checkStatusResponse?.data.attendStatus.msg)" )
-            }
-            self.stopProgress()
-        }
-        let failureClos={
-            (err : Any) in
-            if (err is NetworkBaseError){
-                //                (err:NetworkBaseError?)   in
-                print("failed ---->\(String(describing: (err as! NetworkBaseError).data?.msg))")
-                _ = self.showSimpleConfirmDialog(parent: self, messageText: ((err as! NetworkBaseError).data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
-                ///disaple progressView here
-                
-                
-            }else{
-                _ = self.showSimpleConfirmDialog(parent: self, messageText: "Network Error",messageTitle: "Error", buttonText: "Ok")
-            }
-            
-            self.setAttendQrBtnState(state: true)
-            self.stopProgress()
-            
-        }
-        
-        let bodyParameter = [
-            "uid" : PrefUtil.getUserId()
-            ] as! [String : String]
-        do {
-            try APIRouter.makePostRequest(url: APIRouter.CHECK_STATUS_URL, bodyParameters: bodyParameter, succese: succ, failure: failureClos as! (Any?) -> (), type: CheckStatusResponse.self)
-        }catch{
-            let errorObj = error as! ValidationError
-            showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)
-            self.stopProgress()
-        }
-        
-        
+   
+  func viewProgress(state: Bool) {
+    if state {
+      super.startProgress()
+    }else{
+      super.stopProgress()
     }
-    
-    
-    
-    
-    func requestAttendAction(){
+  }
+  func setAttendBtnState(state: Bool) {
+    if !state{
+      //      qrAttendButton.backgroundColor = .gray
+      self.qrAttendButton.isEnabled=false
+    }else{
+      //      qrAttendButton.backgroundColor = .blue
+      self.qrAttendButton.isEnabled=true
+    }
+     
+  }
+  func viewDialogMessage(title: String, message: String) {
+    self.showSimpleConfirmDialog(parent: self, messageText:message,messageTitle: title, buttonText: "Ok")
+  }
+   
+  func viewAlertMessage(title: String, message: String) {
+    super.showAlert(withTitle:title,message:message)
+  }
+  func setAttendMessageStates(statsID: String) {
+    if(statsID == ApiConstant.ENTER){
+      self.statsMessage.text = "Please select method to Attend".localiz()
+      self.attendActionContainer.isHidden = false
+       
+    }else if(statsID == ApiConstant.OUT){
+      self.statsMessage.text = "Please select method to Leave".localiz()
+      self.attendActionContainer.isHidden = false
+       
+    }
+    else if(statsID == ApiConstant.ENDED){
+        self.statsMessage.text = "your Attend has been taken fot today".localiz()
+      self.attendActionContainer.isHidden = true
+    }
+     
+    statsMessage.centerVertically()
+  }
+   
+  func viewAttendMessage(currenrStatsID: String) {
+    // dialog after Attend suc
+  }
+   
+   
+  func navigate(dest: NavigationType,curenrtlocation: CLLocation) {
+    if(dest == NavigationType.QRReader){
+      ////( Attend / Leave ) user through Qr Scanner
+      let navigationManger = NavigationManger(storyboard: self.storyboard!,viewController: self)
+      navigationManger.setQrViewControllerMessage(cuurentLocation: curenrtlocation)
+      navigationManger.navigateTo(target :Destinations.QrScanner)
+    }
+  }
+   
+}
+extension AttendViewController : OnLocationUpdateDelegate {
+   
+   
+   
+   
+  func onLocationUpdated(curenrtlocation: CLLocation) {
+    self.setAttendBtnState(state: true)
+    self.stopProgress()
+    let newLocation = curenrtlocation
+    //The last location must not be capured more then 3 seconds ago
+    print( " horizontalAccuracy \(curenrtlocation.horizontalAccuracy )" )
+    let centralLat = PrefUtil.getCurrentCentralLat()
+    let centralLng = PrefUtil.getCurrentCentralLng()
+    let centrallocation = CLLocation(latitude: centralLat, longitude: centralLng)
+    let anotherLocation = CLLocation(latitude: newLocation.coordinate.latitude,longitude: newLocation.coordinate.longitude)
+    let distance = centrallocation.distance(from: anotherLocation)
+     
+    print("destance is ----> \(distance) ")
+     
+     
+     
+     
+    if( PrefUtil.getCurrentCentralRadius()! >= distance ){
+      self.attendPresenter.sendAttendAction(attendType: self.currentAttendMethod, curenrtlocation: curenrtlocation)
+    } else{
+      showAlert(withTitle: "Error", message: "you are out of area")
+       
+    }
+  }
+   
+  func onLocationUpdateFailed(error: Error) {
+    self.stopLocationManger()
+    showAlert(withTitle: "Error".localiz(), message: "locationError".localiz())
+  }
+   
+   
+   
+   
+   
+}
 
-        startProgress()
-        do{
-            //step ->1
-            /*
-             start location Updater and region Fencing
-             */
-            try self.startLocationServices()
-        }
-        catch{
-            print("AttendViewController ----> \(Error.self)")
-            self.setAttendQrBtnState(state: true)
-            self.stopProgress()
-        }
-    }
-        
-        private func sendAttendAcction() {
-            
-            let succ={ (checkStatusResponse:CheckStatusResponse?)  in
-                
+
+
+
+
+
+
+
+
+
+
+
  
-                if let statsId =  checkStatusResponse?.data.attendStatus.status {
-                    
-                    
-                    PrefUtil.setCurrentUserStatsID(userStats: statsId)
-                    self.setAttendMessageStates(statsID:(checkStatusResponse?.data.attendStatus.status)!)
-                    
-                    if statsId == ApiConstant.ENDED {
-                        super.showAlert(withTitle: "Warrning", message:  checkStatusResponse?.data.attendStatus.msg)
-                      
-                        
-                    }else{
-                    ////( Attend / Leave ) user through Qr Scanner
-                    let navigationManger = NavigationManger(storyboard: self.storyboard!,viewController: self)
-                    navigationManger.setQrViewControllerMessage(cuurentLocation: super.locationManager.location)
-                    navigationManger.navigateTo(target :Destinations.QrScanner)
-                    }
-                    
-                    self.setAttendQrBtnState(state: true)
-                    self.stopProgress()
-                }
-                
-            }
-            let failureClos={
-                (err : Any) in
-                if (err is NetworkBaseError){
-                    //                (err:NetworkBaseError?)   in
-                    print("failed ---->\(String(describing: (err as! NetworkBaseError).data?.msg))")
-                    _ = self.showSimpleConfirmDialog(parent: self, messageText: ((err as! NetworkBaseError).data?.msg) ?? "failed",messageTitle: "Error", buttonText: "Ok")
-                    
-                    
-                }else{
-                    _ = self.showSimpleConfirmDialog(parent: self, messageText: "Network Error",messageTitle: "Error", buttonText: "Ok")
-                }
-                self.setAttendQrBtnState(state: true)
-                self.stopProgress()
-                
-            }
-            let bodyParameter = [
-                "uid" : PrefUtil.getUserId()
-                ] as! [String : String]
-            
-            
-            do {
-                try _ =  APIRouter.makePostRequest(url: APIRouter.CHECK_STATUS_URL, bodyParameters: bodyParameter, succese: succ, failure: failureClos as! (Any?) -> (), type: CheckStatusResponse.self)
-            }catch{
-                let errorObj = error as! ValidationError
-                showAlert(withTitle: errorObj.errorTitle, message: errorObj.message)
-            }
-        }
-}
-
-extension AttendViewController : OnLocationFencingUpdate {
-    
-    func onDestanceGetMeasured(destance: Double) {
-        print("destance is ----> \(destance) ")
-        
-        self.setAttendQrBtnState(state: true)
-        self.stopProgress()
-        
-        
-        if( PrefUtil.getCurrentCentralRadius()! >= destance  ){
-            sendAttendAcction()
-        } else{
-            showAlert(withTitle: "Error", message: "you are out of area")
-            
-        }
-        
-        
-    }
-    
-    func onUserInside() {
-        //        self.setAttendBtnState(state: true)
-        //        self.stopProgress()
-        
-    }
-    
-    func onUserOutside() {
-        //        self.setAttendBtnState(state: true)
-        //        self.stopProgress()
-        //        showAlert(withTitle: "alert", message: "you are out side")
-    }
-    
-    func onUserWithUnKnowenFencing() {
-        //        self.setAttendBtnState(state: true)
-        //        self.stopProgress()
-        //        showAlert(withTitle: "alert", message: "UnKnowen Area")
-    }
-    
-    
-    
-}

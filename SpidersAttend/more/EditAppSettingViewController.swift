@@ -8,9 +8,9 @@
 
 import UIKit
 
-class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class EditAppSettingViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var moreTableView: UITableView!
+    @IBOutlet weak var edtitItemsTableView: UITableView!
     
     
     var tableItems : [String]=[]
@@ -26,9 +26,9 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         tableItems.append("language".localiz())
         tableItems.append( "logout".localiz())
         
-        self.moreTableView.register(UITableViewCell.self, forCellReuseIdentifier: "moreCell")
-        moreTableView.delegate = self
-        moreTableView.dataSource = self
+        self.edtitItemsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "editCellView")
+        edtitItemsTableView.delegate = self
+        edtitItemsTableView.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,7 +39,7 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         print("------> cellForRowAt")
         
-        let cell :UITableViewCell = (self.moreTableView?.dequeueReusableCell(withIdentifier: "moreCell"))!
+        let cell :UITableViewCell = (self.edtitItemsTableView?.dequeueReusableCell(withIdentifier: "editCellView"))!
         cell.selectionStyle = UITableViewCell.SelectionStyle.blue
         let cellBGView = UIView()
         cellBGView.backgroundColor = UIColor(red: 0, green: 0, blue: 200, alpha: 0.4);
@@ -49,8 +49,7 @@ class MoreViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.row)!")
-        
+ 
         
         if (indexPath.row == 1){
             

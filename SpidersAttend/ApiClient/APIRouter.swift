@@ -22,9 +22,11 @@ class APIRouter {
     private  var STATUS_ERROR = "405"
     var ERROR_STATE_1 = "login-400"
     //    private static var BASE_URL :String = "https://hr-arabjet.com/"
-     static var BASE_URL :String = "https://nfc.spiderholidays.co/"
+    static var BASE_URL :String = "https://nfc.spiderholidays.co/"
     
     static var LOGIN_URL = "/api/login_check"
+    static var TRAIL_LOGIN_URL = "/api/guest_login_check"
+
     static var ATTEND_ACTION = "/api/attend_action"
     static var CHECK_STATUS_URL = "/api/attend_check"
     static var PENDING_VACATION_URL = "/api/Vacations/pending/"
@@ -33,14 +35,20 @@ class APIRouter {
     static var NEW_VACATION_FORM_DATA_URL = "/api/Vacations/create"
     static var NEW_VACATION_REQUEST_URL = "/api/Vacations/create_action"
     static var PAY_ROLL_DATA_URL = "/api/payroll"
-
-
-
-
+    static var CHECK_USER_MANAGMENT_STATS_URL = "/api/check_if_user_is_manager"
+    
+    
+    
+    
     static var DELETE_PENDING_VACATION_URL = "/api/Vacations/delete/"
     
     
+    static var MANAGMENT_PENDING_VACATION_URL = "/api/get_manager_pending_vacations"
+    static var MANAGMENT_APPROVED_VACATION_URL = "/api/get_manager_approved_vacations"
+    static var MANAGMENT_REJECTED_VACATION_URL = "/api/get_manager_rejected_vacations"
     
+    static var REJECT_PENDING_VACATION_URL = "/api/reject_vacation"
+    static var APPROVE_PENDING_VACATION_URL = "/api/approve_vacation"
     
     static var NETWORK_ATTEND_URL = "/api/network_check"
     final   var LANGUAGE_PATH_PARAMETER="lang"
@@ -48,9 +56,10 @@ class APIRouter {
     
     
     //BodyPatameter
-      static var UID_BODY_PARAMETER = "uid"
+    static var UID_BODY_PARAMETER = "uid"
     static var VACATION_ID_BODY_PARAMETER = "id"
-
+    static var REASON_BODY_PARAMETER = "reason"
+    
     
     
     
@@ -83,32 +92,32 @@ class APIRouter {
     
     
     static func makeGetRequest <T : Codable>(getUrl:String,succese: @escaping (T?) ->(), failure: @escaping ((Any?) -> ()), type : T.Type  ) {
- 
-           AF.request(URL(string: getUrl)!, method: .get,encoding: URLEncoding.httpBody)
-               .validate()
-               .responseJSON { response in
-                   switch response.result {
-                   case .success:
-                       do {
-                           let decoder = JSONDecoder()
-                           let codingData = try decoder.decode(type.self, from: response.data!)
-                           succese(codingData)
-                       }catch {
-                           print("\(TAG) ----> Error ----> Failed Parssing Api \(getUrl)")
-                           failure("error")
-                       }
-                       
-                       break
-                   case .failure (let error):
-                       print("\(TAG) ----> Error ----> Failed Api \(getUrl)")
-                       handleApiError(error: error, response: response,failure: failure,currentUrl: getUrl)
-                       break
-                   }
-           }
-           
-           
-           
-       }
+        
+        AF.request(URL(string: getUrl)!, method: .get,encoding: URLEncoding.httpBody)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    do {
+                        let decoder = JSONDecoder()
+                        let codingData = try decoder.decode(type.self, from: response.data!)
+                        succese(codingData)
+                    }catch {
+                        print("\(TAG) ----> Error ----> Failed Parssing Api \(getUrl)")
+                        failure("error")
+                    }
+                    
+                    break
+                case .failure (let error):
+                    print("\(TAG) ----> Error ----> Failed Api \(getUrl)")
+                    handleApiError(error: error, response: response,failure: failure,currentUrl: getUrl)
+                    break
+                }
+        }
+        
+        
+        
+    }
     
     static func getPendingVacations <T : Codable>(userId:String,succese: @escaping (T?) ->(), failure: @escaping ((Any?) -> ()), type : T.Type  ) {
         let currentUrl : String = BASE_URL+PrefUtil.getAppLanguage()!+PENDING_VACATION_URL+userId
@@ -162,6 +171,10 @@ class APIRouter {
                 print("\(TAG) ----> Error 401 ----> Failed Api \(currentUrl)")
                 failure(error)
                 break
+            case 404:
+                print("\(TAG) ----> Error 404 ----> Failed Api \(currentUrl)")
+                failure(error)
+                break
             default : do {
                 failure ("Error")
                 print("\(TAG) ----> Error unResolved Code----> Failed Api \(currentUrl)")
@@ -169,7 +182,7 @@ class APIRouter {
             }
         }else{
             failure ("Un Resolved Error")
-
+            
         }
     }
     

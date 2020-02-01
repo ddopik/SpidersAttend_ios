@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import Floaty
 class RejectedViewController:BaseViewController{
     
     
@@ -21,6 +21,7 @@ class RejectedViewController:BaseViewController{
     
     @IBOutlet weak var rejectedTabBarItem: UITabBarItem!
     
+    @IBOutlet weak var newVacationBtn: Floaty!
     
     
     override func viewDidLoad() {
@@ -29,7 +30,8 @@ class RejectedViewController:BaseViewController{
         rejectedVacationPresenter = RejectedVacationPresenterImpl(rejectedControllerView: self)
         rejectedVacationDataSource =  VacationDataSource(vacationType: VacationDataSource.VacationListType.REJECTED)
         
-        
+        newVacationBtn?.fabDelegate = self
+
         self.rejectedVacationTableView.dataSource = rejectedVacationDataSource
         self.rejectedVacationTableView.delegate = rejectedVacationDataSource!
         self.rejectedVacationTableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -40,7 +42,11 @@ class RejectedViewController:BaseViewController{
         rejectedVacationPresenter.getRejectedVacation()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+        
+    }
     
 }
 
@@ -64,4 +70,10 @@ extension RejectedViewController : RejectedVacationControllerView{
     func viewError(msg: String) {
         noRejectedVacationTitle.isHidden = false
     }
+}
+extension RejectedViewController: FloatyDelegate {
+func emptyFloatySelected(_ floaty: Floaty) {
+    self.tabBarController?.tabBar.isHidden = true
+    self.performSegue(withIdentifier: "new_vacation", sender: nil)
+}
 }
